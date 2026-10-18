@@ -21,9 +21,31 @@
       "medium": 0
     }
   },
+  "caged-victim": {
+    "checked_at": "2026-10-18T14:45:40",
+    "content_hash": "4a54211a45f4fbb4",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "deathly-rock": {
     "checked_at": "2026-10-18T14:38:37",
     "content_hash": "3f1df12a44bfc466",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "double-gates": {
+    "checked_at": "2026-10-18T14:45:40",
+    "content_hash": "dedd54d8cbac25f7",
     "status": "PASS",
     "summary": {
       "critical": 0,
@@ -54,9 +76,31 @@
       "medium": 0
     }
   },
+  "in-the-flooding-chambers": {
+    "checked_at": "2026-10-18T14:45:40",
+    "content_hash": "59ae3f9c6fae38d7",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "interwovened-escape": {
     "checked_at": "2026-10-18T14:41:43",
     "content_hash": "c9864accba3712a8",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "killer-darts": {
+    "checked_at": "2026-10-18T14:45:40",
+    "content_hash": "cdd2eb15cba650a4",
     "status": "PASS",
     "summary": {
       "critical": 0,
@@ -87,6 +131,17 @@
       "medium": 0
     }
   },
+  "rain-machine": {
+    "checked_at": "2026-10-18T14:45:40",
+    "content_hash": "e89e399713067b7b",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "spiders-lair": {
     "checked_at": "2026-10-18T14:38:38",
     "content_hash": "8477c4859a9f850e",
@@ -98,9 +153,64 @@
       "medium": 0
     }
   },
+  "spiders-revenge": {
+    "checked_at": "2026-10-18T14:45:40",
+    "content_hash": "1b78228e07e86225",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "the-parasite": {
+    "checked_at": "2026-10-18T14:45:40",
+    "content_hash": "13ee504011c87b44",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "the-spider": {
     "checked_at": "2026-10-18T14:38:37",
     "content_hash": "07a58df2658d487e",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "unmerciful-village": {
+    "checked_at": "2026-10-18T14:45:40",
+    "content_hash": "5a5796feb442a1e1",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "worms-command": {
+    "checked_at": "2026-10-18T14:45:40",
+    "content_hash": "7d0c02f7bd2a3a34",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "zombified-bait": {
+    "checked_at": "2026-10-18T14:45:40",
+    "content_hash": "88bbd3dbd057e951",
     "status": "PASS",
     "summary": {
       "critical": 0,

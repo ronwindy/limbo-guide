@@ -1,0 +1,11 @@
+{
+  "section_id": "worms-command",
+  "verdict": "PASS",
+  "structured_sha256": "7d0c02f7bd2a3a34d926ca740f27de3ea3b45cb713f4d28b557b551a33998e7d",
+  "spot_checked": [
+    "all walkthrough sentences vs steps (order, names, numbers, conditions)",
+    "navigation prev/next",
+    "no added or dropped facts"
+  ],
+  "findings": []
+}

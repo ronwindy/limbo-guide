@@ -1,0 +1,11 @@
+{
+  "section_id": "in-the-flooding-chambers",
+  "verdict": "PASS",
+  "structured_sha256": "59ae3f9c6fae38d783b8b3b90d825ec9d5312f6c19ce2ce34cae8b814c877d3f",
+  "spot_checked": [
+    "all walkthrough sentences vs steps (order, names, numbers, conditions)",
+    "navigation prev/next",
+    "no added or dropped facts"
+  ],
+  "findings": []
+}

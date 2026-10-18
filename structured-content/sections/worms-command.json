@@ -1,0 +1,63 @@
+{
+  "guide": {
+    "id": "worms-command",
+    "code": "",
+    "title": "Worm's Command",
+    "type": "walkthrough",
+    "category": "Chapters",
+    "source": {
+      "game": "Limbo",
+      "author": "Limbo Wiki (Fandom) contributors",
+      "version": "revision 4899",
+      "url": "https://limbo.fandom.com/wiki/Worm's_Command",
+      "source_file": "raw-sources/fandom/19-worms-command.json"
+    },
+    "navigation": {
+      "prev": {
+        "id": "in-the-flooding-chambers",
+        "code": "",
+        "title": "In the Flooding Chambers",
+        "file": "sections/in-the-flooding-chambers.json"
+      },
+      "next": {
+        "id": "rooftops",
+        "code": "",
+        "title": "Rooftops",
+        "file": "sections/rooftops.json"
+      }
+    },
+    "route": [],
+    "items_summary": {
+      "obtainable": []
+    },
+    "enemies": [],
+    "bosses": [],
+    "shops": [],
+    "steps": [
+      {
+        "id": 1,
+        "description": "1. As you move forward, you will see a beam light from the sky, and then a brain parasite.\n2. The first thing you should do is pull the box to the left, and then walk under the parasite to have it attach.\n3. You turn left and need to climb the box to jump onto the **platform**.\n4. You turn right when you reach the brighter area.",
+        "type": "exploration",
+        "rewards": []
+      },
+      {
+        "id": 2,
+        "description": "1. When you head towards the **ladder**, you will cease sideways movement until you jump off.\n2. However, you can climb up and down.\n3. You should jump to the right **ladder**, then climb to the bottom.\n4. Next, jump across the pipes, until you reach another bright area, which turns you left.\n5. However, the pipes can collapse, causing the water to rise.",
+        "type": "exploration",
+        "rewards": []
+      },
+      {
+        "id": 3,
+        "description": "1. When you reach the **ladder**, you have to climb quickly, and then jump to the next one.\n2. You should reach the light, and turn back to the right, and still be able to reach the **ladder** before the water covers the **platform**.",
+        "type": "exploration",
+        "rewards": []
+      },
+      {
+        "id": 4,
+        "description": "1. Finally, wait at the top of the right **ladder**.\n2. The pipe from below will eventually float up, hence making you gain the ability to cross over, and the removal of the parasite.\n3. Climb to the next **ladder** to proceed to the next chapter.",
+        "type": "exploration",
+        "rewards": []
+      }
+    ]
+  }
+}

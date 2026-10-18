@@ -1,10 +1,10 @@
 # Limbo Guide - Project Status
 
-> Last synced: `2026-10-18 14:42:16`
+> Last synced: `2026-10-18 14:46:26`
 
 ```text
-=== PROJECT STATUS (2026-10-18 14:42:16) ===
-Canonical 41/41 | Structured 10/41 | QA pass 10/41 (fail 0) | Web built 10/41
+=== PROJECT STATUS (2026-10-18 14:46:26) ===
+Canonical 41/41 | Structured 20/41 | QA pass 20/41 (fail 0) | Web built 20/41
 Next:
   (nothing pending)
 ```
@@ -23,16 +23,16 @@ Next:
 | `` | `interwovened-escape` | Interwovened Escape | Chapters | WEB_BUILT |
 | `` | `pillars-of-pain` | Pillars of Pain | Chapters | WEB_BUILT |
 | `` | `flaming-roll` | Flaming Roll | Chapters | WEB_BUILT |
-| `` | `unmerciful-village` | Unmerciful Village | Chapters | NOT_STRUCTURED |
-| `` | `spiders-revenge` | Spider's Revenge | Chapters | NOT_STRUCTURED |
-| `` | `caged-victim` | Caged Victim | Chapters | NOT_STRUCTURED |
-| `` | `zombified-bait` | Zombified Bait | Chapters | NOT_STRUCTURED |
-| `` | `killer-darts` | Killer Darts | Chapters | NOT_STRUCTURED |
-| `` | `double-gates` | Double Gates | Chapters | NOT_STRUCTURED |
-| `` | `the-parasite` | The Parasite | Chapters | NOT_STRUCTURED |
-| `` | `rain-machine` | Rain Machine | Chapters | NOT_STRUCTURED |
-| `` | `in-the-flooding-chambers` | In the Flooding Chambers | Chapters | NOT_STRUCTURED |
-| `` | `worms-command` | Worm's Command | Chapters | NOT_STRUCTURED |
+| `` | `unmerciful-village` | Unmerciful Village | Chapters | WEB_BUILT |
+| `` | `spiders-revenge` | Spider's Revenge | Chapters | WEB_BUILT |
+| `` | `caged-victim` | Caged Victim | Chapters | WEB_BUILT |
+| `` | `zombified-bait` | Zombified Bait | Chapters | WEB_BUILT |
+| `` | `killer-darts` | Killer Darts | Chapters | WEB_BUILT |
+| `` | `double-gates` | Double Gates | Chapters | WEB_BUILT |
+| `` | `the-parasite` | The Parasite | Chapters | WEB_BUILT |
+| `` | `rain-machine` | Rain Machine | Chapters | WEB_BUILT |
+| `` | `in-the-flooding-chambers` | In the Flooding Chambers | Chapters | WEB_BUILT |
+| `` | `worms-command` | Worm's Command | Chapters | WEB_BUILT |
 | `` | `rooftops` | Rooftops | Chapters | NOT_STRUCTURED |
 | `` | `electric-letters` | Electric Letters | Chapters | NOT_STRUCTURED |
 | `` | `down-the-glass` | Down the Glass | Chapters | NOT_STRUCTURED |

@@ -1,0 +1,57 @@
+{
+  "guide": {
+    "id": "double-gates",
+    "code": "",
+    "title": "Double Gates",
+    "type": "walkthrough",
+    "category": "Chapters",
+    "source": {
+      "game": "Limbo",
+      "author": "Limbo Wiki (Fandom) contributors",
+      "version": "revision 4895",
+      "url": "https://limbo.fandom.com/wiki/Double_Gates",
+      "source_file": "raw-sources/fandom/15-double-gates.json"
+    },
+    "navigation": {
+      "prev": {
+        "id": "killer-darts",
+        "code": "",
+        "title": "Killer Darts",
+        "file": "sections/killer-darts.json"
+      },
+      "next": {
+        "id": "the-parasite",
+        "code": "",
+        "title": "The Parasite",
+        "file": "sections/the-parasite.json"
+      }
+    },
+    "route": [],
+    "items_summary": {
+      "obtainable": []
+    },
+    "enemies": [],
+    "bosses": [],
+    "shops": [],
+    "steps": [
+      {
+        "id": 1,
+        "description": "1. The next obstacle that you will face is a pair of doors after a a pair **ropes** and a pair of blades.\n2. These two doors can be raised by hanging onto one of the two **ropes**.\n3. You should slowly close if you aren't weighing the **rope** down.",
+        "type": "exploration",
+        "rewards": []
+      },
+      {
+        "id": 2,
+        "description": "There is also a **cart** that can be moved. It needs to be placed just left of the **rope** hanging between the two blades.",
+        "type": "exploration",
+        "rewards": []
+      },
+      {
+        "id": 3,
+        "description": "1. To be able to raise the first door, you will have to climb to the **platform** that is up, grab the **rope**, and wait for it to stop (you climb up to avoid the blades).\n2. Next, you have to quickly jump off, then run to the lower floor and catch the bottom of the **rope** just before it reaches the blades.\n3. Finally, grab the second **rope** to raise the other door, and proceed to the next chapter.",
+        "type": "exploration",
+        "rewards": []
+      }
+    ]
+  }
+}

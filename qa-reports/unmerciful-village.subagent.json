@@ -1,0 +1,11 @@
+{
+  "section_id": "unmerciful-village",
+  "verdict": "PASS",
+  "structured_sha256": "5a5796feb442a1e136fed6d973444829603df1491e57ad8e0255fd0ffe118100",
+  "spot_checked": [
+    "all walkthrough sentences vs steps (order, names, numbers, conditions)",
+    "navigation prev/next",
+    "no added or dropped facts"
+  ],
+  "findings": []
+}

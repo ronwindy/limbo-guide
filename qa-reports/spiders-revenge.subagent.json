@@ -1,0 +1,11 @@
+{
+  "section_id": "spiders-revenge",
+  "verdict": "PASS",
+  "structured_sha256": "1b78228e07e86225dd1c70b770ae22c6d5a23befd88b313c2789e13fc263953b",
+  "spot_checked": [
+    "all walkthrough sentences vs steps (order, names, numbers, conditions)",
+    "navigation prev/next",
+    "no added or dropped facts"
+  ],
+  "findings": []
+}

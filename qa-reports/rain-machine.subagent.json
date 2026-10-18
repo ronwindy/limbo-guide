@@ -1,0 +1,11 @@
+{
+  "section_id": "rain-machine",
+  "verdict": "PASS",
+  "structured_sha256": "e89e399713067b7b68b77c48dc79875d048c0d9ee63392b8657499063d500819",
+  "spot_checked": [
+    "all walkthrough sentences vs steps (order, names, numbers, conditions)",
+    "navigation prev/next",
+    "no added or dropped facts"
+  ],
+  "findings": []
+}

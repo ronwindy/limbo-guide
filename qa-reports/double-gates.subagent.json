@@ -1,0 +1,11 @@
+{
+  "section_id": "double-gates",
+  "verdict": "PASS",
+  "structured_sha256": "dedd54d8cbac25f735a8fb0d233b9647932d2a5688fbe0d12f1c65bad16ad253",
+  "spot_checked": [
+    "all walkthrough sentences vs steps (order, names, numbers, conditions)",
+    "navigation prev/next",
+    "no added or dropped facts"
+  ],
+  "findings": []
+}
