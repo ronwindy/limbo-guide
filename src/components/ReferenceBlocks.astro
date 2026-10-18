@@ -28,9 +28,28 @@ const slug = (s: string, i: number) => `ref-${i}-${(s || 'text').toLowerCase().r
       const body = b.format === 'prose'
         ? <div class="space-y-3 leading-relaxed text-slate-200">{paragraphs.map((p) => {
             const lines = p.split('\n');
-            return lines.every((l) => l.startsWith('- '))
-              ? <ul class="list-disc space-y-1.5 pl-5 marker:text-gold-400">{lines.map((l) => <li set:html={renderHighlights(l.slice(2))} />)}</ul>
-              : <p set:html={renderHighlights(p)} />;
+            if (!lines.every((l) => /^\s*- /.test(l))) return <p set:html={renderHighlights(p)} />;
+            // Two-space indented lines nest under the preceding top-level bullet.
+            const items: { text: string; children: string[] }[] = [];
+            lines.forEach((l) => {
+              const text = l.replace(/^\s*- /, '');
+              if (/^\s/.test(l) && items.length) items[items.length - 1].children.push(text);
+              else items.push({ text, children: [] });
+            });
+            return (
+              <ul class="list-disc space-y-2 pl-5 marker:text-gold-400">
+                {items.map((it) => (
+                  <li>
+                    <span set:html={renderHighlights(it.text)} />
+                    {it.children.length > 0 && (
+                      <ul class="mt-1.5 list-[circle] space-y-1.5 pl-5 marker:text-slate-500">
+                        {it.children.map((c) => <li set:html={renderHighlights(c)} />)}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            );
           })}</div>
         : <pre class="p-3 sm:p-4 rounded-md border border-slate-800 bg-slate-950/70 text-slate-200 font-source-art text-xs overflow-x-auto">{b.text}</pre>;
       return b.spoiler ? (
