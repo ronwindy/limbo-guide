@@ -9,7 +9,7 @@ import { createHash } from "node:crypto";
 import { ROOT_DIR, loadQaStatus, recordQaResult, auditSection, computeProjectStatus,
   renderCompactSummary, writeStatusMarkdown, pyJson, loadCanonicalIndex } from "./status.mjs";
 import { loadMerges, navigationProblems } from "../.claude/skills/qa/scripts/merges.mjs";
-import { getSectionPaths, getCanonicalManifest } from "./sections.mjs";
+import { getSectionPaths, getCanonicalManifest, sectionType, isWalkthroughType } from "./sections.mjs";
 import { boldFile, buildDictionary, compilePattern } from "./bold_terms.mjs";
 import { scaffoldGuide } from "../.claude/skills/guide-transformer/scripts/scaffold_structured_guide.mjs";
 import { lintGuide } from "../.claude/skills/guide-transformer/scripts/lint_guide.mjs";
@@ -235,7 +235,7 @@ export function runVerdict(sec, verdictFile, readStdin) {
 
 /** Walkthroughs need an independent QA subagent pass (manual step, see CLAUDE.md section 5). */
 function remindIndependentQa(sec) {
-  if (!String(sec.id ?? "").startsWith("w-")) return;
+  if (!isWalkthroughType(sectionType(sec))) return;
   if (existsSync(join(ROOT_DIR, "qa-reports", `${sec.id}.subagent.json`))) {
     const note = staleVerdictNote(sec);
     if (note) console.log(`\n${note}`);
@@ -295,7 +295,7 @@ export function runFinalize(sec) {
     console.log(`[FAIL] Structured file does not exist: ${structuredPath}`);
     return false;
   }
-  if (sid.startsWith("w-") && !existsSync(verdictFile)) {
+  if (isWalkthroughType(sectionType(sec)) && !existsSync(verdictFile)) {
     console.log(`[FAIL] Independent QA verdict missing (qa-reports/${sid}.subagent.json); run \`verdict\` first.`);
     return false;
   }
@@ -367,7 +367,7 @@ export function resolveBacklog() {
 /** Bolds terms in the section's prose so QA always sees the final file (walkthroughs only). */
 function runBold(sec) {
   const { structuredPath } = getSectionPaths(sec);
-  if (!existsSync(structuredPath) || !String(sec.id).startsWith("w-")) return;
+  if (!existsSync(structuredPath) || !isWalkthroughType(sectionType(sec))) return;
   const found = boldFile(structuredPath, compilePattern(buildDictionary()), true);
   if (found.length) {
     const unique = [...new Set(found)].sort();

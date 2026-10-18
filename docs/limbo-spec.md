@@ -55,7 +55,7 @@ Human-readable wiki-style slugs, not `w-1-01` codes. Route is `/guide/<slug>`; t
 4. RPG fields (`bosses`, `shops`, `enemies`, `items_summary`) stay in the schema but are never emitted.
    `BossCard` is kept only because `StepChecklist` imports it; remove it together with that import if unused after the pilot.
 
-## 6. Scripts keyed on id prefixes (fix before the first `check`)
+## 6. Scripts keyed on id prefixes (DONE: now keyed on section `type` via `sectionType` / `isWalkthroughType` in `scripts/sections.mjs`)
 These decide behaviour from `w-` / `a-1-` and must switch to the section `type`
 (`walkthrough` / `sidequest` = walkthrough path; `reference` = verbatim path):
 - `scripts/pipeline.mjs` (3 sites: walkthrough-only checks, subagent-QA reminder, verdict check)

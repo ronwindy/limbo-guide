@@ -665,8 +665,7 @@ function makeNote(mn, cases, characters) {
 }
 
 function isReferenceSection(canonical) {
-  const id = canonical.id ?? "";
-  return id.startsWith("a-1-") && id !== "a-1-00";
+  return canonical.type === "reference";
 }
 
 /** Deterministic scaffold: canonical text is carried over byte-for-byte, no steps or prose. */

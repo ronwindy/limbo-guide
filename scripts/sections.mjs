@@ -16,7 +16,7 @@ export function getCanonicalManifest() {
   return { source: data.source ?? {}, sections: data.sections_index ?? [] };
 }
 
-/** Resolves a section by id (w-1-04), code ([W-1-04]), file stem, or filename. Returns null when unknown or ambiguous. */
+/** Resolves a section by id (slug), optional code, file stem, or filename. Returns null when unknown or ambiguous. */
 export function resolveSection(identifier) {
   const { sections } = getCanonicalManifest();
   const cleanId = identifier.trim().toLowerCase();
@@ -57,4 +57,19 @@ export function getSectionPaths(sec) {
     canonicalPath: join(ROOT_DIR, "canonical-sources", relCanonical),
     structuredPath: join(ROOT_DIR, "structured-content", "sections", filename),
   };
+}
+
+/** Section type from the canonical manifest entry or canonical file; defaults to a walkthrough. */
+export function sectionType(sec) {
+  return sec?.type ?? "walkthrough";
+}
+
+/** Walkthrough path (checklist steps, independent QA subagent, term bolding). */
+export function isWalkthroughType(type) {
+  return ["walkthrough", "walkthrough_intro", "sidequest"].includes(type);
+}
+
+/** Reference path: canonical text carried over verbatim, no LLM prose. */
+export function isReferenceType(type) {
+  return type === "reference";
 }

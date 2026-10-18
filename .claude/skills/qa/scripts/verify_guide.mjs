@@ -77,10 +77,9 @@ export function verifyGuide(canonical, structured, root = ROOT_DIR) {
   }
 
   // 1b. Reference sections carry canonical text verbatim; any drift is a fidelity defect.
-  // Applies to scaffolded appendices (a-1-*, except the a-1-00 index) and to any file that
-  // carries reference_blocks; hand-structured intro pages (header, TOC) are exempt.
-  const isVerbatimReference = (secId.startsWith("a-1-") && secId !== "a-1-00") || truthy(guide.reference_blocks);
-  if (guide.type === "reference" && isVerbatimReference) {
+  // Applies to reference sections that carry reference_blocks (the verbatim scaffold);
+  // hand-structured reference pages without them are exempt.
+  if (guide.type === "reference" && truthy(guide.reference_blocks)) {
     const refText = (guide.reference_blocks ?? []).map((b) => b.text ?? "").join("");
     if (refText !== (canonical.text ?? "")) {
       addFinding("critical", "factual discrepancy", "reference_blocks",

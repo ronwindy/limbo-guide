@@ -5,11 +5,11 @@
 //
 // Run `node scripts/guide.mjs --help` for the command list.
 
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 import { join } from "node:path";
 import { ROOT_DIR, computeProjectStatus, renderCompactSummary, writeStatusMarkdown, pyJson } from "./status.mjs";
-import { resolveSection, getSectionPaths, getCanonicalManifest } from "./sections.mjs";
+import { resolveSection, getSectionPaths, getCanonicalManifest, sectionType, isWalkthroughType } from "./sections.mjs";
 import { runPatch } from "./patch_section.mjs";
 import { mineTerms, loadExtras, buildDictionary, compilePattern, boldFile } from "./bold_terms.mjs";
 import { runFrontendAudit } from "./audit_frontend.mjs";
@@ -117,10 +117,9 @@ function cmdBold(positional, flags) {
     return 0;
   }
   const pat = compilePattern(buildDictionary());
-  const structuredDir = join(ROOT_DIR, "structured-content", "sections");
   let files;
   if (flags.all) {
-    files = readdirSync(structuredDir).filter((f) => /^w-.*\.json$/.test(f)).sort().map((f) => join(structuredDir, f));
+    files = getCanonicalManifest().sections.filter((sec) => isWalkthroughType(sectionType(sec))).map((sec) => getSectionPaths(sec).structuredPath).filter(existsSync);
   } else {
     if (!positional.length) {
       console.log("[ERROR] 'bold' needs a section id, --all or --terms.");

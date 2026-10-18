@@ -1,83 +1,22 @@
 // bold_terms.mjs - Bold important game terms (**term**) in the prose of structured sections.
 //
-// Dictionary = names mined from the canonical appendices + scripts/term_extras.json
-// (manual statuses/locations/characters and a deny list). Only prose fields are touched
+// Dictionary = hand-listed names in scripts/term_extras.json (characters, locations, deny list). Only prose fields are touched
 // (step description, notes text, boss strategy, hub text); data fields keep exact names.
 
-import { readFileSync, readdirSync, existsSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { readFileSync, existsSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 import { ROOT_DIR } from "./status.mjs";
 import { PROJECT } from "./project_config.mjs";
 import { pyJson } from "./status.mjs";
 
-const CANON = join(ROOT_DIR, "canonical-sources", "sections");
-const STRUCT = join(ROOT_DIR, "structured-content", "sections");
 const EXTRAS = join(ROOT_DIR, PROJECT.termExtrasFile);
-
-const NAME = "[A-Z][\\w'’ .&-]*?";
 
 const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const allMatches = (text, re) => [...text.matchAll(re)];
 
-function jsonFiles(dir) {
-  return existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith(".json")).sort() : [];
-}
-
-function canonText(fileId) {
-  const name = jsonFiles(CANON).find((f) => f.startsWith(`${fileId}-`));
-  if (!name) throw new Error(`No canonical file for ${fileId}`);
-  return JSON.parse(readFileSync(join(CANON, name), "utf8")).text;
-}
-
-/** 'TalismanOfLuck' -> 'Talisman of Luck' (same display rule as the scaffold). */
-export function camel(name) {
-  name = name.replace(/(?<=\w's)(?=[A-Z])/g, " "); // "Alchemist'sWater"
-  if (!/^[A-Z][a-z']+(?:[A-Z][a-z]+)+$/.test(name)) return name;
-  const words = allMatches(name, /[A-Z][a-z']*/g).map((m) => m[0]);
-  return words.map((w) => (w === "Of" || w === "The" ? w.toLowerCase() : w)).join(" ");
-}
-
+/** Terms are listed by hand in term_extras.json; there are no appendices to mine. */
 export function mineTerms() {
-  const cats = new Map();
-
-  const add = (cat, names) => {
-    for (let n of names) {
-      n = camel(n.trim());
-      if (n.length >= 3 && /[A-Za-z]/.test(n)) {
-        if (!cats.has(cat)) cats.set(cat, new Set());
-        cats.get(cat).add(n);
-      }
-    }
-  };
-  const grab = (text, re) => allMatches(text, re).map((m) => m[1]);
-
-  // skills/souls: "| 18 | Moon Howl | Earth |" rows and fusion headers "Raging Tiger (Earth, Level 1)"
-  const t = canonText("a-1-01");
-  add("skills", grab(t, new RegExp(`^\\|\\s+(?:\\d+|)\\s*\\|\\s+(${NAME})\\s+\\|`, "gm")));
-  add("fusions", grab(t, /^\|\s{2,3}(\S[^|]*?)\s+\(\w+, Level \d\)/gm));
-  // equipment tables: "|  Leather Gloves     |    0 /   0  |"
-  for (const [fid, cat] of [["a-1-02", "weapons"], ["a-1-03", "armor"], ["a-1-04", "accessories"]]) {
-    add(cat, grab(canonText(fid), new RegExp(`^\\|\\s{2}(${NAME})\\s+\\|\\s+[-\\d]+ /`, "gm")));
-  }
-  // items / valuables: "|  Thera Leaf         |  Restores ..."
-  for (const [fid, cat] of [["a-1-05", "items"], ["a-1-06", "valuables"]]) {
-    add(cat, grab(canonText(fid), new RegExp(`^\\|\\s{2}(${NAME})\\s+\\|\\s{2}\\S`, "gm")));
-  }
-  // bestiary / bosses / NPCs
-  add("enemies", grab(canonText("a-1-13"), new RegExp(`\\|\\s+No\\.\\s+\\d+\\s+\\|\\s+(${NAME})\\s+\\|`, "g")));
-  add("bosses", grab(canonText("a-1-14"), new RegExp(`^\\|\\s(${NAME})\\s+\\|\\s+[\\d,]+ HP\\s+\\|`, "gm")));
-  add("npcs", grab(canonText("a-1-12"), new RegExp(`^\\|\\s+[\\dA-Z-]+\\s+\\|\\s+(${NAME})\\s+\\|\\s+\\w+\\s+\\|`, "gm")));
-  // status abnormalities from the in-game help
-  add("statuses", grab(canonText("a-1-15"), /Status Abnormality \/ ([A-Z][\w ]+?)\s*$/gm));
-  // locations from walkthrough titles: "Shanghai, Huayuan (1)" -> Shanghai, Huayuan
-  const locs = new Set();
-  for (const name of jsonFiles(STRUCT).filter((f) => /^w-[12]-/.test(f))) {
-    const title = JSON.parse(readFileSync(join(STRUCT, name), "utf8")).guide.title;
-    for (const p of title.split(",")) locs.add(p.replace(/\s*\(\d+\)$/, "").trim());
-  }
-  add("locations", [...locs].filter((l) => l !== "Asia Side Quests"));
-  return cats;
+  return new Map();
 }
 
 export function loadExtras() {

@@ -1,13 +1,13 @@
 # Game Guide Converter — Agent Instructions
 
-Converts game-guide source pages into polished static web pages (Astro, GitHub Pages). MVP scope: **one page in → one good page out**.
+Converts the Limbo wiki walkthrough into a static guide (Astro, GitHub Pages): per chapter, an embedded video plus the wiki text as a tickable checklist. Spec: [`docs/limbo-spec.md`](docs/limbo-spec.md). MVP scope: **one page in → one good page out**.
 
 ```text
 Source → Canonical Source → Structured Guide JSON → Static Page → QA → GitHub Pages
 ```
 
 ## 1. Core Rule: Transform Presentation, Not Knowledge
-The source is the sole authority for game facts. Priority when rules conflict: **source fidelity > user requirements > architecture > usability > visual polish > convenience.**
+The wiki text is the sole authority for game facts. The chapter video is embedded and linked as the chapter's source (`source.video_url`) but is **not a fact source and is not fact-checked**; a fact found only in the video is never transcribed, it is flagged for the user. The user chooses all sources; never search for or pick them. Commit directly on `main`. Priority when rules conflict: **source fidelity > user requirements > architecture > usability > visual polish > convenience.**
 
 Allowed: restructure, reorder for readability (never where order carries gameplay meaning), tighten wording, make steps/checklists/tables, highlight warnings, add cross-references backed by project data.
 
@@ -36,9 +36,10 @@ Make the smallest change that fulfils your role; hand other problems to the owni
 
 ## 5. Per-Section Workflow
 Section types decide the path:
-- **Walkthrough** (`w-*`): scaffold → LLM refine → validate → QA → independent QA subagent → status.
+- **Walkthrough** (`type` `walkthrough` / `sidequest`, e.g. chapter pages): scaffold → LLM refine → validate → QA → independent QA subagent → status.
   The independent QA subagent is a **manual step** (a script cannot spawn one): after `check` passes, run `node scripts/guide.mjs qa-prompt <id>` (prints the exact prompt and verdict path), launch a subagent with it, and act on its verdict. The subagent returns a JSON verdict (`.claude/skills/qa/schemas/qa-verdict.schema.json`); record it with `node scripts/guide.mjs verdict <id> <file.json>`. `check` runs bold terms, validate, lint, QA and build in that order (no ordering rules to remember; several ids build once, `--no-build` skips it). Standalone `node scripts/guide.mjs lint [<id>]` (no id = all sections) catches leftover prose blocks, UPPERCASE item tags, `[_TAG_]`, ASCII borders, and fragments (a step line starting lowercase = a wrapped source line split off). `scaffold` prints fragment / low-confidence step-type warnings: a flagged scaffold is a draft, compare it with the canonical and patch it before QA (QA does not catch garbled steps). The subagent writes `qa-reports/<id>.subagent-draft.json` and must not run `verdict`; `verdict` removes the draft. `node scripts/guide.mjs finalize <id>` stages exactly the section's files (no commit). `check` prints a reminder for `w-*` sections until `qa-reports/<id>.subagent.json` exists.
-- **Reference/table appendices** (`a-*`, items, shops, bestiary, bosses): deterministic scaffold only, no LLM prose; validate → QA → status.
+- **Reference pages** (`type` `reference`, e.g. overview, hidden eggs, achievements): deterministic scaffold only, no LLM prose; validate → QA → status.
+- Behavior comes from the section `type` (canonical manifest entry and canonical file), never from the id. Ids are human-readable slugs (`the-forest`, `hidden-eggs`; pattern `^[a-z0-9-]+$`), with no `w-` / `a-1-` codes; `code` is optional and unused. Every canonical manifest entry and canonical section file must carry `type`.
 
 ```bash
 node scripts/guide.mjs scaffold <id>

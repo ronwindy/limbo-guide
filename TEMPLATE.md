@@ -36,10 +36,8 @@ Reset `scripts/term_extras.json` to an empty list.
 `.git`, `node_modules`, `dist`, `raw-sources`, `canonical-sources`, `structured-content`,
 `qa-reports`, `qa-status.json`, `STATUS.md`, game art in `public/`.
 
-## Known prefix coupling (fix when ids are slugs)
-Scripts decide behavior from the `w-` / `a-1-` id prefixes: `scripts/pipeline.mjs`,
-`scripts/guide.mjs`, `scripts/bold_terms.mjs`, `scaffold_structured_guide.mjs`,
-`.claude/skills/qa/scripts/verify_guide.mjs`. Switch them to the section `type`.
+## Id prefixes
+Resolved: scripts decide behavior from the section `type` (`sectionType` / `isWalkthroughType` in `scripts/sections.mjs`), not from id prefixes. Every canonical section needs a `type`.
 
 ## Start checklist
 1. Copy, strip, fill `project.config.json`; `cmd /c npm run build` with zero sections.
