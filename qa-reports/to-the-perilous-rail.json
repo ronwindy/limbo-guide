@@ -1,0 +1,14 @@
+{
+  "qa": {
+    "status": "PASS",
+    "section_id": "to-the-perilous-rail",
+    "section_title": "To the Perilous Rail",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "findings": []
+  }
+}

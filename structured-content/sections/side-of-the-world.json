@@ -1,0 +1,45 @@
+{
+  "guide": {
+    "id": "side-of-the-world",
+    "code": "",
+    "title": "Side of the World",
+    "type": "walkthrough",
+    "category": "Chapters",
+    "source": {
+      "game": "Limbo",
+      "author": "Limbo Wiki (Fandom) contributors",
+      "version": "revision 4866",
+      "url": "https://limbo.fandom.com/wiki/Side_of_the_World",
+      "source_file": "raw-sources/fandom/37-side-of-the-world.json"
+    },
+    "navigation": {
+      "prev": {
+        "id": "levitated-swing",
+        "code": "",
+        "title": "Levitated Swing",
+        "file": "sections/levitated-swing.json"
+      },
+      "next": {
+        "id": "timed-gravity-changes",
+        "code": "",
+        "title": "Timed Gravity Changes",
+        "file": "sections/timed-gravity-changes.json"
+      }
+    },
+    "route": [],
+    "items_summary": {
+      "obtainable": []
+    },
+    "enemies": [],
+    "bosses": [],
+    "shops": [],
+    "steps": [
+      {
+        "id": 1,
+        "description": "1. You have to slide down and jump at the **gravity** change **switch**, then walk up, and jump while aiming for the downward **gravity** **switch** - if done right, you should land in the middle of the H. You have to wait for the elecricity to stop, then jump on the pipe on the right.\n2. Finally, climb down the **rope** to the O, and continue moving right.",
+        "type": "exploration",
+        "rewards": []
+      }
+    ]
+  }
+}

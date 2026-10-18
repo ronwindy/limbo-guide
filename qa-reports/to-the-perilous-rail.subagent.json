@@ -1,0 +1,13 @@
+{
+  "section_id": "to-the-perilous-rail",
+  "verdict": "PASS",
+  "spot_checked": [
+    "all sentences of canonical text present in order across steps",
+    "names, numbers, conditions (ladder, lever, gear, crusher, minecart, rail, turrets, anti-gravity, box/crate) unchanged",
+    "no invented facts, no empty-array omissions (no items/bosses/enemies in source)",
+    "navigation prev/next and source metadata match canonical",
+    "bold terms and list splitting do not alter wording"
+  ],
+  "findings": [],
+  "structured_sha256": "713cb8ddb6d06f0870eb4730041c47ff56919d2b9f55044e24b65ed380b47460"
+}

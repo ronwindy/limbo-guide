@@ -1,0 +1,45 @@
+{
+  "guide": {
+    "id": "levitated-swing",
+    "code": "",
+    "title": "Levitated Swing",
+    "type": "walkthrough",
+    "category": "Chapters",
+    "source": {
+      "game": "Limbo",
+      "author": "Limbo Wiki (Fandom) contributors",
+      "version": "revision 4867",
+      "url": "https://limbo.fandom.com/wiki/Levitated_Swing",
+      "source_file": "raw-sources/fandom/36-levitated-swing.json"
+    },
+    "navigation": {
+      "prev": {
+        "id": "magnetized-blocks",
+        "code": "",
+        "title": "Magnetized Blocks",
+        "file": "sections/magnetized-blocks.json"
+      },
+      "next": {
+        "id": "side-of-the-world",
+        "code": "",
+        "title": "Side of the World",
+        "file": "sections/side-of-the-world.json"
+      }
+    },
+    "route": [],
+    "items_summary": {
+      "obtainable": []
+    },
+    "enemies": [],
+    "bosses": [],
+    "shops": [],
+    "steps": [
+      {
+        "id": 1,
+        "description": "All you have to do in this chapter is set **gravity** to move upward to call the zip-line trolley. When it reaches the top, you have to revert the **gravity** to normal, and quickly grab hold of the **rope**.",
+        "type": "exploration",
+        "rewards": []
+      }
+    ]
+  }
+}

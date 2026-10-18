@@ -1,0 +1,21 @@
+{
+  "section_id": "end-of-the-journey",
+  "verdict": "PASS_WITH_NOTES",
+  "structured_sha256": "4413f52f311a72965cbf88373f5c7ceec55739ed4f099da4307d4fa3edd7b976",
+  "spot_checked": [
+    "40th/final chapter",
+    "preceded-by sentence (source typo preserved)",
+    "no traps/obstacles/enemies",
+    "next null"
+  ],
+  "findings": [
+    {
+      "severity": "low",
+      "category": "altered",
+      "location": "steps[0].description",
+      "canonical": "final chapter of LIMBO",
+      "structured": "final chapter of **limbo**",
+      "issue": "Game title casing changed from LIMBO to lowercase by bold-term markup; meaning intact, cosmetic only."
+    }
+  ]
+}

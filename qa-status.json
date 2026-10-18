@@ -43,6 +43,28 @@
       "medium": 0
     }
   },
+  "dangerous-conveyors": {
+    "checked_at": "2026-10-18T14:54:14",
+    "content_hash": "b0a8d34bee94c0da",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "dark-rotation": {
+    "checked_at": "2026-10-18T14:54:14",
+    "content_hash": "4193521e2ad5d377",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "deathly-rock": {
     "checked_at": "2026-10-18T14:38:37",
     "content_hash": "3f1df12a44bfc466",
@@ -87,6 +109,17 @@
       "medium": 0
     }
   },
+  "end-of-the-journey": {
+    "checked_at": "2026-10-18T14:55:06",
+    "content_hash": "4413f52f311a7296",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "factory-world": {
     "checked_at": "2026-10-18T14:51:19",
     "content_hash": "1552ae04a3a4be04",
@@ -110,8 +143,19 @@
     }
   },
   "game-overview": {
-    "checked_at": "2026-10-18T14:49:23",
-    "content_hash": "2e038fc9d2494b74",
+    "checked_at": "2026-10-18T14:54:46",
+    "content_hash": "ae87170fed0e4cf3",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "gravitational-changes": {
+    "checked_at": "2026-10-18T14:54:14",
+    "content_hash": "5dac924be76969d2",
     "status": "PASS",
     "summary": {
       "critical": 0,
@@ -175,6 +219,39 @@
       "medium": 0
     }
   },
+  "levitated-swing": {
+    "checked_at": "2026-10-18T14:54:14",
+    "content_hash": "51d162636fba821d",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "machine-guns": {
+    "checked_at": "2026-10-18T14:54:14",
+    "content_hash": "31f00096d89f7efb",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "magnetized-blocks": {
+    "checked_at": "2026-10-18T14:54:14",
+    "content_hash": "8d18ee5208a6d988",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "pillars-of-pain": {
     "checked_at": "2026-10-18T14:41:43",
     "content_hash": "2623bfd4e6e4de82",
@@ -230,6 +307,17 @@
       "medium": 0
     }
   },
+  "side-of-the-world": {
+    "checked_at": "2026-10-18T14:54:14",
+    "content_hash": "f3e4b196472ec4bf",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "spiders-lair": {
     "checked_at": "2026-10-18T14:38:38",
     "content_hash": "8477c4859a9f850e",
@@ -263,6 +351,17 @@
       "medium": 0
     }
   },
+  "the-final-glass": {
+    "checked_at": "2026-10-18T14:54:15",
+    "content_hash": "c3806bd3a6832d5b",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "the-parasite": {
     "checked_at": "2026-10-18T14:45:40",
     "content_hash": "13ee504011c87b44",
@@ -277,6 +376,28 @@
   "the-spider": {
     "checked_at": "2026-10-18T14:38:37",
     "content_hash": "07a58df2658d487e",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "timed-gravity-changes": {
+    "checked_at": "2026-10-18T14:54:14",
+    "content_hash": "b9d1ff0bee535bc2",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "to-the-perilous-rail": {
+    "checked_at": "2026-10-18T14:54:14",
+    "content_hash": "713cb8ddb6d06f08",
     "status": "PASS",
     "summary": {
       "critical": 0,

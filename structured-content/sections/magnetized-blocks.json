@@ -1,0 +1,45 @@
+{
+  "guide": {
+    "id": "magnetized-blocks",
+    "code": "",
+    "title": "Magnetized Blocks",
+    "type": "walkthrough",
+    "category": "Chapters",
+    "source": {
+      "game": "Limbo",
+      "author": "Limbo Wiki (Fandom) contributors",
+      "version": "revision 4868",
+      "url": "https://limbo.fandom.com/wiki/Magnetized_Blocks",
+      "source_file": "raw-sources/fandom/35-magnetized-blocks.json"
+    },
+    "navigation": {
+      "prev": {
+        "id": "gravitational-changes",
+        "code": "",
+        "title": "Gravitational Changes",
+        "file": "sections/gravitational-changes.json"
+      },
+      "next": {
+        "id": "levitated-swing",
+        "code": "",
+        "title": "Levitated Swing",
+        "file": "sections/levitated-swing.json"
+      }
+    },
+    "route": [],
+    "items_summary": {
+      "obtainable": []
+    },
+    "enemies": [],
+    "bosses": [],
+    "shops": [],
+    "steps": [
+      {
+        "id": 1,
+        "description": "1. In this chapter, you will reach an area with two heavy blocks, with both anti-**gravity** and magnetic power consoles.\n2. The first thing you have to do is activate the magnetic generator, then activate the anti-**gravity** but quickly disable it.\n3. If done correctly, the left block should be on the ceiling and the right block on the floor.\n4. You can now finally climb the **platforms** to proceed to the next chapter.",
+        "type": "exploration",
+        "rewards": []
+      }
+    ]
+  }
+}

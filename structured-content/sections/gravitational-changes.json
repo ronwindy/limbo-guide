@@ -1,0 +1,57 @@
+{
+  "guide": {
+    "id": "gravitational-changes",
+    "code": "",
+    "title": "Gravitational Changes",
+    "type": "walkthrough",
+    "category": "Chapters",
+    "source": {
+      "game": "Limbo",
+      "author": "Limbo Wiki (Fandom) contributors",
+      "version": "revision 4872",
+      "url": "https://limbo.fandom.com/wiki/Gravitational_Changes",
+      "source_file": "raw-sources/fandom/34-gravitational-changes.json"
+    },
+    "navigation": {
+      "prev": {
+        "id": "machine-guns",
+        "code": "",
+        "title": "Machine Guns",
+        "file": "sections/machine-guns.json"
+      },
+      "next": {
+        "id": "magnetized-blocks",
+        "code": "",
+        "title": "Magnetized Blocks",
+        "file": "sections/magnetized-blocks.json"
+      }
+    },
+    "route": [],
+    "items_summary": {
+      "obtainable": []
+    },
+    "enemies": [],
+    "bosses": [],
+    "shops": [],
+    "steps": [
+      {
+        "id": 1,
+        "description": "The first thing you have to do is jump on the elevator, and climb down. This will trigger a turret that shoots down a box, which you will need to block turret fire.",
+        "type": "exploration",
+        "rewards": []
+      },
+      {
+        "id": 2,
+        "description": "1. To continue, you need two boxes, one of which is to the left.\n2. Lower the elevator and move the **crate** onto the top of the elevator.\n3. Raise the elevator, and climb it.\n4. Use the box to jump over the turret and into an large alcove.\n5. In this alcove, you will then use the anti-**gravity** console.\n6. You have to turn it on to move a box to the top-left, turn it off to have it fall and start sliding, and turn it back on to have it launch over the barrier.\n7. After that, push the **crate** to the right.",
+        "type": "exploration",
+        "rewards": []
+      },
+      {
+        "id": 3,
+        "description": "1. Finally, head to the right, using the first box as cover, then climb the **ladder**, and reverse **gravity**.\n2. Move both boxes above the moving **platform** area - one above the **platform**, and one in front of it.\n3. Reset **gravity** to normal, and use the boxes to climb and reach the **ladder**.",
+        "type": "exploration",
+        "rewards": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "section_id": "levitated-swing",
+  "verdict": "PASS",
+  "spot_checked": [
+    "gravity upward to call zip-line trolley",
+    "revert gravity at top, quickly grab rope",
+    "nothing added or dropped",
+    "navigation prev/next"
+  ],
+  "findings": [],
+  "structured_sha256": "51d162636fba821dc23c613cba862b70ed9287074844ef0e196084f6b81b873c"
+}

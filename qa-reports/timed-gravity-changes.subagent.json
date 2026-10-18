@@ -1,0 +1,11 @@
+{
+  "section_id": "timed-gravity-changes",
+  "verdict": "PASS",
+  "structured_sha256": "b9d1ff0bee535bc282cf534fa753dc82ed4f9179160eef2f27eae6f6f5947108",
+  "spot_checked": [
+    "13 source sentences all present in order across steps 1-2",
+    "switch/saw/turret/pit/buzzsaw directions and conditions",
+    "navigation prev/next"
+  ],
+  "findings": []
+}

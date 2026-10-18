@@ -1,0 +1,45 @@
+{
+  "guide": {
+    "id": "the-final-glass",
+    "code": "",
+    "title": "The Final Glass",
+    "type": "walkthrough",
+    "category": "Chapters",
+    "source": {
+      "game": "Limbo",
+      "author": "Limbo Wiki (Fandom) contributors",
+      "version": "revision 4865",
+      "url": "https://limbo.fandom.com/wiki/The_Final_Glass",
+      "source_file": "raw-sources/fandom/39-the-final-glass.json"
+    },
+    "navigation": {
+      "prev": {
+        "id": "timed-gravity-changes",
+        "code": "",
+        "title": "Timed Gravity Changes",
+        "file": "sections/timed-gravity-changes.json"
+      },
+      "next": {
+        "id": "end-of-the-journey",
+        "code": "",
+        "title": "End of the Journey",
+        "file": "sections/end-of-the-journey.json"
+      }
+    },
+    "route": [],
+    "items_summary": {
+      "obtainable": []
+    },
+    "enemies": [],
+    "bosses": [],
+    "shops": [],
+    "steps": [
+      {
+        "id": 1,
+        "description": "1. This chapter requires precise timing.\n2. You have to wait for the **gravity** to **switch** up.\n3. When it is two seconds away from flipping again, quickly walk forward and fall up.\n4. The **gravity** will then reverse, and you will need to aim yourself at the **switch** to deflect you to the right.\n5. You will then curve, and burst through the window.\n6. When you land and wake up, continue right to see the ending.",
+        "type": "exploration",
+        "rewards": []
+      }
+    ]
+  }
+}
