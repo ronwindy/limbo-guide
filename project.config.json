@@ -3,7 +3,7 @@
   "slug": "limbo-guide",
   "site": "https://ronwindy.github.io",
   "base": "/limbo-guide",
-  "logo": "logo.svg",
+  "logo": "logo.png",
   "canonicalIndexFile": "limbo-guide.canonical.json",
   "termExtrasFile": "scripts/term_extras.json",
   "statusTitle": "Limbo Guide - Project Status",

@@ -95,6 +95,7 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
   <body class="bg-void text-slate-100 flex flex-col min-h-screen relative selection:bg-white/25 selection:text-white">
     <!-- Fixed Site Background -->
     <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
+      <div class="absolute inset-0 limbo-bg" style={`background-image: url(${baseUrl}/background.png)`}></div>
       <div class="absolute inset-0 limbo-fog"></div>
       <div class="absolute inset-0 limbo-grain"></div>
       <div class="absolute inset-0 limbo-vignette"></div>
