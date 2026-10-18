@@ -36,6 +36,14 @@ Route is `/guide/<slug>`; slug = `guide.id` (`^[a-z0-9-]+$`), from the wiki's ch
 - The canonical manifest and each canonical section carry `type`; scripts key behavior on it (see `CLAUDE.md`).
 - No achievements or egg pages: no sources were given. The one egg the wiki mentions (Awakening) is a callout.
 
+## 3b. Images (pilot: awakening, lake-passage, bear-traps)
+The wikitext's `[[File:]]` references are kept as canonical `images[]` (`file`, `caption`, `after` = heading above it); the canonical
+`text` still omits them. `node scripts/import_images.mjs [slug ...]` downloads the files via the API (`imageinfo`) into `public/images/`
+and records source URL / licence metadata in `raw-sources/fandom/_images.json`; run it before `build_canonical_fandom.mjs`
+(only downloaded files become `images[]`). Images are illustrations only, not a fact source. Extending beyond the pilot = run the
+import for more slugs, rebuild the canonical, patch `images` into those sections.
+**[USER]** The wiki returned no licence metadata for these files; check licensing/attribution before publishing.
+
 ## 4. Video
 Dropped for now (decision: wiki text only). `guide.video` / `VideoEmbed` are not built. If added later, the video is
 an embed plus source link and is never fact-checked.

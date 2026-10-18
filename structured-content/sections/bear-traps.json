@@ -63,6 +63,13 @@
         "title": "Corpse",
         "text": "Source remark, kept as written - corpse: it seems to be not be human, of it having bones stuck through its head and no legs/arms and is dead (obviously)."
       }
+    ],
+    "images": [
+      {
+        "file": "images/chapter3.png",
+        "caption": "Chapter 3: Bear Traps - Cover",
+        "after": ""
+      }
     ]
   }
 }

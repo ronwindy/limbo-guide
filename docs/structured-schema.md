@@ -49,6 +49,7 @@ A single object with one key, `guide`. Unknown keys anywhere under `guide` are r
 | `route` | no | Ordered list of location strings. |
 | `objectives` | no | Short goal strings. Only what the source states; never derived from `navigation.next` (a source may offer a branch). QA flags wording that is not traceable. |
 | `save_points` | no | Strings copied verbatim from the canonical `overview.save_points` (not a route). Shown as a "Save Points" section; QA requires them. |
+| `images` | no | `{file, caption, after}[]` copied from the canonical `images[]` (wiki `[[File:]]` illustrations). `file` is under `public/`, `caption` verbatim, `after` the source heading it sits under (`""` = cover, shown under the title; a heading equal to a callout title shows inside that callout; otherwise after the steps). Illustrations only, never fact-checked; QA requires the same files/captions/anchors and that each file exists. |
 | `traps` | no | Strings copied verbatim from the canonical `traps` (the wiki's "Traps and obstacles" list). Shown as a collapsible "Traps and Obstacles" section; QA requires every canonical entry. |
 | `items_summary` | no | See section 3. |
 | `enemies` | no | Copy of canonical `enemies` (section 5). |

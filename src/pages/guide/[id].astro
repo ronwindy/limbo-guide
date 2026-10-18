@@ -11,6 +11,7 @@ import SavePoints from '../../components/SavePoints.astro';
 import TrapsList from '../../components/TrapsList.astro';
 import InitialSetup from '../../components/InitialSetup.astro';
 import DocumentInfo from '../../components/DocumentInfo.astro';
+import GuideFigure from '../../components/GuideFigure.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 import {
   getAllStructuredSections,
@@ -38,6 +39,10 @@ const guideHref = (id: string) => `${baseUrl}/guide/${id}`;
 const objectives = guide.objectives || (overview.objective ? [overview.objective] : []);
 const route = guide.route || overview.route || [];
 const steps = guide.steps || [];
+const images = guide.images || [];
+const calloutTitles = new Set((guide.callouts || []).map((c) => c.title));
+const coverImages = images.filter((i) => i.after === '');
+const looseImages = images.filter((i) => i.after !== '' && !calloutTitles.has(i.after));
 const bosses = guide.bosses || (guide.boss ? [guide.boss] : []);
 
 // Compute local on-page sections for Right TOC and Mobile Drawer
@@ -89,8 +94,10 @@ const pageSections = buildPageTocSections(guide);
         <div class="page-title-rule" aria-hidden="true"><span></span></div>
       </header>
 
+      {coverImages.map((img) => <GuideFigure image={img} />)}
+
       <div class="space-y-8">
-        <Callouts callouts={guide.callouts} />
+        <Callouts callouts={guide.callouts} images={images} />
 
         <ManualOverview overview={overview} />
 
@@ -111,6 +118,12 @@ const pageSections = buildPageTocSections(guide);
         )}
 
         <TrapsList traps={guide.traps} />
+
+        {looseImages.length > 0 && (
+          <section id="images" class="space-y-4">
+            {looseImages.map((img) => <GuideFigure image={img} />)}
+          </section>
+        )}
 
         <DocumentInfo metadata={overview.metadata} purpose={overview.purpose} guideScope={overview.guide_scope} />
       </div>

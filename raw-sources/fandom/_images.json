@@ -1,0 +1,46 @@
+{
+  "Chapter1.png": {
+    "file": "images/chapter1.png",
+    "url": "https://static.wikia.nocookie.net/limbo/images/c/c6/Chapter1.png/revision/latest?cb=20260821134235",
+    "width": 956,
+    "height": 540,
+    "mime": "image/png",
+    "description_page": "https://limbo.fandom.com/wiki/File:Chapter1.png",
+    "license": "",
+    "artist": "",
+    "fetched": "2026-10-18"
+  },
+  "Egg1.png": {
+    "file": "images/egg1.png",
+    "url": "https://static.wikia.nocookie.net/limbo/images/5/52/Egg1.png/revision/latest?cb=20260821134631",
+    "width": 1920,
+    "height": 1080,
+    "mime": "image/png",
+    "description_page": "https://limbo.fandom.com/wiki/File:Egg1.png",
+    "license": "",
+    "artist": "",
+    "fetched": "2026-10-18"
+  },
+  "Chapter2.png": {
+    "file": "images/chapter2.png",
+    "url": "https://static.wikia.nocookie.net/limbo/images/3/34/Chapter2.png/revision/latest?cb=20260821134253",
+    "width": 960,
+    "height": 540,
+    "mime": "image/png",
+    "description_page": "https://limbo.fandom.com/wiki/File:Chapter2.png",
+    "license": "",
+    "artist": "",
+    "fetched": "2026-10-18"
+  },
+  "Chapter3.png": {
+    "file": "images/chapter3.png",
+    "url": "https://static.wikia.nocookie.net/limbo/images/9/96/Chapter3.png/revision/latest?cb=20260821134414",
+    "width": 960,
+    "height": 540,
+    "mime": "image/png",
+    "description_page": "https://limbo.fandom.com/wiki/File:Chapter3.png",
+    "license": "",
+    "artist": "",
+    "fetched": "2026-10-18"
+  }
+}

@@ -422,6 +422,12 @@ export interface GameWikiData {
  * Shape of a structured section's `guide` object. Walkthrough and reference
  * sections share this loose schema; every field is optional.
  */
+export interface GuideImage {
+  file: string;
+  caption: string;
+  after: string;
+}
+
 export interface GuideContent {
   id?: string;
   code?: string;
@@ -434,6 +440,7 @@ export interface GuideContent {
   route?: string[];
   save_points?: string[];
   traps?: string[];
+  images?: GuideImage[];
   initial_setup?: InitialPartySetup;
   items_summary?: ItemsSummary;
   enemies?: EnemyInfo[];

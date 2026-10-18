@@ -1,7 +1,7 @@
 {
   "awakening": {
-    "checked_at": "2026-10-18T13:17:39",
-    "content_hash": "904c48fbafd87714",
+    "checked_at": "2026-10-18T13:48:47",
+    "content_hash": "4250a7045b72ec63",
     "status": "PASS",
     "summary": {
       "critical": 0,
@@ -11,8 +11,8 @@
     }
   },
   "bear-traps": {
-    "checked_at": "2026-10-18T13:19:52",
-    "content_hash": "984c71fee0f8a969",
+    "checked_at": "2026-10-18T13:48:48",
+    "content_hash": "cd63576c9517af24",
     "status": "PASS",
     "summary": {
       "critical": 0,
@@ -22,8 +22,8 @@
     }
   },
   "lake-passage": {
-    "checked_at": "2026-10-18T13:17:39",
-    "content_hash": "0f5a8db33191b234",
+    "checked_at": "2026-10-18T13:48:47",
+    "content_hash": "bfcfa9042c04cb5a",
     "status": "PASS",
     "summary": {
       "critical": 0,

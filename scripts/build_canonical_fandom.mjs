@@ -1,11 +1,14 @@
 // build_canonical_fandom.mjs - Build canonical-sources/ from raw-sources/fandom/ (output of import_fandom.mjs).
 // Deterministic markup stripping only: wording, order and numbers are kept verbatim.
-// Removed: infobox/navigation tables, [[File:]] images, {{templates}}, <br>. Links/bold/italics lose their markup.
+// Removed from the text: infobox/navigation tables, [[File:]] images, {{templates}}, <br>.
+// Images that were downloaded (import_images.mjs) are kept as `images[]` {file, caption, after}. Links/bold/italics lose their markup.
 
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { ROOT_DIR } from "./status.mjs";
 import { PROJECT } from "./project_config.mjs";
+import { imagesOf, localName } from "./wiki_images.mjs";
+import { existsSync } from "node:fs";
 
 const RAW = join(ROOT_DIR, "raw-sources", "fandom");
 const OUT = join(ROOT_DIR, "canonical-sources");
@@ -43,6 +46,13 @@ function trapsOf(w) {
   return clean(m[1]).split("\n").filter((l) => /^\*/.test(l)).map((l) => l.replace(/^\*\s*/, "").trim());
 }
 
+/** images[] for the references whose file was downloaded to public/images/. */
+function imagesField(w) {
+  const images = imagesOf(w).filter((i) => existsSync(join(ROOT_DIR, "public", "images", localName(i.name))))
+    .map((i) => ({ file: `images/${localName(i.name)}`, caption: i.caption, after: i.after }));
+  return images.length ? { images } : {};
+}
+
 const files = readdirSync(RAW).filter((f) => /^\d/.test(f)).sort();
 const pages = files.map((f) => JSON.parse(readFileSync(join(RAW, f), "utf8")));
 const source = (p) => ({ game: PROJECT.game, author: "Limbo Wiki (Fandom) contributors", version: `revision ${p.revid}`,
@@ -68,6 +78,7 @@ pages.forEach((p, i) => {
       next: i === pages.length - 1 ? null : link(pages[i + 1].slug, pages[i + 1].label),
     },
     traps: trapsOf(p.wikitext),
+    ...imagesField(p.wikitext),
     text,
   });
 });

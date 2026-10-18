@@ -514,6 +514,20 @@
           },
           "description": "Save points listed in the source overview, verbatim (not a route)"
         },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["file", "caption", "after"],
+            "properties": {
+              "file": { "type": "string", "description": "Path under public/, e.g. images/egg1.png" },
+              "caption": { "type": "string", "description": "Wiki caption, verbatim" },
+              "after": { "type": "string", "description": "Source heading the image sits under; empty = before the first heading (cover)" }
+            },
+            "additionalProperties": false
+          },
+          "description": "Wiki illustrations, copied from canonical images[]. Not a fact source; never fact-checked"
+        },
         "traps": {
           "type": "array",
           "items": {

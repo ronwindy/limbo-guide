@@ -1,13 +1,16 @@
 ---
 import { TriangleAlert, Lightbulb, Info } from '@lucide/astro';
 import type { SectionCallout } from '../lib/types';
+import type { GuideImage } from '../lib/types';
 import { renderBlockMarkup } from '../lib/markup';
+import GuideFigure from './GuideFigure.astro';
 
 interface Props {
   callouts?: SectionCallout[];
+  images?: GuideImage[];
 }
 
-const { callouts = [] } = Astro.props;
+const { callouts = [], images = [] } = Astro.props;
 
 const STYLES = {
   warning: { icon: TriangleAlert, box: 'callout-warning bg-slate-100 border-white text-slate-900 border-2', iconClass: 'text-slate-900', title: 'text-slate-950 uppercase tracking-widest text-sm' },
@@ -31,6 +34,7 @@ const STYLES = {
             <div class="leading-relaxed opacity-95 space-y-2">
               <Fragment set:html={renderBlockMarkup(c.text)} />
             </div>
+            {images.filter((i) => i.after === c.title).map((img) => <GuideFigure image={img} />)}
           </div>
         </div>
       );

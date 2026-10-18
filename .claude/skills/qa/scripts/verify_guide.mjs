@@ -98,6 +98,16 @@ export function verifyGuide(canonical, structured, root = ROOT_DIR) {
     if (!cTraps.includes(t)) addFinding("high", "unsupported claim", "traps", "Not in canonical traps", t, "Structured trap not in canonical source");
   }
 
+  // 1d. Images: same files/captions/anchors as canonical; each file exists under public/. Illustrations are not fact-checked.
+  const imgKey = (i) => JSON.stringify([i.file, i.caption, i.after]);
+  const cImgs = (canonical.images ?? []).map(imgKey);
+  const gImgs = (guide.images ?? []).map(imgKey);
+  for (const k of cImgs) if (!gImgs.includes(k)) addFinding("medium", "missing information", "images", k, "Missing", "Canonical image not in structured images");
+  for (const k of gImgs) if (!cImgs.includes(k)) addFinding("high", "unsupported claim", "images", "Not in canonical images", k, "Structured image differs from canonical (file, caption or anchor)");
+  for (const i of guide.images ?? []) {
+    if (!existsSync(join(root, "public", i.file))) addFinding("high", "build integrity", "images", i.file, "File not found", "Image file missing under public/");
+  }
+
   // Collect all structured items (items_summary + all step rewards + initial setup)
   const structItems = new Set();
   const summary = guide.items_summary ?? {};

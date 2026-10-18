@@ -57,6 +57,13 @@
         "type": "navigation",
         "rewards": []
       }
+    ],
+    "images": [
+      {
+        "file": "images/chapter2.png",
+        "caption": "Chapter 2: Lake Passage - Cover",
+        "after": ""
+      }
     ]
   }
 }

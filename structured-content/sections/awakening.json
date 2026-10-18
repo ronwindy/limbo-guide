@@ -62,6 +62,18 @@
         "title": "Hidden Egg",
         "text": "- The hidden egg is found right at the start of the game.\n- Move to the leftmost part of the game and obtain the egg on the paddle.\n- This gains the \"Wrong Way\" achievement."
       }
+    ],
+    "images": [
+      {
+        "file": "images/chapter1.png",
+        "caption": "Chapter 1: Awakening - Cover",
+        "after": ""
+      },
+      {
+        "file": "images/egg1.png",
+        "caption": "Egg #1",
+        "after": "Hidden Egg"
+      }
     ]
   }
 }
