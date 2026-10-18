@@ -1,23 +1,16 @@
 {
   "section_id": "bear-traps",
-  "verdict": "PASS_WITH_NOTES",
+  "verdict": "PASS",
   "spot_checked": [
-    "walkthrough paragraph 1 vs step 1 (boat, ledge, vine, hanging chain, higher slope)",
-    "walkthrough paragraph 2 vs step 2 items 1-7 (two bear traps, handle, corpse, rope, order preserved)",
-    "traps list: Deep water / Too high ground / Bear traps",
-    "unmarked 'Dead corpse' line vs discrepancy callout",
-    "corpse remark vs lore callout (wording kept verbatim)",
-    "navigation prev lake-passage / next deathly-rock"
+    "Step 1: all four source sentences present in order (boat, vine, hanging chain, higher slope); bold only on lake/boat/vine/chain",
+    "Step 2: all seven source sentences present in source order; numbers (two bear traps), conditions (lose your head, corpse adds weight) unchanged; bold only on forest/bear traps/rope/bear trap",
+    "Bold markup did not alter any names, numbers or conditions",
+    "Traps list: Deep water, Too high ground, Bear traps match canonical",
+    "Unbulleted 'Dead corpse' line preserved as discrepancy callout",
+    "Corpse remark preserved verbatim (including source typos) as lore callout",
+    "Navigation prev lake-passage / next deathly-rock, image chapter3.png match canonical",
+    "No invented facts, bosses, items, or rewards"
   ],
-  "findings": [
-    {
-      "severity": "low",
-      "category": "other",
-      "location": "guide.traps / callouts[0]",
-      "canonical": "- Deep water\n- Too high ground\n- Bear traps\nDead corpse",
-      "structured": "traps: [Deep water, Too high ground, Bear traps]; discrepancy callout about unmarked 'Dead corpse' line",
-      "issue": "'Dead corpse' is not in traps[] (it lacks a bullet marker in the source) but is preserved and flagged in a discrepancy callout. Acceptable handling; noted only because the item exists in the source list context."
-    }
-  ],
-  "structured_sha256": "984c71fee0f8a969e4960072e6486576f33ed65c844130923726c6286408a583"
+  "findings": [],
+  "structured_sha256": "972e2cacb7c114c4f0a99492f646539d20cff764bf5a04c1230e718be1c95178"
 }

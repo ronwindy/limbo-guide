@@ -1,22 +1,15 @@
 {
   "section_id": "awakening",
-  "verdict": "PASS_WITH_NOTES",
+  "verdict": "PASS",
   "spot_checked": [
-    "walkthrough paragraph vs steps 1-3 (all sentences, order preserved)",
-    "traps list vs canonical Traps and obstacles (Spiked ground)",
-    "Hidden Egg callout (leftmost part, paddle, Wrong Way achievement)",
-    "navigation prev game-overview / next lake-passage",
-    "no numbers or names changed"
+    "Steps 1-3 vs Walkthrough paragraph: all sentences present in order; only bold added (boy, Limbo, checkpoint)",
+    "Bold markup did not change any name, number or condition (stripping ** yields the source wording)",
+    "Hidden Egg callout: 'right at the start of the game', 'leftmost part', 'on the paddle', \"Wrong Way\" achievement all preserved",
+    "Traps: 'Spiked ground' present",
+    "Navigation prev/next: Game Overview / Lake Passage match the intro's 'followed by Lake Passage'",
+    "Images: chapter1.png and egg1.png with captions and placement match canonical",
+    "No invented facts; no enemies, bosses, items, shops or choices in source"
   ],
-  "findings": [
-    {
-      "severity": "low",
-      "category": "omitted",
-      "location": "intro sentence",
-      "canonical": "Awakening is the 1st chapter of LIMBO. It is followed by the succeeding chapter, Lake Passage.",
-      "structured": "(no intro text; navigation.next = lake-passage)",
-      "issue": "The intro sentence is not reproduced as text. Its facts (Awakening is chapter 1; Lake Passage follows) are carried only by metadata and navigation. Chapter number 1 is not shown in the structured file. Minor; acceptable as presentation change."
-    }
-  ],
-  "structured_sha256": "904c48fbafd87714727e0aed40d1e1d9c463792ccb5b9dacb30f18bdf120c031"
+  "findings": [],
+  "structured_sha256": "fbbbcac85fb5af677114ad7a03b4676819aa57e6d165bde2ea2c81e2ebc50d9b"
 }

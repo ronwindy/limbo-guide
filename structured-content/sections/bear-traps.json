@@ -41,13 +41,13 @@
     "steps": [
       {
         "id": 1,
-        "description": "- At the other side of the lake, you cannot reach the ledge at the end.\n- To get on top of it, pull the boat from the water and step upward to get on the ledge.\n- Climb on the vine, and jump to the hanging chain.\n- Climb up to get to the higher slope.",
+        "description": "- At the other side of the **lake**, you cannot reach the ledge at the end.\n- To get on top of it, pull the **boat** from the water and step upward to get on the ledge.\n- Climb on the **vine**, and jump to the hanging **chain**.\n- Climb up to get to the higher slope.",
         "type": "puzzle",
         "rewards": []
       },
       {
         "id": 2,
-        "description": "1. Proceed to the forest, but do not step on one of two bear traps ahead, or you will lose your head.\n2. Pull its handle to give wider space between two deadly traps, and jump over them to pass.\n3. You will notice a rotten corpse on the rope tied on the cliff branch, but you cannot reach the top cliff when the corpse adds weight to the rope level and branch.\n4. To remove it, use the bear trap below.\n5. Pull it out and let it aim under the corpse.\n6. Grab the rope and the corpse will be obliterated into pieces and lightens the weight.\n7. Get to the top cliff to go to the next chapter.",
+        "description": "1. Proceed to the **forest**, but do not step on one of two **bear traps** ahead, or you will lose your head.\n2. Pull its handle to give wider space between two deadly traps, and jump over them to pass.\n3. You will notice a rotten corpse on the **rope** tied on the cliff branch, but you cannot reach the top cliff when the corpse adds weight to the **rope** level and branch.\n4. To remove it, use the **bear trap** below.\n5. Pull it out and let it aim under the corpse.\n6. Grab the **rope** and the corpse will be obliterated into pieces and lightens the weight.\n7. Get to the top cliff to go to the next chapter.",
         "type": "puzzle",
         "rewards": []
       }
