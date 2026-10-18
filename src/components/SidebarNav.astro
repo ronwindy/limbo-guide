@@ -246,13 +246,16 @@ function getCategoryFullTitle(name: string): string {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 7px;
-    height: 7px;
-    background: #0a0a0a;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 6px rgba(255, 255, 255, 0.25);
-    transform: translate(-50%, -50%) rotate(0deg);
-    border-radius: 9999px;
+    width: 29px;
+    height: 13px;
+    /* Reed / grass silhouette: thin ticks of uneven height rising from the line. */
+    background:
+      linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)) 0 100% / 1px 5px no-repeat,
+      linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)) 7px 100% / 1px 9px no-repeat,
+      linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)) 14px 100% / 1px 13px no-repeat,
+      linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)) 21px 100% / 1px 8px no-repeat,
+      linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)) 28px 100% / 1px 4px no-repeat;
+    transform: translate(-50%, -100%);
   }
 
   @media (prefers-reduced-motion: reduce) {

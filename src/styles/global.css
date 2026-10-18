@@ -49,12 +49,18 @@
 }
 
 /* ---------- Atmosphere (fixed layers, see BaseLayout) ---------- */
+/* Game artwork (public/background.png), cropped to cover and dimmed so text stays readable */
+.limbo-bg {
+  background-size: cover;
+  background-position: 40% center;
+  background-repeat: no-repeat;
+  filter: grayscale(1);
+}
+
 .limbo-fog {
   background:
-    radial-gradient(ellipse 90% 45% at 50% 108%, rgba(200, 200, 200, 0.12), transparent 70%),
-    radial-gradient(ellipse 70% 35% at 15% 95%, rgba(170, 170, 170, 0.07), transparent 70%),
-    radial-gradient(ellipse 80% 40% at 50% -10%, rgba(255, 255, 255, 0.05), transparent 70%),
-    linear-gradient(180deg, #121212 0%, #0a0a0a 55%, #0e0e0e 100%);
+    linear-gradient(180deg, rgba(8, 8, 8, 0.82) 0%, rgba(8, 8, 8, 0.72) 50%, rgba(8, 8, 8, 0.88) 100%),
+    radial-gradient(ellipse 90% 45% at 50% 108%, rgba(200, 200, 200, 0.10), transparent 70%);
 }
 
 .limbo-vignette {
@@ -160,7 +166,7 @@
   letter-spacing: 0.14em;
 }
 
-/* Rule under the page title: a thin line fading out, with a small hollow circle */
+/* Rule under the page title: a thin line fading out, with a small reed silhouette */
 .page-title-rule {
   display: flex;
   align-items: center;
@@ -182,10 +188,17 @@
 }
 
 .page-title-rule > span {
-  width: 0.45rem;
-  height: 0.45rem;
-  border: 1px solid #d6d6d6;
-  border-radius: 9999px;
+  flex: none;
+  width: 29px;
+  height: 13px;
+  /* Reed silhouette: thin ticks of uneven height rising from the line. */
+  background:
+    linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)) 0 100% / 1px 5px no-repeat,
+    linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)) 7px 100% / 1px 9px no-repeat,
+    linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)) 14px 100% / 1px 13px no-repeat,
+    linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)) 21px 100% / 1px 8px no-repeat,
+    linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)) 28px 100% / 1px 4px no-repeat;
+  transform: translateY(-6px);
 }
 
 /* Shared panel surface used by guide page cards: flat, hairline-edged, no gloss */
