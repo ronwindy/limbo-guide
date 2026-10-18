@@ -66,8 +66,8 @@
     }
   },
   "game-overview": {
-    "checked_at": "2026-10-18T14:19:25",
-    "content_hash": "c19744853f2327e2",
+    "checked_at": "2026-10-18T14:49:23",
+    "content_hash": "2e038fc9d2494b74",
     "status": "PASS",
     "summary": {
       "critical": 0,

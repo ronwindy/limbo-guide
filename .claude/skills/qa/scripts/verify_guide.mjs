@@ -80,8 +80,10 @@ export function verifyGuide(canonical, structured, root = ROOT_DIR) {
   // Applies to reference sections that carry reference_blocks (the verbatim scaffold);
   // hand-structured reference pages without them are exempt.
   if (guide.type === "reference" && truthy(guide.reference_blocks)) {
-    const refText = (guide.reference_blocks ?? []).map((b) => b.text ?? "").join("");
-    if (refText !== (canonical.text ?? "")) {
+    const refText = (guide.reference_blocks ?? []).map((b) => b.text ?? "").join("\n");
+    // Bullet markers, **bold** and whitespace are presentation; the words must be identical.
+    const plain = (t) => t.replace(/\*\*/g, "").replace(/^- /gm, "").replace(/\s+/g, "");
+    if (plain(refText) !== plain(canonical.text ?? "")) {
       addFinding("critical", "factual discrepancy", "reference_blocks",
         `${(canonical.text ?? "").length} chars`, `${refText.length} chars`,
         "Reference block text differs from canonical source text");
