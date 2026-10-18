@@ -1,10 +1,10 @@
 # Limbo Guide - Project Status
 
-> Last synced: `2026-10-18 14:38:38`
+> Last synced: `2026-10-18 14:42:16`
 
 ```text
-=== PROJECT STATUS (2026-10-18 14:38:38) ===
-Canonical 41/41 | Structured 7/41 | QA pass 7/41 (fail 0) | Web built 7/41
+=== PROJECT STATUS (2026-10-18 14:42:16) ===
+Canonical 41/41 | Structured 10/41 | QA pass 10/41 (fail 0) | Web built 10/41
 Next:
   (nothing pending)
 ```
@@ -20,9 +20,9 @@ Next:
 | `` | `deathly-rock` | Deathly Rock | Chapters | WEB_BUILT |
 | `` | `the-spider` | The Spider | Chapters | WEB_BUILT |
 | `` | `spiders-lair` | Spider's Lair | Chapters | WEB_BUILT |
-| `` | `interwovened-escape` | Interwovened Escape | Chapters | NOT_STRUCTURED |
-| `` | `pillars-of-pain` | Pillars of Pain | Chapters | NOT_STRUCTURED |
-| `` | `flaming-roll` | Flaming Roll | Chapters | NOT_STRUCTURED |
+| `` | `interwovened-escape` | Interwovened Escape | Chapters | WEB_BUILT |
+| `` | `pillars-of-pain` | Pillars of Pain | Chapters | WEB_BUILT |
+| `` | `flaming-roll` | Flaming Roll | Chapters | WEB_BUILT |
 | `` | `unmerciful-village` | Unmerciful Village | Chapters | NOT_STRUCTURED |
 | `` | `spiders-revenge` | Spider's Revenge | Chapters | NOT_STRUCTURED |
 | `` | `caged-victim` | Caged Victim | Chapters | NOT_STRUCTURED |

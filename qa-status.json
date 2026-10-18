@@ -32,6 +32,17 @@
       "medium": 0
     }
   },
+  "flaming-roll": {
+    "checked_at": "2026-10-18T14:41:43",
+    "content_hash": "cea2e4b7b19af967",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "game-overview": {
     "checked_at": "2026-10-18T14:19:25",
     "content_hash": "c19744853f2327e2",
@@ -43,9 +54,31 @@
       "medium": 0
     }
   },
+  "interwovened-escape": {
+    "checked_at": "2026-10-18T14:41:43",
+    "content_hash": "c9864accba3712a8",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "lake-passage": {
     "checked_at": "2026-10-18T14:32:43",
     "content_hash": "ed0636926170aefa",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "pillars-of-pain": {
+    "checked_at": "2026-10-18T14:41:43",
+    "content_hash": "2623bfd4e6e4de82",
     "status": "PASS",
     "summary": {
       "critical": 0,
