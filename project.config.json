@@ -1,0 +1,18 @@
+{
+  "game": "Limbo",
+  "slug": "limbo-guide",
+  "site": "https://ronwindy.github.io",
+  "base": "/limbo-guide",
+  "logo": "logo.svg",
+  "canonicalIndexFile": "limbo-guide.canonical.json",
+  "termExtrasFile": "scripts/term_extras.json",
+  "statusTitle": "Limbo Guide - Project Status",
+  "pageTitleSuffix": "Limbo Guide",
+  "pageDescriptionPrefix": "Limbo Guide & Walkthrough",
+  "defaultTitle": "Limbo — Guide & Walkthrough",
+  "defaultDescription": "A player-friendly walkthrough companion for Limbo.",
+  "sourceDefaults": {
+    "author": "",
+    "version": ""
+  }
+}
