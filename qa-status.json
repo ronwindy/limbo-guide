@@ -21,6 +21,17 @@
       "medium": 0
     }
   },
+  "boulder-by-gravity": {
+    "checked_at": "2026-10-18T14:51:20",
+    "content_hash": "f3e2026244cd335f",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "caged-victim": {
     "checked_at": "2026-10-18T14:45:40",
     "content_hash": "4a54211a45f4fbb4",
@@ -54,6 +65,39 @@
       "medium": 0
     }
   },
+  "down-the-glass": {
+    "checked_at": "2026-10-18T14:51:19",
+    "content_hash": "7dce7fd8f2d19e46",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "electric-letters": {
+    "checked_at": "2026-10-18T14:51:19",
+    "content_hash": "29cce03c02ef3c43",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "factory-world": {
+    "checked_at": "2026-10-18T14:51:19",
+    "content_hash": "1552ae04a3a4be04",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "flaming-roll": {
     "checked_at": "2026-10-18T14:41:43",
     "content_hash": "cea2e4b7b19af967",
@@ -68,6 +112,17 @@
   "game-overview": {
     "checked_at": "2026-10-18T14:49:23",
     "content_hash": "2e038fc9d2494b74",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "impassible-saw": {
+    "checked_at": "2026-10-18T14:51:19",
+    "content_hash": "5a8c86259a64ab65",
     "status": "PASS",
     "summary": {
       "critical": 0,
@@ -142,6 +197,39 @@
       "medium": 0
     }
   },
+  "rooftops": {
+    "checked_at": "2026-10-18T14:51:19",
+    "content_hash": "f214ef0e1f27da09",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "saw-for-the-zombie": {
+    "checked_at": "2026-10-18T14:51:19",
+    "content_hash": "fff7a7726fff8d4c",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "shifted-industry": {
+    "checked_at": "2026-10-18T14:51:19",
+    "content_hash": "3269e6240e2d5268",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "spiders-lair": {
     "checked_at": "2026-10-18T14:38:38",
     "content_hash": "8477c4859a9f850e",
@@ -156,6 +244,17 @@
   "spiders-revenge": {
     "checked_at": "2026-10-18T14:45:40",
     "content_hash": "1b78228e07e86225",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "the-bug": {
+    "checked_at": "2026-10-18T14:51:19",
+    "content_hash": "de6e7825d7fb1408",
     "status": "PASS",
     "summary": {
       "critical": 0,
@@ -189,6 +288,17 @@
   "unmerciful-village": {
     "checked_at": "2026-10-18T14:45:40",
     "content_hash": "5a5796feb442a1e1",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
+  "upward-elevation": {
+    "checked_at": "2026-10-18T14:51:19",
+    "content_hash": "0574d4cd31bdcac1",
     "status": "PASS",
     "summary": {
       "critical": 0,

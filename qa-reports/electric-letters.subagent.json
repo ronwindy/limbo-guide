@@ -1,0 +1,21 @@
+{
+  "section_id": "electric-letters",
+  "verdict": "PASS_WITH_NOTES",
+  "spot_checked": [
+    "sign/letter sequence",
+    "bullets",
+    "trivia Chapter 37",
+    "order"
+  ],
+  "findings": [
+    {
+      "severity": "low",
+      "category": "omitted",
+      "location": "steps[2]",
+      "canonical": "However, keep in mind that:",
+      "structured": "(lead-in dropped; warnings are plain bullets)",
+      "issue": "The caution framing is not stated explicitly, though the warning bullets (arrow falls, O rolls, L tilts) are intact."
+    }
+  ],
+  "structured_sha256": "29cce03c02ef3c430421528784dcdebea6b0ec21468efdd29027e7e61d8fa9a0"
+}

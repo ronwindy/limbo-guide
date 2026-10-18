@@ -1,0 +1,11 @@
+{
+  "section_id": "boulder-by-gravity",
+  "verdict": "PASS",
+  "spot_checked": [
+    "pull next lever, wait until crate falls, push crate to edge, jump across",
+    "move right, person picking flowers in bright light",
+    "brain parasite hit and turned around before approach"
+  ],
+  "findings": [],
+  "structured_sha256": "f3e2026244cd335faf138b52195ebb5a3ab271385524c5fab514067eb42dbe48"
+}

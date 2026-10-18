@@ -1,0 +1,51 @@
+{
+  "guide": {
+    "id": "boulder-by-gravity",
+    "code": "",
+    "title": "Boulder by Gravity",
+    "type": "walkthrough",
+    "category": "Chapters",
+    "source": {
+      "game": "Limbo",
+      "author": "Limbo Wiki (Fandom) contributors",
+      "version": "revision 4869",
+      "url": "https://limbo.fandom.com/wiki/Boulder_by_Gravity",
+      "source_file": "raw-sources/fandom/29-boulder-by-gravity.json"
+    },
+    "navigation": {
+      "prev": {
+        "id": "shifted-industry",
+        "code": "",
+        "title": "Shifted Industry",
+        "file": "sections/shifted-industry.json"
+      },
+      "next": {
+        "id": "dangerous-conveyors",
+        "code": "",
+        "title": "Dangerous Conveyors",
+        "file": "sections/dangerous-conveyors.json"
+      }
+    },
+    "route": [],
+    "items_summary": {
+      "obtainable": []
+    },
+    "enemies": [],
+    "bosses": [],
+    "shops": [],
+    "steps": [
+      {
+        "id": 1,
+        "description": "The first thing you have to do in this chapter is pull the next **lever**, and try to remain in your spot until the **crate** falls down, then push the **crate** to the edge and jump across.",
+        "type": "exploration",
+        "rewards": []
+      },
+      {
+        "id": 2,
+        "description": "Continue moving right, and then you will see another person picking flowers in a bright light. Before you approach, you will get hit by a brain parasite and turned around.",
+        "type": "exploration",
+        "rewards": []
+      }
+    ]
+  }
+}

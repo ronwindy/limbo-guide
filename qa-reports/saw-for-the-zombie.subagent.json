@@ -1,0 +1,11 @@
+{
+  "section_id": "saw-for-the-zombie",
+  "verdict": "PASS",
+  "spot_checked": [
+    "all sentences vs steps",
+    "order",
+    "numbers and conditions"
+  ],
+  "findings": [],
+  "structured_sha256": "fff7a7726fff8d4c29250da26a45b64afd3c51b95dc8f5df63093a0d645b6558"
+}

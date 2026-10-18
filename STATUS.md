@@ -1,10 +1,10 @@
 # Limbo Guide - Project Status
 
-> Last synced: `2026-10-18 14:49:30`
+> Last synced: `2026-10-18 14:51:20`
 
 ```text
-=== PROJECT STATUS (2026-10-18 14:49:30) ===
-Canonical 41/41 | Structured 20/41 | QA pass 20/41 (fail 0) | Web built 20/41
+=== PROJECT STATUS (2026-10-18 14:51:20) ===
+Canonical 41/41 | Structured 30/41 | QA pass 30/41 (fail 0) | Web built 20/41
 Next:
   (nothing pending)
 ```
@@ -33,16 +33,16 @@ Next:
 | `` | `rain-machine` | Rain Machine | Chapters | WEB_BUILT |
 | `` | `in-the-flooding-chambers` | In the Flooding Chambers | Chapters | WEB_BUILT |
 | `` | `worms-command` | Worm's Command | Chapters | WEB_BUILT |
-| `` | `rooftops` | Rooftops | Chapters | NOT_STRUCTURED |
-| `` | `electric-letters` | Electric Letters | Chapters | NOT_STRUCTURED |
-| `` | `down-the-glass` | Down the Glass | Chapters | NOT_STRUCTURED |
-| `` | `saw-for-the-zombie` | Saw for the Zombie | Chapters | NOT_STRUCTURED |
-| `` | `upward-elevation` | Upward Elevation | Chapters | NOT_STRUCTURED |
-| `` | `impassible-saw` | Impassible Saw | Chapters | NOT_STRUCTURED |
-| `` | `the-bug` | The Bug | Chapters | NOT_STRUCTURED |
-| `` | `factory-world` | Factory World | Chapters | NOT_STRUCTURED |
-| `` | `shifted-industry` | Shifted Industry | Chapters | NOT_STRUCTURED |
-| `` | `boulder-by-gravity` | Boulder by Gravity | Chapters | NOT_STRUCTURED |
+| `` | `rooftops` | Rooftops | Chapters | QA_PASSED |
+| `` | `electric-letters` | Electric Letters | Chapters | QA_PASSED |
+| `` | `down-the-glass` | Down the Glass | Chapters | QA_PASSED |
+| `` | `saw-for-the-zombie` | Saw for the Zombie | Chapters | QA_PASSED |
+| `` | `upward-elevation` | Upward Elevation | Chapters | QA_PASSED |
+| `` | `impassible-saw` | Impassible Saw | Chapters | QA_PASSED |
+| `` | `the-bug` | The Bug | Chapters | QA_PASSED |
+| `` | `factory-world` | Factory World | Chapters | QA_PASSED |
+| `` | `shifted-industry` | Shifted Industry | Chapters | QA_PASSED |
+| `` | `boulder-by-gravity` | Boulder by Gravity | Chapters | QA_PASSED |
 | `` | `dangerous-conveyors` | Dangerous Conveyors | Chapters | NOT_STRUCTURED |
 | `` | `to-the-perilous-rail` | To the Perilous Rail | Chapters | NOT_STRUCTURED |
 | `` | `dark-rotation` | Dark Rotation | Chapters | NOT_STRUCTURED |
