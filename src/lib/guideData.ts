@@ -11,6 +11,7 @@ import type {
 export * from './types';
 
 const SECTIONS_DIR = path.resolve(process.cwd(), 'structured-content/sections');
+const CANONICAL_INDEX = path.resolve(process.cwd(), 'canonical-sources/limbo-guide.canonical.json');
 
 /** Label shown on directory cards; the category is the generic fallback. */
 export function getHumanReadableLabel(
@@ -49,23 +50,36 @@ function orderByNavigation<T extends { id: string; data: any }>(items: T[]): T[]
  * Consecutive sections with the same `category` form one group.
  */
 export function getTocData(): TocData {
-  const sections = orderByNavigation(getAllStructuredSections());
-  const categories: TocCategory[] = [];
-  for (const sec of sections) {
+  const structured = new Map(getAllStructuredSections().map((s) => [s.id, s]));
+  // Canonical index gives the full chronological list; entries without a structured file stay unlinked.
+  const entries: Array<{ id: string; code?: string; title: string; type?: string; category?: string }> =
+    fs.existsSync(CANONICAL_INDEX)
+      ? JSON.parse(fs.readFileSync(CANONICAL_INDEX, 'utf-8')).sections_index ?? []
+      : [];
+  const indexed = new Set(entries.map((e) => e.id));
+  for (const sec of orderByNavigation([...structured.values()])) {
+    if (indexed.has(sec.id)) continue;
     const g = sec.data.guide ?? {};
-    const category = g.category || 'Guide';
+    entries.push({ id: sec.id, code: g.code, title: g.title, type: g.type, category: g.category });
+  }
+
+  const categories: TocCategory[] = [];
+  for (const e of entries) {
+    const g = structured.get(e.id)?.data.guide ?? {};
+    const category = g.category || e.category || 'Guide';
+    const type = g.type || e.type;
     let cat = categories[categories.length - 1];
     if (!cat || cat.category !== category) {
       cat = { category, entries: [] };
       categories.push(cat);
     }
     cat.entries.push({
-      code: g.code || sec.id,
-      title: g.title || sec.id,
-      is_sidequest: g.type === 'sidequest',
-      id: sec.id,
-      has_structured: true,
-      type: g.type,
+      code: g.code || e.code || e.id,
+      title: g.title || e.title || e.id,
+      is_sidequest: type === 'sidequest',
+      id: e.id,
+      has_structured: structured.has(e.id),
+      type,
       label: category
     });
   }
