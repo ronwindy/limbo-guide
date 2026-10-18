@@ -43,7 +43,7 @@ function getCategoryFullTitle(name: string): string {
 
 <div class="space-y-8" id="toc-root">
   <!-- Search and Filter Bar -->
-  <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-between p-4 rounded-lg bg-slate-850 border border-slate-800">
+  <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-between p-4 rounded-sm bg-slate-850 border border-slate-800">
     <div class="relative flex-1">
       <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
         <Search class="h-4 w-4" />
@@ -73,7 +73,7 @@ function getCategoryFullTitle(name: string): string {
             aria-expanded="true"
             aria-controls={`toc-panel-${catIndex}`}
           >
-            <h2 class="text-xl sm:text-2xl font-serif font-semibold text-slate-100 flex items-center gap-2.5">
+            <h2 class="text-xl sm:text-2xl font-display font-semibold text-slate-100 flex items-center gap-2.5">
               <CatIcon class="w-5 h-5 text-gold-400 flex-shrink-0" />
               <span class="gold-metal-lite" title={getCategoryFullTitle(cat.category)}>{cat.category}</span>
             </h2>
@@ -90,7 +90,7 @@ function getCategoryFullTitle(name: string): string {
               const { Icon: EntryIcon, tone } = getEntryType(entry.type);
               return (
                 <div
-                  class={`toc-item group relative p-3.5 rounded-lg border transition-all duration-200 flex items-start gap-3 ${
+                  class={`toc-item group relative p-3.5 rounded-sm border transition-all duration-200 flex items-start gap-3 ${
                     isAvailable 
                       ? 'bg-slate-850/80 hover:bg-slate-800/90 border-slate-800 hover:border-gold-500/50 shadow-sm'
                       : 'bg-slate-900/40 border-slate-850 text-slate-400'
@@ -164,9 +164,9 @@ function getCategoryFullTitle(name: string): string {
     })}
   </div>
 
-  <div id="no-results" class="hidden text-center py-16 p-8 rounded-lg border border-slate-800 bg-slate-850">
+  <div id="no-results" class="hidden text-center py-16 p-8 rounded-sm border border-slate-800 bg-slate-850">
     <SearchX class="w-8 h-8 text-slate-600 mx-auto mb-2" />
-    <p class="text-slate-300 font-serif text-lg">No guide sections match your search</p>
+    <p class="text-slate-300 font-display text-lg">No guide sections match your search</p>
     <p class="text-sm text-slate-500 mt-1">Try clearing filters or searching by a different title, location, or chapter.</p>
   </div>
 </div>
@@ -174,7 +174,7 @@ function getCategoryFullTitle(name: string): string {
 <style>
   .category-toggle { cursor: pointer; }
   .category-state { display: inline-flex; transition: color 0.2s; }
-  .category-toggle:hover .category-state { color: var(--color-gold-400, #d4a73a); }
+  .category-toggle:hover .category-state { color: #ffffff; }
   .icon-expand { display: none; }
   #toc-root:not(.searching) .category-block.collapsed .icon-collapse { display: none; }
   #toc-root:not(.searching) .category-block.collapsed .icon-expand { display: block; }

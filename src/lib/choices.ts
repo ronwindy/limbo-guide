@@ -61,5 +61,5 @@ export function renderChoiceBox(group: ChoiceGroup, label?: string): string {
   const head = label
     ? `<p class="text-xs font-mono font-semibold text-slate-400 mb-1.5">${escapeHtml(label)}</p>`
     : '';
-  return `<div class="choice-box not-prose my-2 rounded-lg border border-slate-800 bg-slate-900/50 p-3 list-none">${head}<ul class="space-y-1 text-sm list-none pl-0">${items}</ul></div>`;
+  return `<div class="choice-box not-prose my-2 rounded-sm border border-slate-800 bg-slate-900/50 p-3 list-none">${head}<ul class="space-y-1 text-sm list-none pl-0">${items}</ul></div>`;
 }

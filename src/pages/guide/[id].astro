@@ -83,7 +83,7 @@ const pageSections = buildPageTocSections(guide);
       </div>
 
       <header>
-        <h1 class="page-title gold-metal-text text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold">
+        <h1 class="page-title gold-metal-text text-3xl sm:text-4xl lg:text-5xl font-display font-semibold">
           {guide.title}
         </h1>
         <div class="page-title-rule" aria-hidden="true"><span></span></div>
@@ -151,7 +151,7 @@ const pageSections = buildPageTocSections(guide);
 
     <!-- Right Sidebar: On-This-Page Local TOC (Desktop >= xl) -->
     {pageSections.length > 0 && (
-      <aside class="hidden xl:block w-56 2xl:w-64 flex-shrink-0 sticky top-6 max-h-[calc(100vh-3rem)] rounded-xl border border-slate-800/80 bg-obsidian/80 backdrop-blur shadow-sm overflow-y-auto custom-scrollbar">
+      <aside class="hidden xl:block w-56 2xl:w-64 flex-shrink-0 sticky top-6 max-h-[calc(100vh-3rem)] rounded-sm border border-slate-800/80 bg-obsidian/80 backdrop-blur shadow-sm overflow-y-auto custom-scrollbar">
         <PageToc sections={pageSections} />
       </aside>
     )}

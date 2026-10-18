@@ -1,40 +1,57 @@
 /** @type {import('tailwindcss').Config} */
+
+// Limbo theme: strictly greyscale. Every chromatic Tailwind palette the components
+// reference is remapped to this neutral scale, so no stray colour can appear.
+const grey = {
+  50: '#f4f4f4',
+  100: '#e9e9e9',
+  200: '#d6d6d6',
+  300: '#bdbdbd',
+  400: '#9a9a9a',
+  500: '#767676',
+  600: '#555555',
+  700: '#3b3b3b',
+  800: '#272727',
+  850: '#1d1d1d',
+  900: '#151515',
+  950: '#0b0b0b',
+};
+
+// Former "gold" accent: brighter ramp so highlights still read as the strongest greys.
+const accent = {
+  300: '#f0f0f0',
+  400: '#dcdcdc',
+  500: '#b0b0b0',
+  600: '#848484',
+  700: '#4a4a4a',
+};
+
+const chromatic = [
+  'slate', 'gray', 'zinc', 'neutral', 'stone',
+  'crimson', 'amber', 'rose', 'emerald', 'purple', 'blue', 'cyan', 'sky',
+  'yellow', 'red', 'teal', 'violet', 'indigo', 'orange', 'green', 'lime',
+  'fuchsia', 'pink',
+];
+
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
       colors: {
-        obsidian: '#07080c',
-        void: '#0a0d14',
-        slate: {
-          850: '#121622',
-          900: '#0e121a',
-          950: '#080a10',
-        },
-        gold: {
-          300: '#fde047',
-          400: '#f59e0b',
-          500: '#d4af37',
-          600: '#b48a1c',
-          700: '#854d0e',
-        },
-        crimson: {
-          400: '#fb7185',
-          500: '#e11d48',
-          600: '#be123c',
-          700: '#9f1239',
-          800: '#881337',
-          950: '#4c0519',
-        },
-        malice: '#881337',
+        ...Object.fromEntries(chromatic.map((name) => [name, grey])),
+        gold: accent,
+        obsidian: '#050505',
+        void: '#0a0a0a',
+        fog: '#8a8a8a',
+        malice: '#3b3b3b',
       },
       boxShadow: {
-        'gold-glow': '0 0 25px -5px rgba(212, 175, 55, 0.18)',
-        'crimson-glow': '0 0 25px -5px rgba(225, 29, 72, 0.22)',
-        'gothic-card': '0 4px 20px -2px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05)',
+        'gold-glow': '0 0 30px -8px rgba(255, 255, 255, 0.10)',
+        'crimson-glow': '0 0 30px -8px rgba(255, 255, 255, 0.14)',
+        'gothic-card': '0 4px 24px -2px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05)',
       },
       fontFamily: {
-        serif: ['Cinzel', 'Trajan Pro', 'Georgia', 'serif'],
+        display: ['"Josefin Sans"', 'Jost', 'system-ui', 'sans-serif'],
         sans: ['Jost', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['"Courier Prime"', '"Courier New"', 'monospace'],
       },

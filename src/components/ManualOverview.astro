@@ -29,7 +29,7 @@ const { directions, controls, battle_mechanics: battle } = overview;
 
 <div class="space-y-8">
   {overview.intro && (
-    <div class="p-4 rounded-xl bg-slate-850/90 border border-slate-800 text-slate-300 text-base italic leading-relaxed">
+    <div class="p-4 rounded-sm bg-slate-850/90 border border-slate-800 text-slate-300 text-base italic leading-relaxed">
       <Fragment set:html={renderInlineMarkup(overview.intro)} />
     </div>
   )}
@@ -56,12 +56,12 @@ const { directions, controls, battle_mechanics: battle } = overview;
         </p>
       )}
       {directions.compass_art && (
-        <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/70">
+        <div class="overflow-x-auto rounded-sm border border-slate-800 bg-slate-950/70">
           <pre class="p-3 sm:p-4 text-slate-200 font-source-art text-[10px] sm:text-sm">{directions.compass_art}</pre>
         </div>
       )}
       {directions.mappings && directions.mappings.length > 0 && (
-        <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-850/90">
+        <div class="overflow-x-auto rounded-sm border border-slate-800 bg-slate-850/90">
           <table class="w-full text-sm text-left border-collapse">
             <thead>
               <tr class="border-b border-slate-700/80 text-slate-400 font-sans bg-slate-900/60">
@@ -88,12 +88,12 @@ const { directions, controls, battle_mechanics: battle } = overview;
   {controls && (
     <CollapsibleSection id="controls" title="Controls & Controller Layout" icon={Gamepad2}>
       {controls.controller_art && (
-        <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/70 mb-3">
+        <div class="overflow-x-auto rounded-sm border border-slate-800 bg-slate-950/70 mb-3">
           <pre class="p-3 sm:p-4 text-slate-200 font-source-art text-[10px] sm:text-xs">{controls.controller_art}</pre>
         </div>
       )}
       {controls.controller_layout && (
-        <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-850/90">
+        <div class="overflow-x-auto rounded-sm border border-slate-800 bg-slate-850/90">
           <table class="w-full text-sm sm:text-base text-left">
             <thead>
               <tr class="border-b border-slate-800 text-slate-400 font-sans bg-slate-900/60">
@@ -148,7 +148,7 @@ const { directions, controls, battle_mechanics: battle } = overview;
       )}
       {battle.action_menu && (
         <div class="space-y-2.5">
-          <h3 class="text-base sm:text-lg font-serif font-semibold text-slate-200">Battle Actions</h3>
+          <h3 class="text-base sm:text-lg font-display font-semibold text-slate-200">Battle Actions</h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {battle.action_menu.map((a) => {
               const meta = getActionMeta(a.action);
@@ -162,14 +162,14 @@ const { directions, controls, battle_mechanics: battle } = overview;
         </div>
       )}
       {battle.judgment_ring && (
-        <div class="p-5 rounded-xl bg-amber-950/20 border border-amber-800/50 text-sm sm:text-base space-y-3">
+        <div class="p-5 rounded-sm bg-amber-950/20 border border-amber-800/50 text-sm sm:text-base space-y-3">
           <div class="flex items-center gap-2">
             <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-amber-900/60 text-amber-200 border border-amber-700/60">
               <Target class="w-3.5 h-3.5 text-amber-300" aria-hidden="true" />
               <span>Core Combat Mechanic</span>
             </span>
           </div>
-          <h3 class="font-serif font-semibold text-amber-300 text-lg sm:text-xl">Judgment Ring System</h3>
+          <h3 class="font-display font-semibold text-amber-300 text-lg sm:text-xl">Judgment Ring System</h3>
           <p class="text-slate-200 text-base leading-relaxed">
             <Fragment set:html={renderInlineMarkup(battle.judgment_ring.description)} />
           </p>

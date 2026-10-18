@@ -10,15 +10,15 @@ const first = getTocData().guide.overview.sections?.[0]?.entries?.[0];
 
 <BaseLayout currentId="">
   <section class="max-w-3xl mx-auto text-center space-y-6 py-12">
-    <h1 class="page-title gold-metal-text text-4xl sm:text-5xl font-serif font-semibold">{project.game}</h1>
+    <h1 class="page-title gold-metal-text text-4xl sm:text-5xl font-display font-semibold">{project.game}</h1>
     <div class="page-title-rule" aria-hidden="true"><span></span></div>
     <p class="text-slate-300">{project.defaultDescription}</p>
     <div class="flex flex-wrap justify-center gap-3">
-      <a href={`${baseUrl}/contents`} class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gold-500 hover:bg-gold-400 text-slate-950 font-semibold transition-colors">
+      <a href={`${baseUrl}/contents`} class="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-gold-500 hover:bg-gold-400 text-slate-950 font-semibold transition-colors">
         Contents <ArrowRight class="w-4 h-4" aria-hidden="true" />
       </a>
       {first && (
-        <a href={`${baseUrl}/guide/${first.id}`} class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-slate-700 hover:border-gold-500/50 text-slate-200 transition-colors">
+        <a href={`${baseUrl}/guide/${first.id}`} class="inline-flex items-center gap-2 px-6 py-3 rounded-sm border border-slate-700 hover:border-gold-500/50 text-slate-200 transition-colors">
           Start: {first.title}
         </a>
       )}
