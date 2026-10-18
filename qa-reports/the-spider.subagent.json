@@ -1,0 +1,14 @@
+{
+  "section_id": "the-spider",
+  "verdict": "PASS",
+  "structured_sha256": "ba7a900f3b92e59904eb5beb25e52ed8316b4a137c14340fd03fa6acf5e07b1a",
+  "spot_checked": [
+    "all 8 sentences compared word-for-word against canonical text",
+    "ordinals: first time, second time, third leg",
+    "condition: bear trap drops after the second missed attack",
+    "warning: run back after attacking or it will hit and kill you",
+    "sentence ordering across steps 1 and 2",
+    "metadata: id, title, type, navigation prev/next"
+  ],
+  "findings": []
+}
