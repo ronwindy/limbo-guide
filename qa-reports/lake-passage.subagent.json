@@ -1,0 +1,13 @@
+{
+  "section_id": "lake-passage",
+  "verdict": "PASS",
+  "spot_checked": [
+    "step 1: cart pulled until stopped by rope, climb to top ledge",
+    "step 2: rope grab, 'do not fall down too high or you will die', safe scaffold landing, right side preferred due to bottomless pit",
+    "step 3: boat chain released, drift across lake, do not jump on water or drown, wait until other side",
+    "traps: Too high ground, Bottomless pit, Deep water (same order)",
+    "navigation prev=awakening, next=bear-traps; metadata id/title/type/category/source"
+  ],
+  "findings": [],
+  "structured_sha256": "0f5a8db33191b23429882ee3bc38079dad884b923ffd22b3833c4821e67eb3fc"
+}

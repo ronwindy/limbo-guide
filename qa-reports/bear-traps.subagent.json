@@ -1,0 +1,23 @@
+{
+  "section_id": "bear-traps",
+  "verdict": "PASS_WITH_NOTES",
+  "spot_checked": [
+    "walkthrough paragraph 1 vs step 1 (boat, ledge, vine, hanging chain, higher slope)",
+    "walkthrough paragraph 2 vs step 2 items 1-7 (two bear traps, handle, corpse, rope, order preserved)",
+    "traps list: Deep water / Too high ground / Bear traps",
+    "unmarked 'Dead corpse' line vs discrepancy callout",
+    "corpse remark vs lore callout (wording kept verbatim)",
+    "navigation prev lake-passage / next deathly-rock"
+  ],
+  "findings": [
+    {
+      "severity": "low",
+      "category": "other",
+      "location": "guide.traps / callouts[0]",
+      "canonical": "- Deep water\n- Too high ground\n- Bear traps\nDead corpse",
+      "structured": "traps: [Deep water, Too high ground, Bear traps]; discrepancy callout about unmarked 'Dead corpse' line",
+      "issue": "'Dead corpse' is not in traps[] (it lacks a bullet marker in the source) but is preserved and flagged in a discrepancy callout. Acceptable handling; noted only because the item exists in the source list context."
+    }
+  ],
+  "structured_sha256": "984c71fee0f8a969e4960072e6486576f33ed65c844130923726c6286408a583"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "killer-darts",
+  "code": "",
+  "title": "Killer Darts",
+  "type": "walkthrough",
+  "category": "Chapters",
+  "chapter": 14,
+  "wiki_page": "Killer Darts",
+  "source": {
+    "game": "Limbo",
+    "author": "Limbo Wiki (Fandom) contributors",
+    "version": "revision 4893",
+    "url": "https://limbo.fandom.com/wiki/Killer_Darts",
+    "source_file": "raw-sources/fandom/14-killer-darts.json",
+    "source_url": "https://limbo.fandom.com/wiki/Killer_Darts",
+    "fetched": "2026-10-18",
+    "fetch_method": "api"
+  },
+  "navigation": {
+    "prev": {
+      "id": "zombified-bait",
+      "code": "",
+      "title": "Zombified Bait",
+      "file": "sections/zombified-bait.json"
+    },
+    "next": {
+      "id": "double-gates",
+      "code": "",
+      "title": "Double Gates",
+      "file": "sections/double-gates.json"
+    }
+  },
+  "traps": [],
+  "text": "Walkthrough\n\nAs you walk through a bit, there are are two crushers ahead. The first crusher triggers if you don't jump to the central platform, while the second triggers if you jump on the center. Get past them and jump over the pit.\n\nNext after the pit, you will see three hostile people armed with blowguns. Move backwards and jump over the pit. Just a bit later, one of the hostiles will fall into the pit, but the two others will get past the pit. Keep moving backwards past the two traps and then the two other hostiles will die from the crushers."
+}

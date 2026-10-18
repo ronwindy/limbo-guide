@@ -1,0 +1,35 @@
+{
+  "id": "flaming-roll",
+  "code": "",
+  "title": "Flaming Roll",
+  "type": "walkthrough",
+  "category": "Chapters",
+  "chapter": 9,
+  "wiki_page": "Flaming Roll",
+  "source": {
+    "game": "Limbo",
+    "author": "Limbo Wiki (Fandom) contributors",
+    "version": "revision 4988",
+    "url": "https://limbo.fandom.com/wiki/Flaming_Roll",
+    "source_file": "raw-sources/fandom/09-flaming-roll.json",
+    "source_url": "https://limbo.fandom.com/wiki/Flaming_Roll",
+    "fetched": "2026-10-18",
+    "fetch_method": "api"
+  },
+  "navigation": {
+    "prev": {
+      "id": "pillars-of-pain",
+      "code": "",
+      "title": "Pillars of Pain",
+      "file": "sections/pillars-of-pain.json"
+    },
+    "next": {
+      "id": "unmerciful-village",
+      "code": "",
+      "title": "Unmerciful Village",
+      "file": "sections/unmerciful-village.json"
+    }
+  },
+  "traps": [],
+  "text": "Walkthrough\n\nWalk forward a bit and you will see two mechanical spider-like legs, as well as another human. When the legs are raised, you can walk past through them. The human manning the controls will run away.\n\nNext, when you jump across the gap that comes after, you will also need to jump over burning tires. These tires are also thrown by humans, who will run away when you get closer to them. Finally, proceed by climbing up the ladder."
+}

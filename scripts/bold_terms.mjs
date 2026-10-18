@@ -49,6 +49,7 @@ function atSentenceStart(before) {
 }
 
 export function compilePattern(terms) {
+  if (!terms.length) return /(?!)/g; // empty dictionary: match nothing (an empty alternation matches everywhere)
   const numbered = new Set(loadExtras().numbered ?? []);
   const alts = terms.map((t) => escapeRe(t) + (numbered.has(t) ? "(?: No\\. \\d+)?" : "")).join("|");
   // case-sensitive; optional plural; not inside a word

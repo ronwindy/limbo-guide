@@ -1,0 +1,35 @@
+{
+  "id": "impassible-saw",
+  "code": "",
+  "title": "Impassible Saw",
+  "type": "walkthrough",
+  "category": "Chapters",
+  "chapter": 25,
+  "wiki_page": "Impassible Saw",
+  "source": {
+    "game": "Limbo",
+    "author": "Limbo Wiki (Fandom) contributors",
+    "version": "revision 4888",
+    "url": "https://limbo.fandom.com/wiki/Impassible_Saw",
+    "source_file": "raw-sources/fandom/25-impassible-saw.json",
+    "source_url": "https://limbo.fandom.com/wiki/Impassible_Saw",
+    "fetched": "2026-10-18",
+    "fetch_method": "api"
+  },
+  "navigation": {
+    "prev": {
+      "id": "upward-elevation",
+      "code": "",
+      "title": "Upward Elevation",
+      "file": "sections/upward-elevation.json"
+    },
+    "next": {
+      "id": "the-bug",
+      "code": "",
+      "title": "The Bug",
+      "file": "sections/the-bug.json"
+    }
+  },
+  "traps": [],
+  "text": "Walkthrough\n\nThere is another buzzsaw puzzle nearby. You have to activate the left button, wait 1 second, and walk to the right button to activate it. The left box should drop, and then you will need to pull it under the right box. This will create a stack that you can use to climb up.\n\nThis requires precise timing, and you may have to adjust the delay if you're too early or late."
+}

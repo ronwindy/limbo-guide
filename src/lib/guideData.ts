@@ -125,6 +125,9 @@ export function buildPageTocSections(guide: any): PageTocItem[] {
   if (steps && steps.length > 0) {
     pageSections.push({ id: 'steps', label: 'Walkthrough Steps', count: steps.length });
   }
+  if (guide.traps && guide.traps.length > 0) {
+    pageSections.push({ id: 'traps', label: 'Traps and Obstacles', count: guide.traps.length });
+  }
   if (overview.story_prologue) {
     pageSections.push({ id: 'prologue', label: 'Story Prologue' });
   }

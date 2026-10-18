@@ -1,0 +1,35 @@
+{
+  "id": "unmerciful-village",
+  "code": "",
+  "title": "Unmerciful Village",
+  "type": "walkthrough",
+  "category": "Chapters",
+  "chapter": 10,
+  "wiki_page": "Unmerciful Village",
+  "source": {
+    "game": "Limbo",
+    "author": "Limbo Wiki (Fandom) contributors",
+    "version": "revision 4989",
+    "url": "https://limbo.fandom.com/wiki/Unmerciful_Village",
+    "source_file": "raw-sources/fandom/10-unmerciful-village.json",
+    "source_url": "https://limbo.fandom.com/wiki/Unmerciful_Village",
+    "fetched": "2026-10-18",
+    "fetch_method": "api"
+  },
+  "navigation": {
+    "prev": {
+      "id": "flaming-roll",
+      "code": "",
+      "title": "Flaming Roll",
+      "file": "sections/flaming-roll.json"
+    },
+    "next": {
+      "id": "spiders-revenge",
+      "code": "",
+      "title": "Spider's Revenge",
+      "file": "sections/spiders-revenge.json"
+    }
+  },
+  "traps": [],
+  "text": "Walkthrough\n\nYou must spring the trap that comes at the beginning. When you are under the trap, the left bear trap will be the first to fall, and that can be avoided by running left. The other trap quickly comes next, and that can be dodged by moving right. The second trap also leaves a freed rope, which you can use to climb to the platform above, walk above the traps, and proceed to the next chapter."
+}

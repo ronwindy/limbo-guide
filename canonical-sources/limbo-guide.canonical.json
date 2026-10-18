@@ -1,0 +1,338 @@
+{
+  "source": {
+    "game": "Limbo",
+    "url": "https://limbo.fandom.com/wiki/Walkthrough",
+    "fetched": "2026-10-18",
+    "method": "api"
+  },
+  "sections_index": [
+    {
+      "id": "game-overview",
+      "code": "",
+      "title": "Game Overview",
+      "type": "reference",
+      "category": "Introduction",
+      "file": "sections/game-overview.json"
+    },
+    {
+      "id": "awakening",
+      "code": "",
+      "title": "Awakening",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/awakening.json"
+    },
+    {
+      "id": "lake-passage",
+      "code": "",
+      "title": "Lake Passage",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/lake-passage.json"
+    },
+    {
+      "id": "bear-traps",
+      "code": "",
+      "title": "Bear Traps",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/bear-traps.json"
+    },
+    {
+      "id": "deathly-rock",
+      "code": "",
+      "title": "Deathly Rock",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/deathly-rock.json"
+    },
+    {
+      "id": "the-spider",
+      "code": "",
+      "title": "The Spider",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/the-spider.json"
+    },
+    {
+      "id": "spiders-lair",
+      "code": "",
+      "title": "Spider's Lair",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/spiders-lair.json"
+    },
+    {
+      "id": "interwovened-escape",
+      "code": "",
+      "title": "Interwovened Escape",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/interwovened-escape.json"
+    },
+    {
+      "id": "pillars-of-pain",
+      "code": "",
+      "title": "Pillars of Pain",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/pillars-of-pain.json"
+    },
+    {
+      "id": "flaming-roll",
+      "code": "",
+      "title": "Flaming Roll",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/flaming-roll.json"
+    },
+    {
+      "id": "unmerciful-village",
+      "code": "",
+      "title": "Unmerciful Village",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/unmerciful-village.json"
+    },
+    {
+      "id": "spiders-revenge",
+      "code": "",
+      "title": "Spider's Revenge",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/spiders-revenge.json"
+    },
+    {
+      "id": "caged-victim",
+      "code": "",
+      "title": "Caged Victim",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/caged-victim.json"
+    },
+    {
+      "id": "zombified-bait",
+      "code": "",
+      "title": "Zombified Bait",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/zombified-bait.json"
+    },
+    {
+      "id": "killer-darts",
+      "code": "",
+      "title": "Killer Darts",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/killer-darts.json"
+    },
+    {
+      "id": "double-gates",
+      "code": "",
+      "title": "Double Gates",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/double-gates.json"
+    },
+    {
+      "id": "the-parasite",
+      "code": "",
+      "title": "The Parasite",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/the-parasite.json"
+    },
+    {
+      "id": "rain-machine",
+      "code": "",
+      "title": "Rain Machine",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/rain-machine.json"
+    },
+    {
+      "id": "in-the-flooding-chambers",
+      "code": "",
+      "title": "In the Flooding Chambers",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/in-the-flooding-chambers.json"
+    },
+    {
+      "id": "worms-command",
+      "code": "",
+      "title": "Worm's Command",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/worms-command.json"
+    },
+    {
+      "id": "rooftops",
+      "code": "",
+      "title": "Rooftops",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/rooftops.json"
+    },
+    {
+      "id": "electric-letters",
+      "code": "",
+      "title": "Electric Letters",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/electric-letters.json"
+    },
+    {
+      "id": "down-the-glass",
+      "code": "",
+      "title": "Down the Glass",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/down-the-glass.json"
+    },
+    {
+      "id": "saw-for-the-zombie",
+      "code": "",
+      "title": "Saw for the Zombie",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/saw-for-the-zombie.json"
+    },
+    {
+      "id": "upward-elevation",
+      "code": "",
+      "title": "Upward Elevation",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/upward-elevation.json"
+    },
+    {
+      "id": "impassible-saw",
+      "code": "",
+      "title": "Impassible Saw",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/impassible-saw.json"
+    },
+    {
+      "id": "the-bug",
+      "code": "",
+      "title": "The Bug",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/the-bug.json"
+    },
+    {
+      "id": "factory-world",
+      "code": "",
+      "title": "Factory World",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/factory-world.json"
+    },
+    {
+      "id": "shifted-industry",
+      "code": "",
+      "title": "Shifted Industry",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/shifted-industry.json"
+    },
+    {
+      "id": "boulder-by-gravity",
+      "code": "",
+      "title": "Boulder by Gravity",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/boulder-by-gravity.json"
+    },
+    {
+      "id": "dangerous-conveyors",
+      "code": "",
+      "title": "Dangerous Conveyors",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/dangerous-conveyors.json"
+    },
+    {
+      "id": "to-the-perilous-rail",
+      "code": "",
+      "title": "To the Perilous Rail",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/to-the-perilous-rail.json"
+    },
+    {
+      "id": "dark-rotation",
+      "code": "",
+      "title": "Dark Rotation",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/dark-rotation.json"
+    },
+    {
+      "id": "machine-guns",
+      "code": "",
+      "title": "Machine Guns",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/machine-guns.json"
+    },
+    {
+      "id": "gravitational-changes",
+      "code": "",
+      "title": "Gravitational Changes",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/gravitational-changes.json"
+    },
+    {
+      "id": "magnetized-blocks",
+      "code": "",
+      "title": "Magnetized Blocks",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/magnetized-blocks.json"
+    },
+    {
+      "id": "levitated-swing",
+      "code": "",
+      "title": "Levitated Swing",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/levitated-swing.json"
+    },
+    {
+      "id": "side-of-the-world",
+      "code": "",
+      "title": "Side of the World",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/side-of-the-world.json"
+    },
+    {
+      "id": "timed-gravity-changes",
+      "code": "",
+      "title": "Timed Gravity Changes",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/timed-gravity-changes.json"
+    },
+    {
+      "id": "the-final-glass",
+      "code": "",
+      "title": "The Final Glass",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/the-final-glass.json"
+    },
+    {
+      "id": "end-of-the-journey",
+      "code": "",
+      "title": "End of the Journey",
+      "type": "walkthrough",
+      "category": "Chapters",
+      "file": "sections/end-of-the-journey.json"
+    }
+  ]
+}

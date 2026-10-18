@@ -1,0 +1,30 @@
+{
+  "id": "end-of-the-journey",
+  "code": "",
+  "title": "End of the Journey",
+  "type": "walkthrough",
+  "category": "Chapters",
+  "chapter": 40,
+  "wiki_page": "End of the Journey",
+  "source": {
+    "game": "Limbo",
+    "author": "Limbo Wiki (Fandom) contributors",
+    "version": "revision 4880",
+    "url": "https://limbo.fandom.com/wiki/End_of_the_Journey",
+    "source_file": "raw-sources/fandom/40-end-of-the-journey.json",
+    "source_url": "https://limbo.fandom.com/wiki/End_of_the_Journey",
+    "fetched": "2026-10-18",
+    "fetch_method": "api"
+  },
+  "navigation": {
+    "prev": {
+      "id": "the-final-glass",
+      "code": "",
+      "title": "The Final Glass",
+      "file": "sections/the-final-glass.json"
+    },
+    "next": null
+  },
+  "traps": [],
+  "text": "End of the Journey is the 40th and the final chapter of LIMBO. It is preceeded by the previous chapter, The Final Glass. It is the final scene of the entire game, but it includes no traps, obstacles, or enemies."
+}

@@ -1,0 +1,35 @@
+{
+  "id": "caged-victim",
+  "code": "",
+  "title": "Caged Victim",
+  "type": "walkthrough",
+  "category": "Chapters",
+  "chapter": 12,
+  "wiki_page": "Caged Victim",
+  "source": {
+    "game": "Limbo",
+    "author": "Limbo Wiki (Fandom) contributors",
+    "version": "revision 4892",
+    "url": "https://limbo.fandom.com/wiki/Caged_Victim",
+    "source_file": "raw-sources/fandom/12-caged-victim.json",
+    "source_url": "https://limbo.fandom.com/wiki/Caged_Victim",
+    "fetched": "2026-10-18",
+    "fetch_method": "api"
+  },
+  "navigation": {
+    "prev": {
+      "id": "spiders-revenge",
+      "code": "",
+      "title": "Spider's Revenge",
+      "file": "sections/spiders-revenge.json"
+    },
+    "next": {
+      "id": "zombified-bait",
+      "code": "",
+      "title": "Zombified Bait",
+      "file": "sections/zombified-bait.json"
+    }
+  },
+  "traps": [],
+  "text": "Walkthrough\n\nIn this chapter, there are two cages hanging, and on one of them, there is a crow pecking one rope. You should climb the ladder you see to the right, and then jump across to the cage with the rope. When the cage hits the ground, push it to the right, then climb up to proceed."
+}

@@ -514,6 +514,13 @@
           },
           "description": "Save points listed in the source overview, verbatim (not a route)"
         },
+        "traps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Traps and obstacles listed in the source, one per item, verbatim"
+        },
         "objectives": {
           "type": "array",
           "items": {

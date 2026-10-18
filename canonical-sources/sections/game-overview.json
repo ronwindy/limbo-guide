@@ -1,0 +1,27 @@
+{
+  "id": "game-overview",
+  "code": "",
+  "title": "Game Overview",
+  "type": "reference",
+  "category": "Introduction",
+  "source": {
+    "game": "Limbo",
+    "author": "Limbo Wiki (Fandom) contributors",
+    "version": "revision 4630",
+    "url": "https://limbo.fandom.com/wiki/Walkthrough",
+    "source_file": "raw-sources/fandom/_index.json",
+    "source_url": "https://limbo.fandom.com/wiki/Walkthrough",
+    "fetched": "2026-10-18",
+    "fetch_method": "api"
+  },
+  "navigation": {
+    "prev": null,
+    "next": {
+      "id": "awakening",
+      "code": "",
+      "title": "Awakening",
+      "file": "sections/awakening.json"
+    }
+  },
+  "text": "Every chapter has its own puzzles, ranging from 1 to 39 chapters (40th chapter is a final scene, but no traps, obstacles and enemies). Respectively, it progresses from easiest to hardest. Chapters can be called checkpoints; they are automatically saved when a player finishes each to proceed across the continuous side-scrolling path.\n\nChapters\nApparently, the chapters are unnamed, but the given titles are generic to specify the checkpoints scene and setting:"
+}

@@ -88,6 +88,16 @@ export function verifyGuide(canonical, structured, root = ROOT_DIR) {
     }
   }
 
+  // 1c. Traps and obstacles: every canonical entry appears, verbatim, once.
+  const cTraps = (canonical.traps ?? []).map(String);
+  const gTraps = (guide.traps ?? []).map(String);
+  for (const t of cTraps) {
+    if (!gTraps.includes(t)) addFinding("high", "missing information", "traps", t, "Missing", "Canonical trap/obstacle not in structured traps");
+  }
+  for (const t of gTraps) {
+    if (!cTraps.includes(t)) addFinding("high", "unsupported claim", "traps", "Not in canonical traps", t, "Structured trap not in canonical source");
+  }
+
   // Collect all structured items (items_summary + all step rewards + initial setup)
   const structItems = new Set();
   const summary = guide.items_summary ?? {};

@@ -1,0 +1,35 @@
+{
+  "id": "the-bug",
+  "code": "",
+  "title": "The Bug",
+  "type": "walkthrough",
+  "category": "Chapters",
+  "chapter": 26,
+  "wiki_page": "The Bug",
+  "source": {
+    "game": "Limbo",
+    "author": "Limbo Wiki (Fandom) contributors",
+    "version": "revision 4884",
+    "url": "https://limbo.fandom.com/wiki/The_Bug",
+    "source_file": "raw-sources/fandom/26-the-bug.json",
+    "source_url": "https://limbo.fandom.com/wiki/The_Bug",
+    "fetched": "2026-10-18",
+    "fetch_method": "api"
+  },
+  "navigation": {
+    "prev": {
+      "id": "impassible-saw",
+      "code": "",
+      "title": "Impassible Saw",
+      "file": "sections/impassible-saw.json"
+    },
+    "next": {
+      "id": "factory-world",
+      "code": "",
+      "title": "Factory World",
+      "file": "sections/factory-world.json"
+    }
+  },
+  "traps": [],
+  "text": "Walkthrough\n\nAll you have to do is slowly approach the mosquito, then when it flies, grab it, and it will carry you to the platform above."
+}

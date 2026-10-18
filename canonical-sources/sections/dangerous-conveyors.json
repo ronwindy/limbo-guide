@@ -1,0 +1,35 @@
+{
+  "id": "dangerous-conveyors",
+  "code": "",
+  "title": "Dangerous Conveyors",
+  "type": "walkthrough",
+  "category": "Chapters",
+  "chapter": 30,
+  "wiki_page": "Dangerous Conveyors",
+  "source": {
+    "game": "Limbo",
+    "author": "Limbo Wiki (Fandom) contributors",
+    "version": "revision 4878",
+    "url": "https://limbo.fandom.com/wiki/Dangerous_Conveyors",
+    "source_file": "raw-sources/fandom/30-dangerous-conveyors.json",
+    "source_url": "https://limbo.fandom.com/wiki/Dangerous_Conveyors",
+    "fetched": "2026-10-18",
+    "fetch_method": "api"
+  },
+  "navigation": {
+    "prev": {
+      "id": "boulder-by-gravity",
+      "code": "",
+      "title": "Boulder by Gravity",
+      "file": "sections/boulder-by-gravity.json"
+    },
+    "next": {
+      "id": "to-the-perilous-rail",
+      "code": "",
+      "title": "To the Perilous Rail",
+      "file": "sections/to-the-perilous-rail.json"
+    }
+  },
+  "traps": [],
+  "text": "Walkthrough\n\nAt first, you will unconsciously walk across a gear, and then jump over the pit. Next, you will reach a light, but returning is different.\n\nThe first gear remains the same. The succeeding obstacle is a conveyor, and requires a timed run past a crusher. When you reach the second conveyer, ignore the ladder and execute another timed run through this crusher. This will bring you to a third conveyer, which has parasite-munchers on the ceiling. You can reach these and free yourself by hopping onto a box.\n\nNext, you have to ride the gear to the ladder, and climb it. Set the lever to the left, wait for the gears to reach top speed, and flip it to the right. After that, jump to the right gear, then the ladder before the gear changes rotation. You can then reach the top.\n\nFinally, you have to ride a minecart. First of all, you should head right, and then pull the mine art directly below the lever. Next, walk back to the ladder, and push it to the side to make it start moving. After that, pull the lever on the left, and jump on the ladder to use it to reach the upper platform. Finally, jump on the lever and land on the minecart."
+}

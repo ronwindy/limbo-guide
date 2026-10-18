@@ -1,0 +1,35 @@
+{
+  "id": "interwovened-escape",
+  "code": "",
+  "title": "Interwovened Escape",
+  "type": "walkthrough",
+  "category": "Chapters",
+  "chapter": 7,
+  "wiki_page": "Interwovened Escape",
+  "source": {
+    "game": "Limbo",
+    "author": "Limbo Wiki (Fandom) contributors",
+    "version": "revision 4990",
+    "url": "https://limbo.fandom.com/wiki/Interwovened_Escape",
+    "source_file": "raw-sources/fandom/07-interwovened-escape.json",
+    "source_url": "https://limbo.fandom.com/wiki/Interwovened_Escape",
+    "fetched": "2026-10-18",
+    "fetch_method": "api"
+  },
+  "navigation": {
+    "prev": {
+      "id": "spiders-lair",
+      "code": "",
+      "title": "Spider's Lair",
+      "file": "sections/spiders-lair.json"
+    },
+    "next": {
+      "id": "pillars-of-pain",
+      "code": "",
+      "title": "Pillars of Pain",
+      "file": "sections/pillars-of-pain.json"
+    }
+  },
+  "traps": [],
+  "text": "Walkthrough\n\nInside the pit, there is a rope that is attached to a bear trap. To get through, you simply need to jump on the rope, climb a bit if necessary, and quickly jump away to avoid the bear trap."
+}

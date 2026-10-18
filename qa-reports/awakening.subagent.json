@@ -1,0 +1,22 @@
+{
+  "section_id": "awakening",
+  "verdict": "PASS_WITH_NOTES",
+  "spot_checked": [
+    "walkthrough paragraph vs steps 1-3 (all sentences, order preserved)",
+    "traps list vs canonical Traps and obstacles (Spiked ground)",
+    "Hidden Egg callout (leftmost part, paddle, Wrong Way achievement)",
+    "navigation prev game-overview / next lake-passage",
+    "no numbers or names changed"
+  ],
+  "findings": [
+    {
+      "severity": "low",
+      "category": "omitted",
+      "location": "intro sentence",
+      "canonical": "Awakening is the 1st chapter of LIMBO. It is followed by the succeeding chapter, Lake Passage.",
+      "structured": "(no intro text; navigation.next = lake-passage)",
+      "issue": "The intro sentence is not reproduced as text. Its facts (Awakening is chapter 1; Lake Passage follows) are carried only by metadata and navigation. Chapter number 1 is not shown in the structured file. Minor; acceptable as presentation change."
+    }
+  ],
+  "structured_sha256": "904c48fbafd87714727e0aed40d1e1d9c463792ccb5b9dacb30f18bdf120c031"
+}

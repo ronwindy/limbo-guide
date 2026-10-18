@@ -1,0 +1,39 @@
+{
+  "id": "lake-passage",
+  "code": "",
+  "title": "Lake Passage",
+  "type": "walkthrough",
+  "category": "Chapters",
+  "chapter": 2,
+  "wiki_page": "Lake Passage",
+  "source": {
+    "game": "Limbo",
+    "author": "Limbo Wiki (Fandom) contributors",
+    "version": "revision 4978",
+    "url": "https://limbo.fandom.com/wiki/Lake_Passage",
+    "source_file": "raw-sources/fandom/02-lake-passage.json",
+    "source_url": "https://limbo.fandom.com/wiki/Lake_Passage",
+    "fetched": "2026-10-18",
+    "fetch_method": "api"
+  },
+  "navigation": {
+    "prev": {
+      "id": "awakening",
+      "code": "",
+      "title": "Awakening",
+      "file": "sections/awakening.json"
+    },
+    "next": {
+      "id": "bear-traps",
+      "code": "",
+      "title": "Bear Traps",
+      "file": "sections/bear-traps.json"
+    }
+  },
+  "traps": [
+    "Too high ground",
+    "Bottomless pit",
+    "Deep water"
+  ],
+  "text": "Walkthrough\n\nPull the wooden cart until it stops when it is shortly tied by a rope. Climb up until you stand on the top ledge. Jump and grab the rope, but do not fall down too high or you will die. Climb down and you will land safely on the scaffold. You may jump down at the right side better than left one because there is a bottomless pit below the scaffold.\n\nWhen you see the boat, enter it and its chain will be released and you may drift across the lake. Try not to jump yourself on the water, or you will be drowned. Wait for the navigation until you reach the other side of the lake.\n\nTraps and Obstacles\n\n- Too high ground\n- Bottomless pit\n- Deep water"
+}

@@ -433,6 +433,7 @@ export interface GuideContent {
   objectives?: string[];
   route?: string[];
   save_points?: string[];
+  traps?: string[];
   initial_setup?: InitialPartySetup;
   items_summary?: ItemsSummary;
   enemies?: EnemyInfo[];
