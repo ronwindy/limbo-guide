@@ -1,0 +1,41 @@
+{
+  "guide": {
+    "id": "game-overview",
+    "code": "",
+    "title": "Game Overview",
+    "type": "reference",
+    "category": "Introduction",
+    "source": {
+      "game": "Limbo",
+      "author": "Wikipedia contributors (CC BY-SA 4.0)",
+      "version": "revision 1374266661",
+      "url": "https://en.wikipedia.org/wiki/Limbo_(video_game)",
+      "source_file": "raw-sources/wikipedia/limbo-video-game.json"
+    },
+    "navigation": {
+      "prev": null,
+      "next": {
+        "id": "awakening",
+        "code": "",
+        "title": "Awakening",
+        "file": "sections/awakening.json"
+      }
+    },
+    "enemies": [],
+    "bosses": [],
+    "shops": [],
+    "reference_blocks": [
+      {
+        "title": "Gameplay",
+        "format": "prose",
+        "text": "The player controls the boy throughout the game. As is typical of most two-dimensional platform games, the boy can run left or right, jump, climb onto short ledges or up and down ladders and ropes, and push or pull objects. Limbo is presented through dark, greyscale graphics and with minimalist ambient sounds, creating an eerie, haunting environment. The dark visuals also serve to conceal numerous lethal surprises, including such environmental and physical hazards as deadly bear traps on the forest floor, or lethal monsters hiding in the shadows. Among the hazards are glowing worms, which attach themselves to the boy's head and force him to travel in only one direction until they are killed.\n\nThe game's second half features mechanical puzzles and traps using machinery, electromagnets, and gravity. Many of these traps are not apparent until triggered, often killing the boy. The player is able to restart at the last encountered checkpoint, with no limits placed on how many times this can occur. Some traps can be avoided and used later in the game; one bear trap is used to clamp onto an animal's carcass, hung from the end of a rope, tearing the carcass off the rope and allowing the branch and rope to retract upwards and allow the boy to climb onto a ledge otherwise out of reach. As the player will likely encounter numerous deaths before they solve each puzzle and complete the game, the developers call Limbo a \"trial and death\" game. Some deaths are animated with images of the boy's dismemberment or beheading, although an optional gore filter on the Xbox 360 blacks out the screen instead of showing these deaths (although audio is still played), as well as removing or replacing hanging/dead children. Game achievements (optional in-game goals) include finding hidden insect eggs and completing the game with five or fewer deaths."
+      },
+      {
+        "title": "Plot",
+        "format": "prose",
+        "spoiler": true,
+        "text": "The primary character in Limbo is a nameless boy in search of his sister, who awakens in the middle of a forest on the \"edge of hell\" (the game's title is taken from the Latin limbus, meaning \"edge\"),  where he encounters a humongous spider who tries to kill him. After using a trap to cut off the sharp points on half of the spider's legs, it retreats further into the forest, and the boy is allowed to pass. However, he is later caught in webs and spun into a cocoon. Shortly after freeing himself, he encounters a colony of other boys who actively try to kill him with traps, and later poison darts; they later fall victim to their very own final traps, after the boy finally manages to kill the spider after a short chase. At one point during his journey, he encounters a female character, who he thinks might be his sister, but is prevented from reaching her. The forest eventually gives way to a crumbling city environment, followed by industrial and flooded environments. On completion of the final puzzle, the boy is thrown through a pane of glass and back into the forest area from the beginning. After he wakes up, he walks a short distance until he again encounters the girl, who, upon his approach, stands up startled. At this point, the screen cuts to black, abruptly ending the game."
+      }
+    ]
+  }
+}

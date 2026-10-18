@@ -688,7 +688,9 @@ function scaffoldReferenceGuide(canonical) {
     enemies: canonical.enemies ?? [],
     bosses: canonical.bosses ?? [],
     shops: canonical.shops ?? [],
-    reference_blocks: [{ format: "preformatted", text: canonical.text ?? "" }],
+    reference_blocks: Array.isArray(canonical.blocks) && canonical.blocks.length
+      ? canonical.blocks.map((blk) => ({ ...(blk.title ? { title: blk.title } : {}), format: blk.format ?? "preformatted", ...(blk.spoiler ? { spoiler: true } : {}), text: blk.text ?? "" }))
+      : [{ format: "preformatted", text: canonical.text ?? "" }],
   };
   if (canonical.boss) guide.boss = canonical.boss;
   return { guide };

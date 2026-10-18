@@ -10,6 +10,7 @@ import RouteProgression from '../../components/RouteProgression.astro';
 import SavePoints from '../../components/SavePoints.astro';
 import TrapsList from '../../components/TrapsList.astro';
 import InitialSetup from '../../components/InitialSetup.astro';
+import ReferenceBlocks from '../../components/ReferenceBlocks.astro';
 import DocumentInfo from '../../components/DocumentInfo.astro';
 import GuideFigure from '../../components/GuideFigure.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
@@ -116,6 +117,8 @@ const pageSections = buildPageTocSections(guide);
             <StepChecklist guideId={guide.id || guide.code || ""} steps={steps} bosses={bosses} />
           </section>
         )}
+
+        <ReferenceBlocks blocks={guide.reference_blocks} sourceName={guide.source?.author} sourceUrl={guide.source?.url} />
 
         <TrapsList traps={guide.traps} />
 

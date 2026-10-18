@@ -1,0 +1,47 @@
+---
+import { BookOpen, EyeOff } from '@lucide/astro';
+import SectionHeading from './SectionHeading.astro';
+import CollapsibleSection from './CollapsibleSection.astro';
+
+interface Block {
+  title?: string;
+  format: 'preformatted' | 'prose';
+  spoiler?: boolean;
+  text: string;
+}
+interface Props {
+  blocks?: Block[];
+  sourceName?: string;
+  sourceUrl?: string;
+}
+
+const { blocks = [], sourceName, sourceUrl } = Astro.props;
+const slug = (s: string, i: number) => `ref-${i}-${(s || 'text').toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+---
+
+{blocks.length > 0 && (
+  <div class="space-y-8">
+    {blocks.map((b, i) => {
+      const id = slug(b.title ?? '', i);
+      const paragraphs = b.text.split(/\n{2,}/);
+      const body = b.format === 'prose'
+        ? <div class="space-y-3 leading-relaxed text-slate-200">{paragraphs.map((p) => <p>{p}</p>)}</div>
+        : <pre class="p-3 sm:p-4 rounded-md border border-slate-800 bg-slate-950/70 text-slate-200 font-source-art text-xs overflow-x-auto">{b.text}</pre>;
+      return b.spoiler ? (
+        <CollapsibleSection id={id} title={`${b.title ?? 'Details'} (spoilers)`} icon={EyeOff}>
+          {body}
+        </CollapsibleSection>
+      ) : (
+        <section id={id} class="space-y-4">
+          {b.title && <SectionHeading icon={BookOpen}>{b.title}</SectionHeading>}
+          {body}
+        </section>
+      );
+    })}
+    {sourceName && (
+      <p class="text-xs text-slate-400">
+        Source: {sourceUrl ? <a href={sourceUrl} class="underline hover:text-gold-400" rel="noopener">{sourceName}</a> : sourceName}
+      </p>
+    )}
+  </div>
+)}

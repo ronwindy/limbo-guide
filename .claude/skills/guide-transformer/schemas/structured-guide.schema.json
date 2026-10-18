@@ -518,11 +518,24 @@
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["file", "caption", "after"],
+            "required": [
+              "file",
+              "caption",
+              "after"
+            ],
             "properties": {
-              "file": { "type": "string", "description": "Path under public/, e.g. images/egg1.png" },
-              "caption": { "type": "string", "description": "Wiki caption, verbatim" },
-              "after": { "type": "string", "description": "Source heading the image sits under; empty = before the first heading (cover)" }
+              "file": {
+                "type": "string",
+                "description": "Path under public/, e.g. images/egg1.png"
+              },
+              "caption": {
+                "type": "string",
+                "description": "Wiki caption, verbatim"
+              },
+              "after": {
+                "type": "string",
+                "description": "Source heading the image sits under; empty = before the first heading (cover)"
+              }
             },
             "additionalProperties": false
           },
@@ -956,11 +969,16 @@
               "format": {
                 "type": "string",
                 "enum": [
-                  "preformatted"
+                  "preformatted",
+                  "prose"
                 ]
               },
               "text": {
                 "type": "string"
+              },
+              "spoiler": {
+                "type": "boolean",
+                "description": "Render collapsed behind a spoiler fold"
               }
             },
             "additionalProperties": false

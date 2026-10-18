@@ -1,10 +1,10 @@
 # Limbo Guide - Project Status
 
-> Last synced: `2026-10-18 13:48:48`
+> Last synced: `2026-10-18 14:19:33`
 
 ```text
-=== PROJECT STATUS (2026-10-18 13:48:48) ===
-Canonical 41/41 | Structured 3/41 | QA pass 3/41 (fail 0) | Web built 3/41
+=== PROJECT STATUS (2026-10-18 14:19:33) ===
+Canonical 41/41 | Structured 4/41 | QA pass 4/41 (fail 0) | Web built 4/41
 Next:
   (nothing pending)
 ```
@@ -13,7 +13,7 @@ Next:
 
 | Code | ID | Title | Category | State |
 | :-- | :-- | :-- | :-- | :-- |
-| `` | `game-overview` | Game Overview | Introduction | NOT_STRUCTURED |
+| `` | `game-overview` | Game Overview | Introduction | WEB_BUILT |
 | `` | `awakening` | Awakening | Chapters | WEB_BUILT |
 | `` | `lake-passage` | Lake Passage | Chapters | WEB_BUILT |
 | `` | `bear-traps` | Bear Traps | Chapters | WEB_BUILT |

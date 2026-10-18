@@ -59,13 +59,19 @@ const source = (p) => ({ game: PROJECT.game, author: "Limbo Wiki (Fandom) contri
   url: p.url ?? "https://limbo.fandom.com/wiki/Walkthrough", source_file: p.file ?? "", source_url: p.url ?? "https://limbo.fandom.com/wiki/Walkthrough", fetched: index.fetched, fetch_method: index.method });
 const link = (id, title) => ({ id, code: "", title, file: `sections/${id}.json` });
 
-const overview = {
+// game-overview now comes from Wikipedia (scripts/import_wikipedia_overview.mjs); keep it, refresh only navigation.
+const OVERVIEW_FILE = join(OUT, "sections", "game-overview.json");
+const keptOverview = existsSync(OVERVIEW_FILE) ? JSON.parse(readFileSync(OVERVIEW_FILE, "utf8")) : null;
+const fandomOverview = {
   id: "game-overview", code: "", title: "Game Overview", type: "reference", category: "Introduction",
   source: { ...source({ revid: index.revid, url: "https://limbo.fandom.com/wiki/Walkthrough", file: "raw-sources/fandom/_index.json" }) },
   navigation: { prev: null, next: link(pages[0].slug, pages[0].label) },
   text: toText(index.wikitext.split(/^==\s*Chapters\s*==/m)[0], "Walkthrough") + "\n\nChapters\n" +
     toText(index.wikitext.split(/^==\s*Chapters\s*==/m)[1].split(/^#/m)[0], "Walkthrough"),
 };
+const overview = keptOverview?.source?.url?.includes("wikipedia.org")
+  ? { ...keptOverview, navigation: { prev: null, next: link(pages[0].slug, pages[0].label) } }
+  : fandomOverview;
 const sections = [overview];
 pages.forEach((p, i) => {
   const text = toText(p.wikitext, p.title);

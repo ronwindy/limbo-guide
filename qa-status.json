@@ -21,6 +21,17 @@
       "medium": 0
     }
   },
+  "game-overview": {
+    "checked_at": "2026-10-18T14:19:25",
+    "content_hash": "c19744853f2327e2",
+    "status": "PASS",
+    "summary": {
+      "critical": 0,
+      "high": 0,
+      "low": 0,
+      "medium": 0
+    }
+  },
   "lake-passage": {
     "checked_at": "2026-10-18T13:48:47",
     "content_hash": "bfcfa9042c04cb5a",
