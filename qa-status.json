@@ -22,8 +22,8 @@
     }
   },
   "deathly-rock": {
-    "checked_at": "2026-10-18T14:35:46",
-    "content_hash": "22d4ea452f78bec1",
+    "checked_at": "2026-10-18T14:38:37",
+    "content_hash": "3f1df12a44bfc466",
     "status": "PASS",
     "summary": {
       "critical": 0,
@@ -55,8 +55,8 @@
     }
   },
   "spiders-lair": {
-    "checked_at": "2026-10-18T14:36:24",
-    "content_hash": "176cba151016f465",
+    "checked_at": "2026-10-18T14:38:38",
+    "content_hash": "8477c4859a9f850e",
     "status": "PASS",
     "summary": {
       "critical": 0,
@@ -66,8 +66,8 @@
     }
   },
   "the-spider": {
-    "checked_at": "2026-10-18T14:36:04",
-    "content_hash": "ba7a900f3b92e599",
+    "checked_at": "2026-10-18T14:38:37",
+    "content_hash": "07a58df2658d487e",
     "status": "PASS",
     "summary": {
       "critical": 0,

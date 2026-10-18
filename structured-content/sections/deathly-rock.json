@@ -46,6 +46,13 @@
         "type": "exploration",
         "rewards": []
       }
+    ],
+    "images": [
+      {
+        "file": "images/chapter4.png",
+        "caption": "Chapter 4: Deathly Rock - Cover",
+        "after": ""
+      }
     ]
   }
 }

@@ -46,6 +46,13 @@
         "type": "exploration",
         "rewards": []
       }
+    ],
+    "images": [
+      {
+        "file": "images/chapter5.png",
+        "caption": "Chapter 5: The Spider - Cover",
+        "after": ""
+      }
     ]
   }
 }
