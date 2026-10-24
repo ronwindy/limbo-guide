@@ -116,6 +116,7 @@ function getStepTypeMeta(type: string = 'exploration') {
     return (
       <div
         class="step-item p-4 sm:p-5 rounded-sm bg-slate-850/90 border border-slate-800 hover:border-slate-700 transition-all duration-150 shadow-sm"
+        id={`step-${stepNum}`}
         data-step-key={stepStorageKey}
       >
         <div class="flex items-start gap-3.5">

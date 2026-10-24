@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import project from '../../project.config.json';
+import ResumeBanner from '../components/ResumeBanner.astro';
 import { getTocData } from '../lib/guideData';
 import { Play, ListChecks, ExternalLink } from '@lucide/astro';
 
@@ -38,6 +39,7 @@ const facts = [
       <p class="hero-tag text-slate-300 text-lg sm:text-xl max-w-xl mx-auto">
         Every chapter, step by step: a video to watch, a checklist to tick, and your place saved as you go.
       </p>
+      <div class="hero-cta has-[#resume-banner.hidden]:hidden"><ResumeBanner /></div>
       <div class="hero-cta flex flex-wrap justify-center gap-3 pt-2">
         <a id="continue-btn" href={first ? `${baseUrl}/guide/${first.id}` : `${baseUrl}/contents`} class="inline-flex items-center gap-2 px-7 py-3 rounded-sm bg-gold-500 hover:bg-gold-400 text-slate-950 font-semibold transition-colors">
           <Play class="w-4 h-4" aria-hidden="true" />
