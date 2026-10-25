@@ -38,19 +38,19 @@
         "id": 1,
         "type": "exploration",
         "rewards": [],
-        "description": "1. The 'HOTEL⤵' sign is partially destroyed and electrified, and eventually stops progress.\n2. When the 'H' turns off, you have to jump across it to the 'O' and have it strike the 'T'.\n3. But the 'E' won't turn off for you to get to the 'L' and the arrow, so you have to slide down the left of the 'O'.\n4. Next, you need to swing using the wire connecting the 'T' and 'E' together to reach the power box in order to turn off the power."
+        "description": "1. The 'HOTEL⤵' sign is partially destroyed and electrified, and eventually stops progress.\n2. When the 'H' turns off, you have to **jump across it to the 'O'** and have it strike the 'T'.\n3. But the 'E' won't turn off for you to get to the 'L' and the arrow, so you have to **slide down the left of the 'O'**.\n4. Next, you need to **swing using the wire connecting the 'T' and 'E' together to reach the power box** in order to turn off the power."
       },
       {
         "id": 2,
         "type": "exploration",
         "rewards": [],
-        "description": "- With the power off, you can climb up the rain gutter, and safely jump over all the letters ('H', 'O', 'T', 'E', 'L', '⤵').\n- The arrow pointing downwards ('⤵') will fall as soon as you jump towards the ledge, so be careful.\n- The 'O' is still able to roll in a circle, which may cause you to slide off of it.\n- The 'L' will slowly tilt approximately 90 or -90 degrees depending on where exactly you stand on it."
+        "description": "- With the power off, you can **climb up the rain gutter, and safely jump over all the letters** ('H', 'O', 'T', 'E', 'L', '⤵').\n- ==The arrow pointing downwards ('⤵') will fall as soon as you jump towards the ledge==, so be careful.\n- The 'O' is still able to roll in a circle, which may cause you to slide off of it.\n- The 'L' will slowly tilt approximately 90 or -90 degrees depending on where exactly you stand on it."
       },
       {
         "id": 3,
         "type": "story",
         "rewards": [],
-        "description": "**Trivia**\n- The letters 'H' and 'O' reappear in Chapter 37, Side of the World.\n- This particular hotel may be a place where a traumatizing incident or event happened to the **boy**, his little sister, or the rest of his family.\n- This theory can be proved by the destruction and gloominess of the hotel both from the inside and outside of it."
+        "description": "Trivia\n- The letters 'H' and 'O' reappear in Chapter 37, Side of the World.\n- This particular hotel may be a place where a traumatizing incident or event happened to the boy, his little sister, or the rest of his family.\n- This theory can be proved by the destruction and gloominess of the hotel both from the inside and outside of it."
       }
     ]
   }

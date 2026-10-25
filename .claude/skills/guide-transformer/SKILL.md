@@ -14,6 +14,7 @@ Owns `structured-content/sections/*.json`. The working procedure and conventions
 - **Forbidden:** inventing facts or outside knowledge; silently resolving source contradictions or errors; renaming characters, items, enemies, locations, mechanics; altering numbers; hoisting spoilers into headers.
 - **Choices:** `choices[].option` verbatim; set `outcome` only when the source states it.
 - **Source shouting** becomes bold normal case, never UPPERCASE.
+- **Highlighting (see `docs/structured-schema.md`):** `**bold**` the key action + object per list item (`**pull the boat** from the water`), `==red==` things to avoid (`==do not step on the bear traps==`). No bare-noun bolds, no auto-bolder; words never change.
 - Step `type` is one of: `story`, `exploration`, `battle`, `boss`, `loot`, `puzzle`, `shop`, `dialogue`, `navigation`, `quest`, `preparation`, `misc`.
 - Reference/appendix sections (`a-*`): scaffold in reference mode, no refinement; run `node scripts/guide.mjs check <id>` and stop.
 

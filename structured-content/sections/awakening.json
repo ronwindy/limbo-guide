@@ -39,19 +39,19 @@
     "steps": [
       {
         "id": 1,
-        "description": "- The setting fades in to reveal the nameless **boy** sleeping on the ground.\n- The **boy** wakes up in the midst of **Limbo** world.",
+        "description": "- The setting fades in to reveal the nameless boy sleeping on the ground.\n- The boy wakes up in the midst of Limbo world.",
         "type": "story",
         "rewards": []
       },
       {
         "id": 2,
-        "description": "- Proceed forth toward the edge of the tree branch.\n- Drop yourself down the cliff, where the inclined slope safely lets you slide down.",
+        "description": "- **Proceed forth toward the edge of the tree branch**.\n- **Drop yourself down the cliff**, where the inclined slope safely lets you slide down.",
         "type": "exploration",
         "rewards": []
       },
       {
         "id": 3,
-        "description": "- Beware of the deadly obstacle: jump over the spiky hole to avoid impaling yourself.\n- Then move to cross the next **checkpoint**/chapter.",
+        "description": "- ==Beware of the deadly obstacle==: **jump over the spiky hole** to avoid impaling yourself.\n- Then move to cross the next checkpoint/chapter.",
         "type": "exploration",
         "rewards": []
       }
@@ -60,7 +60,7 @@
       {
         "type": "tip",
         "title": "Hidden Egg",
-        "text": "- The hidden **egg** is found right at the start of the game.\n- Move to the leftmost part of the game and obtain the **egg** on the paddle.\n- This gains the \"Wrong Way\" **achievement**."
+        "text": "- The hidden egg is found right at the start of the game.\n- Move to the leftmost part of the game and obtain the egg on the paddle.\n- This gains the \"Wrong Way\" achievement."
       }
     ],
     "images": [

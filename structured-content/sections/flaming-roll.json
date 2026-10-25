@@ -36,13 +36,13 @@
     "steps": [
       {
         "id": 1,
-        "description": "- Walk forward a bit and you will see two mechanical spider-like legs, as well as another human.\n- When the legs are raised, you can walk past through them.\n- The human manning the controls will run away.",
+        "description": "- **Walk forward a bit** and you will see two mechanical spider-like legs, as well as another human.\n- When the legs are raised, you can **walk past through them**.\n- The human manning the controls will run away.",
         "type": "navigation",
         "rewards": []
       },
       {
         "id": 2,
-        "description": "1. Next, when you jump across the gap that comes after, you will also need to jump over burning tires.\n2. These tires are also thrown by humans, who will run away when you get closer to them.\n3. Finally, proceed by climbing up the **ladder**.",
+        "description": "1. Next, when you **jump across the gap** that comes after, you will also need to **jump over burning tires**.\n2. These tires are also thrown by humans, who will run away when you get closer to them.\n3. Finally, proceed by **climbing up the ladder**.",
         "type": "exploration",
         "rewards": []
       }

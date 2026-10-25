@@ -10,7 +10,6 @@ import { ROOT_DIR, loadQaStatus, recordQaResult, auditSection, computeProjectSta
   renderCompactSummary, writeStatusMarkdown, pyJson, loadCanonicalIndex } from "./status.mjs";
 import { loadMerges, navigationProblems } from "../.claude/skills/qa/scripts/merges.mjs";
 import { getSectionPaths, getCanonicalManifest, sectionType, isWalkthroughType } from "./sections.mjs";
-import { boldFile, buildDictionary, compilePattern } from "./bold_terms.mjs";
 import { scaffoldGuide } from "../.claude/skills/guide-transformer/scripts/scaffold_structured_guide.mjs";
 import { lintGuide } from "../.claude/skills/guide-transformer/scripts/lint_guide.mjs";
 import { getValidator, validateFile, validateInstance, compileSchemaFile } from "../.claude/skills/guide-transformer/scripts/validate_guide.mjs";
@@ -364,20 +363,8 @@ export function resolveBacklog() {
   return verified;
 }
 
-/** Bolds terms in the section's prose so QA always sees the final file (walkthroughs only). */
-function runBold(sec) {
-  const { structuredPath } = getSectionPaths(sec);
-  if (!existsSync(structuredPath) || !isWalkthroughType(sectionType(sec))) return;
-  const found = boldFile(structuredPath, compilePattern(buildDictionary()), true);
-  if (found.length) {
-    const unique = [...new Set(found)].sort();
-    console.log(`[bold] ${sec.id}: bolded ${unique.length} term(s): [${unique.map((t) => `'${t}'`).join(", ")}]`);
-  }
-}
-
-/** Single per-section gate: bold -> validate -> lint -> QA -> build -> status. */
+/** Single per-section gate: validate -> lint -> QA -> build -> status. Bold is hand-written action markup, not auto-applied. */
 export function runCheck(sec, build = true) {
-  runBold(sec);
   let ok;
   if (!runValidate(sec)) {
     // QA would record a result against an invalid file, and the build is wasted.

@@ -41,19 +41,19 @@
     "steps": [
       {
         "id": 1,
-        "description": "- Pull the wooden **cart** until it stops when it is shortly tied by a **rope**.\n- Climb up until you stand on the top ledge.",
+        "description": "- **Pull the wooden cart** until it stops when it is shortly tied by a rope.\n- **Climb up** until you stand on the top ledge.",
         "type": "puzzle",
         "rewards": []
       },
       {
         "id": 2,
-        "description": "- Jump and grab the **rope**, but do not fall down too high or you will die.\n- Climb down and you will land safely on the scaffold.\n- You may jump down at the right side better than left one because there is a bottomless pit below the scaffold.",
+        "description": "- **Jump and grab the rope**, but ==do not fall down too high== or you will die.\n- **Climb down** and you will land safely on the scaffold.\n- You may **jump down at the right side** better than left one because there is a bottomless pit below the scaffold.",
         "type": "exploration",
         "rewards": []
       },
       {
         "id": 3,
-        "description": "- When you see the **boat**, enter it and its **chain** will be released and you may drift across the **lake**.\n- Try not to jump yourself on the water, or you will be drowned.\n- Wait for the navigation until you reach the other side of the **lake**.",
+        "description": "- When you see the boat, **enter it** and its chain will be released and you may drift across the lake.\n- ==Try not to jump yourself on the water==, or you will be drowned.\n- **Wait for the navigation** until you reach the other side of the lake.",
         "type": "navigation",
         "rewards": []
       }

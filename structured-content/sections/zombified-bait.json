@@ -36,7 +36,7 @@
     "steps": [
       {
         "id": 1,
-        "description": "1. A large pool of water features a corpse which is drowned in the middle of the **lake**.\n2. You have to jump on it, and another human mindlessly plunges into the water, providing you a second **platform** to jump across, which is that human.\n3. After reaching to the other side, you have to drag one of the bodies.\n4. You will then reach to a crushing trap, so release the body to the pit, then proceed forward.",
+        "description": "1. A large pool of water features a corpse which is drowned in the middle of the lake.\n2. You have to **jump on it**, and another human mindlessly plunges into the water, providing you a second platform to jump across, which is that human.\n3. After reaching to the other side, you have to **drag one of the bodies**.\n4. You will then reach to a crushing trap, so **release the body to the pit**, then proceed forward.",
         "type": "exploration",
         "rewards": []
       }

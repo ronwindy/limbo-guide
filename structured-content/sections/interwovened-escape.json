@@ -36,7 +36,7 @@
     "steps": [
       {
         "id": 1,
-        "description": "Inside the pit, there is a **rope** that is attached to a **bear trap**. To get through, you simply need to jump on the **rope**, climb a bit if necessary, and quickly jump away to avoid the **bear trap**.",
+        "description": "Inside the pit, there is a rope that is attached to a bear trap. To get through, you simply need to **jump on the rope, climb a bit if necessary, and quickly jump away to avoid the bear trap**.",
         "type": "exploration",
         "rewards": []
       }

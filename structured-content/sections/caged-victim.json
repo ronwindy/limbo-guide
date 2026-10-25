@@ -36,7 +36,7 @@
     "steps": [
       {
         "id": 1,
-        "description": "1. In this chapter, there are two cages hanging, and on one of them, there is a crow pecking one **rope**.\n2. You should climb the **ladder** you see to the right, and then jump across to the cage with the **rope**.\n3. When the cage hits the ground, push it to the right, then climb up to proceed.",
+        "description": "1. In this chapter, there are two cages hanging, and on one of them, there is a crow pecking one rope.\n2. You should **climb the ladder** you see to the right, and then **jump across to the cage with the rope**.\n3. When the cage hits the ground, **push it to the right**, then **climb up** to proceed.",
         "type": "exploration",
         "rewards": []
       }

@@ -42,7 +42,7 @@ export function getResumeSteps(): ResumeStep[] {
         guideTitle: g.title,
         stepNum,
         text: richToPlainText(st.description || st.instruction)
-          .replace(/\*\*/g, '')
+          .replace(/\*\*|==/g, '')
           .replace(/\s+/g, ' ')
           .trim(),
       };

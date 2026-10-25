@@ -36,13 +36,13 @@
     "steps": [
       {
         "id": 1,
-        "description": "1. When moving forward, there is a **bear trap** that is oddly placed on a tree, and there is also a giant spider-like creature that is blocking the path.\n2. When you approach to where the spider is, it will raise one of its legs and try to kill you with one of its other legs.\n3. When it raises one of its legs for the first time, you should run to have it hit the ground instead.\n4. Once it misses doing its attack for the second time, the **bear trap** will drop to the ground, hence making you be able to fight back.",
+        "description": "1. When moving forward, there is a bear trap that is oddly placed on a tree, and there is also a giant spider-like creature that is blocking the path.\n2. When you approach to where the spider is, it will raise one of its legs and try to kill you with one of its other legs.\n3. When it raises one of its legs for the first time, you should **run to have it hit the ground instead**.\n4. Once it misses doing its attack for the second time, the bear trap will drop to the ground, hence making you be able to fight back.",
         "type": "exploration",
         "rewards": []
       },
       {
         "id": 2,
-        "description": "1. What you should do next is keep moving the **bear trap** forward until the spider starts to aim at you.\n2. Next, try to pull it back when the spider raises the leg, and that way, it will become inaccurate and hit the trap instead of you.\n3. As you attack once again, you'll also have to run back, because otherwise, it will hit you and kill you.\n4. Finally, the third leg can be snapped in the same way as the first two legs were, and when this happens, the spider will run away, hence making you able to proceed.",
+        "description": "1. What you should do next is **keep moving the bear trap forward until the spider starts to aim at you**.\n2. Next, try to **pull it back when the spider raises the leg**, and that way, it will become inaccurate and hit the trap instead of you.\n3. As you attack once again, you'll also have to **run back**, because otherwise, it will hit you and kill you.\n4. Finally, the third leg can be snapped in the same way as the first two legs were, and when this happens, the spider will run away, hence making you able to proceed.",
         "type": "exploration",
         "rewards": []
       }

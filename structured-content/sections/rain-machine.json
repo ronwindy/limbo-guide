@@ -36,13 +36,13 @@
     "steps": [
       {
         "id": 1,
-        "description": "- You can see a wheel that can power a building in the background alone.\n- However, it is unoccupied.\n- You should head to the right to find an animal hiding in a cove.\n- To lure it out, you have to jump on a nearby **platform** so that the mushrooms drop something onto the ground.\n- When the animal eats the food, land to its right and chase it towards the wheel.",
+        "description": "- You can see a wheel that can power a building in the background alone.\n- However, it is unoccupied.\n- You should **head to the right to find an animal hiding in a cove**.\n- To lure it out, you have to **jump on a nearby platform so that the mushrooms drop something onto the ground**.\n- When the animal eats the food, **land to its right and chase it towards the wheel**.",
         "type": "exploration",
         "rewards": []
       },
       {
         "id": 2,
-        "description": "1. Next, you have to power the generator by pulling the **lever**, and then the animal will run.\n2. Later on, to the right, you will see a small pit that needs to be filled with water.\n3. You have to pull the log in the pit towards the middle, then climb back out, and grab the **chain** to fill the pit.\n4. Finally, jump across it before the water drainage, then proceed to the large pipe.",
+        "description": "1. Next, you have to **power the generator by pulling the lever**, and then the animal will run.\n2. Later on, to the right, you will see a small pit that needs to be filled with water.\n3. You have to **pull the log in the pit towards the middle, then climb back out, and grab the chain** to fill the pit.\n4. Finally, **jump across it before the water drainage**, then **proceed to the large pipe**.",
         "type": "exploration",
         "rewards": []
       }

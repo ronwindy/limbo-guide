@@ -36,13 +36,13 @@
     "steps": [
       {
         "id": 1,
-        "description": "- You will have to push the log into the water, and use it to jump to a small island.\n- You will have to keep moving until you see a fallen tree and wait for the spider to approach.\n- When this spider touches the tree, it will lift up, hence it will allow you to make a jump to the higher ledge.",
+        "description": "- You will have to **push the log into the water, and use it to jump to a small island**.\n- You will have to **keep moving until you see a fallen tree and wait for the spider to approach**.\n- When this spider touches the tree, it will lift up, hence it will allow you to **make a jump to the higher ledge**.",
         "type": "exploration",
         "rewards": []
       },
       {
         "id": 2,
-        "description": "1. Next, you will have to push the tree stump over, and then jump across the gap.\n2. When you see a **boulder**, you have to break the stick that is holding it in its position, then run to the left.\n3. You have to take cover just below the ramp and then the **boulder** will eventually smash the spider down into the abyss below.\n4. You have to then get close enough to the injured spider so it will try to stab you.\n5. Move away quickly so then it doesn’t.\n6. Then pull on its remaining leg so it will come off its body.\n7. Then roll it into the spike pit to the right.",
+        "description": "1. Next, you will have to **push the tree stump over, and then jump across the gap**.\n2. When you see a boulder, you have to **break the stick that is holding it in its position, then run to the left**.\n3. You have to **take cover just below the ramp** and then the boulder will eventually smash the spider down into the abyss below.\n4. You have to then **get close enough to the injured spider so it will try to stab you**.\n5. **Move away quickly** so then it doesn’t.\n6. Then **pull on its remaining leg** so it will come off its body.\n7. Then **roll it into the spike pit to the right**.",
         "type": "exploration",
         "rewards": []
       }

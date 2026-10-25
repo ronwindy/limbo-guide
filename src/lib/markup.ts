@@ -194,6 +194,9 @@ export function renderInlineMarkup(text: string | null | undefined): string {
     '<kbd class="font-mono text-xs px-1.5 py-0.5 rounded bg-slate-900 text-gold-300 border border-slate-700/80 shadow-inner tracking-wide">$1</kbd>'
   );
 
+  // 3b. Danger / avoid: ==text== -> red <strong class="highlight-danger">.
+  html = html.replace(/==([^=]+)==/g, '<strong class="highlight-danger">$1</strong>');
+
   // 4. Bold / Strong: **text** or __text__ -> <strong class="highlight-term">.
   // A bolded element name (**Earth**) gets its element icon in front of it.
   html = html.replace(
@@ -225,6 +228,7 @@ export function renderHighlights(text: string | null | undefined): string {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
+    .replace(/==([^=]+)==/g, '<strong class="highlight-danger">$1</strong>')
     .replace(/\*\*([^*]+)\*\*/g, '<strong class="highlight-term">$1</strong>');
 }
 

@@ -118,7 +118,7 @@ class SequenceMatcher {
 }
 
 function tokens(text) {
-  let t = String(text ?? "").replace(/\*\*|`/g, "");
+  let t = String(text ?? "").replace(/\*\*|==|`/g, "");
   t = t.replace(/\[_|_\]/g, " ");
   t = t.replace(/(?<=[a-z])(?=[A-Z])/g, " "); // TeaOfTheHolyOne -> Tea Of The Holy One
   t = t.replace(/_/g, " ").replace(/[’‘]/g, "'");
@@ -169,7 +169,7 @@ function units(guide) {
   for (const u of out) {
     u.text = u.text.replace(XREF, ""); // scaffold-added **[W-2-07] Title** cross-refs
     u.words = tokens(stripListMarker(u.text));
-    u.bold = new Set([...u.text.matchAll(/\*\*(.+?)\*\*/g)].flatMap((m) => tokens(m[1])));
+    u.bold = new Set([...u.text.matchAll(/\*\*(.+?)\*\*|==(.+?)==/g)].flatMap((m) => tokens(m[1] ?? m[2])));
   }
   return out.filter((u) => u.words.length >= 3);
 }

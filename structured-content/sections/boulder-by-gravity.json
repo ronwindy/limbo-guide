@@ -36,7 +36,7 @@
     "steps": [
       {
         "id": 1,
-        "description": "The first thing you have to do in this chapter is pull the next **lever**, and try to remain in your spot until the **crate** falls down, then push the **crate** to the edge and jump across.",
+        "description": "The first thing you have to do in this chapter is **pull the next lever**, and try to **remain in your spot until the crate falls down**, then **push the crate to the edge** and **jump across**.",
         "type": "exploration",
         "rewards": []
       },

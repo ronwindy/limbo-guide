@@ -36,7 +36,7 @@
     "steps": [
       {
         "id": 1,
-        "description": "1. You must spring the trap that comes at the beginning.\n2. When you are under the trap, the left **bear trap** will be the first to fall, and that can be avoided by running left.\n3. The other trap quickly comes next, and that can be dodged by moving right.\n4. The second trap also leaves a freed **rope**, which you can use to climb to the **platform** above, walk above the traps, and proceed to the next chapter.",
+        "description": "1. You must **spring the trap that comes at the beginning**.\n2. When you are under the trap, the left bear trap will be the first to fall, and that can be avoided by **running left**.\n3. The other trap quickly comes next, and that can be dodged by **moving right**.\n4. The second trap also leaves a freed rope, which you can use to **climb to the platform above, walk above the traps**, and proceed to the next chapter.",
         "type": "exploration",
         "rewards": []
       }

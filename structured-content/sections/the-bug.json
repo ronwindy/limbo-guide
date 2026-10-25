@@ -36,7 +36,7 @@
     "steps": [
       {
         "id": 1,
-        "description": "All you have to do is slowly approach the mosquito, then when it flies, grab it, and it will carry you to the **platform** above.",
+        "description": "All you have to do is **slowly approach the mosquito, then when it flies, grab it**, and it will carry you to the platform above.",
         "type": "exploration",
         "rewards": []
       }

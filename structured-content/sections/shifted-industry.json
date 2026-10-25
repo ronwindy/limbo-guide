@@ -36,19 +36,19 @@
     "steps": [
       {
         "id": 1,
-        "description": "1. First, you have to jump to catch the **rope**, and then swing back and forth.\n2. Once you are past the electrified **rail**, release yourself from the **rope**, then drop down, and push the gear to start turning the environment.\n3. Next, stand left from the door before it falls, and then ride the second gear to the top, then jump left.",
+        "description": "1. First, you have to **jump to catch the rope, and then swing back and forth**.\n2. Once you are past the electrified rail, **release yourself from the rope, then drop down, and push the gear** to start turning the environment.\n3. Next, **stand left from the door before it falls**, and then **ride the second gear to the top, then jump left**.",
         "type": "exploration",
         "rewards": []
       },
       {
         "id": 2,
-        "description": "1. After that, you should move the metal **crate** to a position where you can reach the **ladder**, and then climb on the right.\n2. Next, use the magnetic power console to lock the **crate** in place, then open the door using the control panel that can be found on the right, and finally run to the door before it closes.",
+        "description": "1. After that, you should **move the metal crate to a position where you can reach the ladder, and then climb on the right**.\n2. Next, **use the magnetic power console to lock the crate in place**, then **open the door using the control panel** that can be found on the right, and finally **run to the door before it closes**.",
         "type": "exploration",
         "rewards": []
       },
       {
         "id": 3,
-        "description": "1. Finally, pull the next **lever** to turn the world again, then run left, and push the box to the corner.\n2. Next, jump on the **chain** to the right of the saw and land on the **crate** when it is blown.\n3. When the **crate** approaches another saw, you have to jump to the **rope** to the left, then release and slide down to proceed.",
+        "description": "1. Finally, **pull the next lever to turn the world again, then run left, and push the box to the corner**.\n2. Next, **jump on the chain to the right of the saw and land on the crate** when it is blown.\n3. When the crate approaches another saw, you have to **jump to the rope to the left, then release and slide down** to proceed.",
         "type": "exploration",
         "rewards": []
       }

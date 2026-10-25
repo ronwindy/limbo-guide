@@ -83,7 +83,7 @@ export function verifyGuide(canonical, structured, root = ROOT_DIR) {
     const refText = (guide.reference_blocks ?? []).map((b) => b.text ?? "").join("\n");
     // Bullet markers, **bold** and whitespace are presentation; the words must be identical.
     // Label-only lines (`- **Topic**`) group the bullets beneath them and carry no source words.
-    const plain = (t) => t.replace(/^- \*\*[^*\n]+\*\*[ \t]*$/gm, "").replace(/\*\*/g, "").replace(/^\s*- /gm, "").replace(/\s+/g, "");
+    const plain = (t) => t.replace(/^- \*\*[^*\n]+\*\*[ \t]*$/gm, "").replace(/\*\*|==/g, "").replace(/^\s*- /gm, "").replace(/\s+/g, "");
     if (plain(refText) !== plain(canonical.text ?? "")) {
       addFinding("critical", "factual discrepancy", "reference_blocks",
         `${(canonical.text ?? "").length} chars`, `${refText.length} chars`,
@@ -196,7 +196,7 @@ export function verifyGuide(canonical, structured, root = ROOT_DIR) {
     if (key === "drop" && typeof v === "string") return v.replace(/ /g, "").toLowerCase();
     return v ?? null;
   };
-  const plainStrategy = (text) => (text ?? "").replace(/^\s*(?:[-*]|\d+\.)\s+/gm, "").replace(/\*\*/g, "")
+  const plainStrategy = (text) => (text ?? "").replace(/^\s*(?:[-*]|\d+\.)\s+/gm, "").replace(/\*\*|==/g, "")
     .split(/\s+/).filter(Boolean).join(" ");
 
   for (const cB of cBosses) {
@@ -352,7 +352,7 @@ export function verifyGuide(canonical, structured, root = ROOT_DIR) {
   const cAll = (canonical.text ?? "").toLowerCase();
   const bossNames = new Set((canonical.bosses ?? []).map((b) => normalizeName(b.name)));
   (guide.objectives ?? []).forEach((obj, idx) => {
-    const plain = String(obj).replace(/\*\*|`/g, "");
+    const plain = String(obj).replace(/\*\*|==|`/g, "");
     if (bossNames.has(normalizeName(plain.trim().replace(/^defeat\s+/i, "")))) return;
     const generic = new Set(["which", "their", "other", "there", "proceed", "defeat", "collect", "complete", "continue", "reach"]);
     const words = (plain.toLowerCase().match(/[a-z]{5,}/g) ?? []).filter((w) => !generic.has(w));

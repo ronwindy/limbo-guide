@@ -141,8 +141,16 @@
   font-weight: 600;
 }
 
+/* Things to avoid (==text==): red, same weight as a bold action */
+.highlight-danger {
+  color: #f87171;
+  font-weight: 600;
+}
+
 .step-content.line-through .highlight-term,
-.step-item:has(.step-checkbox:checked) .highlight-term {
+.step-content.line-through .highlight-danger,
+.step-item:has(.step-checkbox:checked) .highlight-term,
+.step-item:has(.step-checkbox:checked) .highlight-danger {
   color: inherit;
   text-decoration: line-through;
 }

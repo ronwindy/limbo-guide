@@ -36,19 +36,19 @@
     "steps": [
       {
         "id": 1,
-        "description": "1. As you can see on the right, there is a **ladder** with wheels.\n2. You have to push that to the right, then climb the **ladder**.\n3. When it rolls to the left, you have to jump onto the cracked glass.\n4. You need to break through with two attempts.\n5. Next, when the glass shatters, you have to jump onto the light at the bottom of the slope, then jump to the **rope** on the left, and it will lower you to the ground.",
+        "description": "1. As you can see on the right, there is a ladder with wheels.\n2. You have to **push that to the right, then climb the ladder**.\n3. When it rolls to the left, you have to **jump onto the cracked glass**.\n4. You need to break through with two attempts.\n5. Next, when the glass shatters, you have to **jump onto the light at the bottom of the slope, then jump to the rope on the left**, and it will lower you to the ground.",
         "type": "exploration",
         "rewards": []
       },
       {
         "id": 2,
-        "description": "The next thing you should do is head to the left, and push against the wood scaffold until it starts to topple. Back up to let it safely collapse.",
+        "description": "The next thing you should do is head to the left, and **push against the wood scaffold until it starts to topple**. **Back up to let it safely collapse**.",
         "type": "exploration",
         "rewards": []
       },
       {
         "id": 3,
-        "description": "Finally, move to the right so that the brain parasite hits you, then you'll safely walk past the collapsed scaffold, turn round, and walk along a group of **platforms**.",
+        "description": "Finally, **move to the right so that the brain parasite hits you**, then you'll safely walk past the collapsed scaffold, turn round, and walk along a group of platforms.",
         "type": "exploration",
         "rewards": []
       }

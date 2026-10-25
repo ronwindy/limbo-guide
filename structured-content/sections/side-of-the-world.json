@@ -36,7 +36,7 @@
     "steps": [
       {
         "id": 1,
-        "description": "1. You have to slide down and jump at the **gravity** change **switch**, then walk up, and jump while aiming for the downward **gravity** **switch** - if done right, you should land in the middle of the H. You have to wait for the elecricity to stop, then jump on the pipe on the right.\n2. Finally, climb down the **rope** to the O, and continue moving right.",
+        "description": "1. You have to **slide down and jump at the gravity change switch, then walk up, and jump while aiming for the downward gravity switch** - if done right, you should land in the middle of the H. You have to **wait for the elecricity to stop, then jump on the pipe on the right**.\n2. Finally, **climb down the rope to the O, and continue moving right**.",
         "type": "exploration",
         "rewards": []
       }

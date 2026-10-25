@@ -29,7 +29,7 @@ const EMPHASIS_WORDS = new Set(["THE", "YOUR", "YOU", "TO", "IN", "AND", "IS", "
 const ACRONYMS = new Set(["EXP", "HP", "MP", "SP", "NOTE", "BOSS", "SUB-BOSS", "ATK", "DEF", "OK", "TV", "NPC", "VS"]);
 
 const norm = (name) => String(name ?? "").toLowerCase().replace(/[^a-z0-9]/g, "");
-const plain = (text) => text.replace(/\*\*|__|`/g, "");
+const plain = (text) => text.replace(/\*\*|==|__|`/g, "");
 const wordCount = (text) => text.split(/\s+/).filter(Boolean).length;
 const squash = (text) => text.split(/\s+/).filter(Boolean).join(" ");
 

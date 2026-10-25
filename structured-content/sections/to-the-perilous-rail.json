@@ -36,13 +36,13 @@
     "steps": [
       {
         "id": 1,
-        "description": "As you are riding the minecart, you will observe a **ladder**. Once you reach it, jump and climb it, run to the right, and jump over the buzzsaw.",
+        "description": "As you are riding the minecart, you will observe a ladder. Once you reach it, **jump and climb it, run to the right, and jump over the buzzsaw**.",
         "type": "exploration",
         "rewards": []
       },
       {
         "id": 2,
-        "description": "1. The **cart** will eventually stop at some point, and press a button providing electrical charge to a **rail**.\n2. Pull it out, and jump ahead of it.\n3. Push it to just below the **rail**, then climb the **cart** and **rail**, and then finally, run to the right before the **cart** strikes the button again.",
+        "description": "1. The cart will eventually stop at some point, and press a button providing electrical charge to a rail.\n2. **Pull it out, and jump ahead of it**.\n3. **Push it to just below the rail, then climb the cart and rail, and then finally, run to the right before the cart strikes the button again**.",
         "type": "exploration",
         "rewards": []
       }

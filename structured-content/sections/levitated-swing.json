@@ -36,7 +36,7 @@
     "steps": [
       {
         "id": 1,
-        "description": "All you have to do in this chapter is set **gravity** to move upward to call the zip-line trolley. When it reaches the top, you have to revert the **gravity** to normal, and quickly grab hold of the **rope**.",
+        "description": "All you have to do in this chapter is **set gravity to move upward to call the zip-line trolley**. When it reaches the top, you have to **revert the gravity to normal, and quickly grab hold of the rope**.",
         "type": "exploration",
         "rewards": []
       }

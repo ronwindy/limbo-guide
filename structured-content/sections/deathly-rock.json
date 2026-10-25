@@ -36,13 +36,13 @@
     "steps": [
       {
         "id": 1,
-        "description": "1. After getting to the top cliff from the previous chapter, keep walking until you get near to a large wooden log.\n2. Put at most a few steps to the log, then run back to the left side before the **boulder** gets you.\n3. After that, wait until the **boulder** stops moving, then jump over it, then move forward a bit.",
+        "description": "1. After getting to the top cliff from the previous chapter, **keep walking until you get near to a large wooden log**.\n2. Put at most a few steps to the log, then **run back to the left side** before the boulder gets you.\n3. After that, **wait until the boulder stops moving, then jump over it**, then move forward a bit.",
         "type": "exploration",
         "rewards": []
       },
       {
         "id": 2,
-        "description": "1. Just a few meters, the path shows trees with a hanging **vine**, then a large **lake** next to it.\n2. The **crate** won't help crossing the **lake**, because the **boy** cannot swim.\n3. However, you can use this **crate** by pulling it back to the hanging **vine**.\n4. Next, go above the **crate**, climb the **vine**, and swing back and forth a few times until you can jump onto the branch on the right side.\n5. Keep jumping on the large branches until you reach the top branch of the right-most tree.\n6. That tree features dead wood on the top, which can be knocked down.\n7. Climb back down, and then push and use the floating wood to cross the **lake**.\n8. Given that the wood doesn't fully cover the **lake**, you'll have to jump to the other side on the gap between the floating wood and the ground on the other side.",
+        "description": "1. Just a few meters, the path shows trees with a hanging vine, then a large lake next to it.\n2. The crate won't help crossing the lake, because the boy cannot swim.\n3. However, you can use this crate by **pulling it back to the hanging vine**.\n4. Next, **go above the crate, climb the vine, and swing back and forth** a few times until you can jump onto the branch on the right side.\n5. **Keep jumping on the large branches** until you reach the top branch of the right-most tree.\n6. That tree features dead wood on the top, which can be knocked down.\n7. **Climb back down, and then push and use the floating wood to cross the lake**.\n8. Given that the wood doesn't fully cover the lake, you'll have to **jump to the other side on the gap** between the floating wood and the ground on the other side.",
         "type": "exploration",
         "rewards": []
       }

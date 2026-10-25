@@ -36,19 +36,19 @@
     "steps": [
       {
         "id": 1,
-        "description": "There is a **crate** that is observed at the left of the elevator. You will need to pull it onto the **platform**, and activate the control to raise the elevator.",
+        "description": "There is a crate that is observed at the left of the elevator. You will need to **pull it onto the platform, and activate the control to raise the elevator**.",
         "type": "exploration",
         "rewards": []
       },
       {
         "id": 2,
-        "description": "- In the case of you pushing the **crate** to the right, it will catch on the pivoting **platform**.\n- You have to place the **crate** on the left of the **platform**, and pull the elevator **platform** to the right.\n- Be sure to activate the control to make sure it isn't pulled back to the left.",
+        "description": "- ==In the case of you pushing the crate to the right, it will catch on the pivoting platform==.\n- You have to **place the crate on the left of the platform, and pull the elevator platform to the right**.\n- Be sure to **activate the control to make sure it isn't pulled back to the left**.",
         "type": "exploration",
         "rewards": []
       },
       {
         "id": 3,
-        "description": "The elevator will finally hold the pivot down, allowing you to push the **crate** under the **rope**, in which you can climb.",
+        "description": "The elevator will finally hold the pivot down, allowing you to **push the crate under the rope**, in which you can climb.",
         "type": "exploration",
         "rewards": []
       }

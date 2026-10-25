@@ -36,7 +36,7 @@
     "steps": [
       {
         "id": 1,
-        "description": "1. All you have to do is move right, then jump over the gap.\n2. At the downward slope, you have to jump at the bottom.\n3. After that, you have to jump onto the rain gutter then climb to the top.\n4. You have to keep holding up even if the gutter detaches from the wall.\n5. Finally, at the top, you have to jump onto the roof.",
+        "description": "1. All you have to do is **move right, then jump over the gap**.\n2. At the downward slope, you have to **jump at the bottom**.\n3. After that, you have to **jump onto the rain gutter then climb to the top**.\n4. You have to **keep holding up even if the gutter detaches from the wall**.\n5. Finally, at the top, you have to **jump onto the roof**.",
         "type": "exploration",
         "rewards": []
       }

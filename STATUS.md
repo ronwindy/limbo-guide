@@ -1,9 +1,9 @@
 # Limbo Guide - Project Status
 
-> Last synced: `2026-10-18 14:54:56`
+> Last synced: `2026-10-25 11:08:30`
 
 ```text
-=== PROJECT STATUS (2026-10-18 14:54:56) ===
+=== PROJECT STATUS (2026-10-25 11:08:30) ===
 Canonical 41/41 | Structured 41/41 | QA pass 41/41 (fail 0) | Web built 41/41
 Next:
   (nothing pending)

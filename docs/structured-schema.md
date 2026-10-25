@@ -240,8 +240,12 @@ the step where the fight happens; do not hoist boss tactics into overviews.
   - Block = `{text}` (paragraph) or `{list: "bullet" | "numbered", items: [{text, children?: [list, ...]}]}`.
   - A child list picks its own kind (bullets under a numbered step is fine).
   - Max 3 levels (list > children > children); the schema rejects deeper nesting.
-  - Item/paragraph `text` takes the same inline markup (`**bold**`, `` `CROSS` ``).
-- Emphasise entities with `**bold**` (items, places, enemies, mechanics) and `` `CROSS` `` for buttons.
+  - Item/paragraph `text` takes the same inline markup (`**bold**`, `==danger==`, `` `CROSS` ``).
+- **Highlight strategy (Limbo, an adventure game with one-off places and items): highlight what the player must DO, not scenery.**
+  - `**bold**` = the key action plus its object, about one per list item: `**pull the boat** from the water`, `**jump to the hanging chain**`. Skip filler (proceed, watch, wait). Do not bold bare nouns (`lake`, `forest`, `boat`); there is no automatic term bolder.
+  - `==danger==` = something to avoid or a hazard to act on, shown in red bold: `==do not step on the bear traps==`. Do not nest it with `**`.
+  - Highlighting is markup only: wording stays identical (QA compares words with `**` and `==` stripped).
+  - `` `CROSS` `` for buttons.
 - No `[_TAG_]` marks, no ASCII-art borders.
 - Do not rename, re-number or "correct" anything (`Margaret` vs `Margarete`, `Causal Belt` stay).
 
