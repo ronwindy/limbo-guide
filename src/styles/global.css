@@ -194,6 +194,8 @@
 .guide-body > * + * { margin-top: 1rem; }
 .guide-body h2 { font-size: 1.6rem; margin-top: 2.25rem; scroll-margin-top: 1rem; }
 .guide-body h3 { font-size: 1.25rem; margin-top: 1.75rem; }
+.guide-body[data-page='pc-cheats'] h3 { font-size: 1.6rem; font-weight: 600; color: #ffffff; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.28); }
+.guide-body[data-page='pc-cheats'] h3 + p { margin-top: 1.25rem; }
 .guide-body b, .guide-body strong { color: #ffffff; font-weight: 600; }
 .guide-body i, .guide-body em { color: #e4e4e4; }
 .guide-body a { color: #ffffff; text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.35); text-underline-offset: 3px; }

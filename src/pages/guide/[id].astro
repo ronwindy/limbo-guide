@@ -36,7 +36,7 @@ const href = (id: string) => `${baseUrl}/guide/${id}`;
         <div class="page-title-rule" aria-hidden="true"><span></span></div>
       </header>
 
-      <div class="guide-body" set:html={html} />
+      <div class="guide-body" data-page={page.id} set:html={html} />
 
       <div class="page-actions">
         <button type="button" class="mark-read" data-mark-read={page.id} data-page={page.id} aria-pressed="false">Mark as read</button>
