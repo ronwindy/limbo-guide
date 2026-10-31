@@ -1,174 +1,50 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import project from "../../../project.config.json";
+import project from '../../../project.config.json';
+import { getPages, getPageHtml, getNeighbours, stripInlineStyles, tagChapterLabel, withHeadingIds } from '../../lib/guideData';
 import PageToc from '../../components/PageToc.astro';
-import StepChecklist from '../../components/StepChecklist.astro';
-import ManualOverview from '../../components/ManualOverview.astro';
-import Callouts from '../../components/Callouts.astro';
-import ObjectivesList from '../../components/ObjectivesList.astro';
-import RouteProgression from '../../components/RouteProgression.astro';
-import SavePoints from '../../components/SavePoints.astro';
-import TrapsList from '../../components/TrapsList.astro';
-import InitialSetup from '../../components/InitialSetup.astro';
-import ReferenceBlocks from '../../components/ReferenceBlocks.astro';
-import DocumentInfo from '../../components/DocumentInfo.astro';
-import GuideFigure from '../../components/GuideFigure.astro';
-import SectionHeading from '../../components/SectionHeading.astro';
-import {
-  getAllStructuredSections,
-  buildPageTocSections
-} from '../../lib/guideData';
-import type { GuideContent } from '../../lib/types';
-import { ChevronLeft, ChevronRight, ArrowLeft, ArrowRight, ListChecks } from '@lucide/astro';
 
-export async function getStaticPaths() {
-  const sections = getAllStructuredSections();
-  return sections.map((sec) => ({
-    params: { id: sec.id },
-    props: { section: sec.data },
-  }));
+export function getStaticPaths() {
+  return getPages().map((page) => ({ params: { id: page.id }, props: { page } }));
 }
 
-const { section } = Astro.props;
-const guide: GuideContent = section.guide || {};
-const overview = guide.overview || {};
-const navigation = guide.navigation || {};
+const { page } = Astro.props;
+const { prev, next } = getNeighbours(page.id);
+const { html, headings } = withHeadingIds(tagChapterLabel(stripInlineStyles(getPageHtml(page.id)), page.title));
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
-const guideHref = (id: string) => `${baseUrl}/guide/${id}`;
-
-// Normalizations across walkthrough and reference schemas
-const objectives = guide.objectives || (overview.objective ? [overview.objective] : []);
-const route = guide.route || overview.route || [];
-const steps = guide.steps || [];
-const images = guide.images || [];
-const calloutTitles = new Set((guide.callouts || []).map((c) => c.title));
-const coverImages = images.filter((i) => i.after === '');
-const looseImages = images.filter((i) => i.after !== '' && !calloutTitles.has(i.after));
-const bosses = guide.bosses || (guide.boss ? [guide.boss] : []);
-
-// Compute local on-page sections for Right TOC and Mobile Drawer
-const prev = navigation.prev;
-const pageSections = buildPageTocSections(guide);
+const href = (id: string) => `${baseUrl}/guide/${id}`;
 ---
 
 <BaseLayout
-  title={`${guide.title || 'Guide Section'} — ${project.pageTitleSuffix}`}
-  description={`${project.pageDescriptionPrefix} — ${guide.title || 'Guide Section'}`}
-  currentId={guide.id || ''}
-  pageSections={pageSections}
-  isWide={true}
+  title={`${page.title} - ${project.pageTitleSuffix}`}
+  description={`${project.pageDescriptionPrefix} - ${page.category}: ${page.title}`}
+  currentId={page.id}
+  pageSections={headings}
 >
-  <!-- Guide Page Layout: Center Content + Right Local TOC -->
-  <div class="flex gap-6 lg:gap-8 items-start relative">
-    <!-- Center Column: Main Content -->
+  <div class="flex gap-8 items-start">
     <article class="flex-1 min-w-0 max-w-4xl mx-auto space-y-8">
-      <!-- Breadcrumb & Top Prev/Next -->
-      <div class="flex items-center justify-between text-sm text-slate-400 border-b border-slate-800/80 pb-4">
-        <nav aria-label="Breadcrumb" class="flex items-center gap-2 min-w-0">
-          <a href={`${baseUrl}/contents`} class="hover:text-gold-400 transition-colors flex-shrink-0">Chapters</a>
-          <span aria-hidden="true">/</span>
-          <span class="text-slate-400 truncate max-w-[120px] sm:max-w-xs">{guide.category}</span>
-          <span aria-hidden="true">/</span>
-          <span aria-current="page" class="text-gold-400 font-medium truncate max-w-[150px] sm:max-w-md">{guide.title}</span>
-        </nav>
-
-        <nav aria-label="Previous and next chapter" class="flex items-center gap-3 flex-shrink-0 ml-2">
-          {prev && (
-            <a href={guideHref(prev.id)} aria-label={`Previous chapter: ${prev.title}`} class="gp-nav hover:text-gold-400 text-slate-300 transition-colors flex items-center gap-1">
-              <ChevronLeft class="w-3.5 h-3.5" aria-hidden="true" />
-              <span class="hidden sm:inline">Prev</span>
-            </a>
-          )}
-          {navigation.next && (
-            <a href={guideHref(navigation.next.id)} aria-label={`Next chapter: ${navigation.next.title}`} class="gp-nav hover:text-gold-400 text-slate-300 transition-colors flex items-center gap-1">
-              <span class="hidden sm:inline">Next</span>
-              <ChevronRight class="w-3.5 h-3.5" aria-hidden="true" />
-            </a>
-          )}
-        </nav>
-      </div>
-
       <header>
-        <h1 class="page-title gold-metal-text text-3xl sm:text-4xl lg:text-5xl font-display font-semibold">
-          {guide.title}
-        </h1>
+        <p class="breadcrumb text-xs uppercase tracking-[0.3em] text-slate-400">
+          <a href={`${baseUrl}/`} class="hover:text-white">Contents</a> / {page.category}
+        </p>
+        <h1 class="page-title gold-metal-text text-3xl sm:text-4xl lg:text-5xl font-display font-semibold mt-2">{page.title}</h1>
         <div class="page-title-rule" aria-hidden="true"><span></span></div>
       </header>
 
-      {coverImages.map((img) => <GuideFigure image={img} />)}
+      <div class="guide-body" set:html={html} />
 
-      <div class="space-y-8">
-        <Callouts callouts={guide.callouts} images={images} />
-
-        <ManualOverview overview={overview} />
-
-        <ObjectivesList objectives={objectives} />
-        <RouteProgression route={route} />
-        <SavePoints savePoints={guide.save_points} />
-        <InitialSetup setup={guide.initial_setup} />
-
-        {/* Walkthrough steps come before reference tables so the checklist is reachable while playing */}
-        {steps.length > 0 && (
-          <section id="steps" class="space-y-4">
-            <SectionHeading icon={ListChecks}>
-              Walkthrough Steps
-              <span slot="aside" class="text-sm font-sans text-slate-400">{steps.length} steps &bull; Tap to track</span>
-            </SectionHeading>
-            <StepChecklist guideId={guide.id || guide.code || ""} steps={steps} bosses={bosses} />
-          </section>
-        )}
-
-        <ReferenceBlocks blocks={guide.reference_blocks} sourceName={guide.source?.author} sourceUrl={guide.source?.url} />
-
-        <TrapsList traps={guide.traps} />
-
-        {looseImages.length > 0 && (
-          <section id="images" class="space-y-4">
-            {looseImages.map((img) => <GuideFigure image={img} />)}
-          </section>
-        )}
-
-        <DocumentInfo metadata={overview.metadata} purpose={overview.purpose} guideScope={overview.guide_scope} />
+      <div class="page-actions">
+        <button type="button" class="mark-read" data-mark-read={page.id} data-page={page.id} aria-pressed="false">Mark as read</button>
       </div>
 
-      <!-- Prev / Next Navigation Footer (Responsive Grid) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 border-t border-slate-800/80 pt-6 mt-12">
-        {prev ? (
-          <a
-            href={guideHref(prev.id)}
-            class="gp-nav card p-4 hover:border-gold-500/50 flex items-center gap-3 group transition-all"
-          >
-            <ArrowLeft class="w-5 h-5 text-gold-500 group-hover:-translate-x-1 motion-reduce:transform-none transition-transform flex-shrink-0" aria-hidden="true" />
-            <div class="min-w-0 flex-1">
-              <div class="text-xs font-sans text-slate-400 uppercase">Previous Chapter</div>
-              <div class="text-sm sm:text-base font-medium text-slate-200 group-hover:text-gold-300 truncate">
-                {prev.title}
-              </div>
-            </div>
-          </a>
-        ) : <div class="hidden sm:block"></div>}
-
-        {navigation.next && (
-          <a
-            href={guideHref(navigation.next.id)}
-            class="gp-nav card p-4 hover:border-gold-500/50 flex items-center justify-between gap-3 text-right group transition-all sm:col-start-2"
-          >
-            <div class="min-w-0 flex-1">
-              <div class="text-xs font-sans text-slate-400 uppercase">Next Chapter</div>
-              <div class="text-sm sm:text-base font-medium text-slate-200 group-hover:text-gold-300 truncate">
-                {navigation.next.title}
-              </div>
-            </div>
-            <ArrowRight class="w-5 h-5 text-gold-500 group-hover:translate-x-1 motion-reduce:transform-none transition-transform flex-shrink-0" aria-hidden="true" />
-          </a>
-        )}
-      </div>
+      <nav class="page-nav grid gap-3 sm:grid-cols-2" aria-label="Previous and next">
+        {prev ? <a class="card px-4 py-3 text-slate-200 hover:text-white hover:border-white/30" href={href(prev.id)}>&larr; {prev.title}</a> : <span></span>}
+        {next ? <a class="card px-4 py-3 text-right text-slate-200 hover:text-white hover:border-white/30" href={href(next.id)}>{next.title} &rarr;</a> : <span></span>}
+      </nav>
     </article>
-
-    <!-- Right Sidebar: On-This-Page Local TOC (Desktop >= xl) -->
-    {pageSections.length > 0 && (
-      <aside class="hidden xl:block w-56 2xl:w-64 flex-shrink-0 sticky top-6 max-h-[calc(100vh-3rem)] rounded-sm border border-slate-800/80 bg-obsidian/80 backdrop-blur shadow-sm overflow-y-auto custom-scrollbar">
-        <PageToc sections={pageSections} />
+    {headings.length > 1 && (
+      <aside class="hidden xl:block w-64 flex-shrink-0 sticky top-6 max-h-[calc(100vh-3rem)] overflow-y-auto custom-scrollbar">
+        <PageToc sections={headings} />
       </aside>
     )}
   </div>

@@ -4,15 +4,19 @@
   "site": "https://ronwindy.github.io",
   "base": "/limbo-guide",
   "logo": "logo.png",
-  "canonicalIndexFile": "limbo-guide.canonical.json",
-  "termExtrasFile": "scripts/term_extras.json",
-  "statusTitle": "Limbo Guide - Project Status",
   "pageTitleSuffix": "Limbo Guide",
   "pageDescriptionPrefix": "Limbo Guide & Walkthrough",
   "defaultTitle": "Limbo — Guide & Walkthrough",
   "defaultDescription": "A player-friendly walkthrough companion for Limbo.",
-  "sourceDefaults": {
-    "author": "",
-    "version": ""
+  "extract": {
+    "sourceDir": "raw-sources/ign",
+    "homeId": "overview",
+    "homeTitle": "Overview",
+    "videoEmbed": "https://widgets.ign.com/video/embed/content.html?url=",
+    "categories": [
+      { "name": "Overview", "match": "^$" },
+      { "name": "Walkthrough", "match": "^(Walkthrough|Chapter_\\d+)$" },
+      { "name": "Extras", "match": ".*" }
+    ]
   }
 }

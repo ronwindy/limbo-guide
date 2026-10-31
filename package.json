@@ -8,19 +8,20 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "guide": "node scripts/guide.mjs"
+    "extract": "node scripts/extract.mjs",
+    "verify": "node scripts/verify.mjs",
+    "sync": "node scripts/extract.mjs && node scripts/verify.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/tailwind": "^5.1.5",
     "@lucide/astro": "^1.52.0",
     "astro": "^5.4.2",
-    "lucide-astro": "^0.556.0",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "parse5": "^7.3.0"
   },
   "devDependencies": {
-    "@types/node": "^26.6.4",
-    "ajv": "^8.20.0"
+    "@types/node": "^26.6.4"
   }
 }

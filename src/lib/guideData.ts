@@ -1,168 +1,78 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import type {
-  TocEntry,
-  TocCategory,
-  TocData,
-  PageTocItem,
-  ManualOverviewData
-} from './types';
 
-export * from './types';
-
-const SECTIONS_DIR = path.resolve(process.cwd(), 'structured-content/sections');
-const CANONICAL_INDEX = path.resolve(process.cwd(), 'canonical-sources/limbo-guide.canonical.json');
-
-/** Label shown on directory cards; the category is the generic fallback. */
-export function getHumanReadableLabel(
-  _rawCode: string = '',
-  category: string = '',
-  isSidequest: boolean = false
-): string {
-  if (category) return category;
-  return isSidequest ? 'Side Quest' : '';
+export interface PageEntry {
+  id: string;
+  title: string;
+  category: string;
 }
 
-/**
- * Orders sections by following navigation.next from the section that has no prev.
- * Sections not on the chain keep filename order at the end.
- */
-function orderByNavigation<T extends { id: string; data: any }>(items: T[]): T[] {
-  const byId = new Map(items.map((i) => [i.id, i]));
-  const hasPrev = (i: T) => !!i.data.guide?.navigation?.prev?.id && byId.has(i.data.guide.navigation.prev.id);
-  const ordered: T[] = [];
-  const seen = new Set<string>();
-  for (const start of items.filter((i) => !hasPrev(i))) {
-    let cur: T | undefined = start;
-    while (cur && !seen.has(cur.id)) {
-      ordered.push(cur);
-      seen.add(cur.id);
-      const nextId: string | undefined = cur.data.guide?.navigation?.next?.id;
-      cur = nextId ? byId.get(nextId) : undefined;
-    }
-  }
-  for (const i of items) if (!seen.has(i.id)) ordered.push(i);
-  return ordered;
+export interface TocCategory {
+  category: string;
+  entries: PageEntry[];
 }
 
-/**
- * Builds the sidebar / directory data (TocData shape) from the structured sections themselves.
- * Consecutive sections with the same `category` form one group.
- */
-export function getTocData(): TocData {
-  const structured = new Map(getAllStructuredSections().map((s) => [s.id, s]));
-  // Canonical index gives the full chronological list; entries without a structured file stay unlinked.
-  const entries: Array<{ id: string; code?: string; title: string; type?: string; category?: string }> =
-    fs.existsSync(CANONICAL_INDEX)
-      ? JSON.parse(fs.readFileSync(CANONICAL_INDEX, 'utf-8')).sections_index ?? []
-      : [];
-  const indexed = new Set(entries.map((e) => e.id));
-  for (const sec of orderByNavigation([...structured.values()])) {
-    if (indexed.has(sec.id)) continue;
-    const g = sec.data.guide ?? {};
-    entries.push({ id: sec.id, code: g.code, title: g.title, type: g.type, category: g.category });
-  }
+export interface PageHeading {
+  id: string;
+  label: string;
+}
 
+const DATA_DIR = path.resolve(process.cwd(), 'src/data');
+
+/** Pages in source order, as written by scripts/extract.mjs. */
+export function getPages(): PageEntry[] {
+  const manifest = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'manifest.json'), 'utf-8'));
+  return manifest.pages.map(({ id, title, category }: PageEntry) => ({ id, title, category }));
+}
+
+/** Verbatim page markup from the source. */
+export function getPageHtml(id: string): string {
+  return fs.readFileSync(path.join(DATA_DIR, 'pages', `${id}.html`), 'utf-8');
+}
+
+/** Drops inline style attributes (IGN floats and centres blocks) so the site theme controls layout. Text is untouched. */
+export function stripInlineStyles(html: string): string {
+  return html.replace(/\sstyle="[^"]*"/g, '');
+}
+
+/** Marks the "Chapter 01" label paragraph so CSS can hide it (the page title already shows it). Text is untouched. */
+export function tagChapterLabel(html: string, title: string): string {
+  const escaped = title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return html.replace(new RegExp(`<p>(${escaped})\\s*</p>`), '<p class="chapter-label">$1</p>');
+}
+
+/** Pages grouped by consecutive category, for the sidebar and contents page. */
+export function getToc(): TocCategory[] {
   const categories: TocCategory[] = [];
-  for (const e of entries) {
-    const g = structured.get(e.id)?.data.guide ?? {};
-    const category = g.category || e.category || 'Guide';
-    const type = g.type || e.type;
+  for (const page of getPages()) {
     let cat = categories[categories.length - 1];
-    if (!cat || cat.category !== category) {
-      cat = { category, entries: [] };
+    if (!cat || cat.category !== page.category) {
+      cat = { category: page.category, entries: [] };
       categories.push(cat);
     }
-    cat.entries.push({
-      code: g.code || e.code || e.id,
-      title: g.title || e.title || e.id,
-      is_sidequest: type === 'sidequest',
-      id: e.id,
-      has_structured: structured.has(e.id),
-      type,
-      label: category
-    });
+    cat.entries.push(page);
   }
-  return {
-    guide: {
-      id: 'contents',
-      code: '',
-      title: 'Contents',
-      type: 'reference',
-      category: 'Contents',
-      source: { game: '', author: '', version: '', url: '', source_file: '' },
-      navigation: {},
-      overview: { sections: categories }
-    }
-  } as unknown as TocData;
+  return categories;
 }
 
-export function getAllStructuredSections(): Array<{ id: string; filename: string; data: any }> {
-  if (!fs.existsSync(SECTIONS_DIR)) return [];
-  const files = fs.readdirSync(SECTIONS_DIR).filter((f: string) => f.endsWith('.json'));
-  return files.map((filename: string) => {
-    const filePath = path.join(SECTIONS_DIR, filename);
-    const content = fs.readFileSync(filePath, 'utf-8');
-    const data = JSON.parse(content);
-    if (data.guide?.overview?.sections) {
-      enrichTocCategories(data.guide.overview.sections, files);
-    }
-    const id = data.guide?.id || filename.replace('.json', '');
-    return { id, filename, data };
-  });
+export function getNeighbours(id: string): { prev?: PageEntry; next?: PageEntry } {
+  const pages = getPages();
+  const at = pages.findIndex((p) => p.id === id);
+  return at < 0 ? {} : { prev: pages[at - 1], next: pages[at + 1] };
 }
 
 /**
- * Builds the array of jump sections for on-page table of contents (right sidebar & mobile drawer)
+ * Gives every h2 (or h3, on pages without h2) an id (its own, or one derived from its text) and lists them for the
+ * on-page contents. Returns the html with ids applied.
  */
-export function buildPageTocSections(guide: any): PageTocItem[] {
-  const overview: ManualOverviewData = guide.overview || {};
-  const objectives = guide.objectives || (overview.objective ? [overview.objective] : []);
-  const route = guide.route || overview.route || [];
-  const steps = guide.steps || [];
-  const initialSetup = guide.initial_setup;
-
-  const pageSections: PageTocItem[] = [];
-
-  if (objectives && objectives.length > 0) {
-    pageSections.push({ id: 'objectives', label: 'Primary Objectives', count: objectives.length });
-  }
-  if (route && route.length > 0) {
-    pageSections.push({ id: 'route', label: 'Route Progression' });
-  }
-  if (guide.save_points && guide.save_points.length > 0) {
-    pageSections.push({ id: 'save-points', label: 'Save Points', count: guide.save_points.length });
-  }
-  if (initialSetup) {
-    pageSections.push({ id: 'setup', label: 'Initial Setup' });
-  }
-  if (steps && steps.length > 0) {
-    pageSections.push({ id: 'steps', label: 'Walkthrough Steps', count: steps.length });
-  }
-  if (guide.traps && guide.traps.length > 0) {
-    pageSections.push({ id: 'traps', label: 'Traps and Obstacles', count: guide.traps.length });
-  }
-  if (overview.story_prologue) {
-    pageSections.push({ id: 'prologue', label: 'Story Prologue' });
-  }
-  if (overview.directions) {
-    pageSections.push({ id: 'compass', label: 'Compass & Navigation' });
-  }
-  if (overview.controls) {
-    pageSections.push({ id: 'controls', label: 'Controls' });
-  }
-  if (overview.playing_the_game) {
-    pageSections.push({ id: 'system', label: 'System & Operations' });
-  }
-  if (overview.player_attributes) {
-    pageSections.push({ id: 'attributes', label: 'Attributes & Battle' });
-  }
-  if (overview.battle_mechanics) {
-    pageSections.push({ id: 'battle-mechanics', label: 'Battle Mechanics' });
-  }
-  if (overview.metadata) {
-    pageSections.push({ id: 'metadata', label: 'Document Information' });
-  }
-
-  return pageSections;
+export function withHeadingIds(html: string): { html: string; headings: PageHeading[] } {
+  const headings: PageHeading[] = [];
+  const tag = /<h2>/.test(html) ? 'h2' : 'h3';
+  const out = html.replace(new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`, 'g'), (_m, inner: string) => {
+    const label = inner.replace(/<[^>]+>/g, '').replace(/&#x?[0-9a-f]+;|&\w+;/gi, ' ').replace(/\s+/g, ' ').trim();
+    const id = `s-${headings.length + 1}`;
+    headings.push({ id, label });
+    return `<${tag} id="${id}">${inner}</${tag}>`;
+  });
+  return { html: out, headings };
 }

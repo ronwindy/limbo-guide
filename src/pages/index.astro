@@ -1,117 +1,58 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import project from '../../project.config.json';
-import ResumeBanner from '../components/ResumeBanner.astro';
-import { getTocData } from '../lib/guideData';
-import { Play, ListChecks, ExternalLink } from '@lucide/astro';
+import { getPages, getToc } from '../lib/guideData';
+import { Check, Play } from '@lucide/astro';
 
+const categories = getToc();
+const pages = getPages();
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
-const categories = getTocData().guide.overview.sections ?? [];
-const first = categories
-  .filter((c: any) => c.category === 'Chapters')
-  .flatMap((c: any) => c.entries)
-  .find((e: any) => e.has_structured);
-
-const steamUrl = 'https://store.steampowered.com/app/48000/LIMBO/';
-const steamImg = 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/48000';
-const facts = [
-  ['Developer', 'Playdead'],
-  ['Publisher', 'Playdead'],
-  ['Release date', '2 Aug 2011 (Steam)'],
-  ['Genres', 'Action, Adventure, Indie'],
-  ['Tags', 'Puzzle Platformer, Dark, Atmospheric, 2D, Singleplayer, Horror, Surreal, Short'],
-  ['Platforms', 'Windows, macOS'],
-  ['Steam reviews', 'Very Positive (91% of 13,148 English reviews)']
-];
+const first = pages.find((p) => p.id === 'chapter-01') ?? pages[0];
 ---
 
-<BaseLayout currentId="" showSidebar={false} isWide={true}>
-  <!-- HERO -->
-  <section class="hero relative -mx-4 sm:-mx-6 lg:-mx-8 -mt-4 sm:-mt-6 lg:-mt-8 min-h-[88vh] flex items-center justify-center overflow-hidden">
-    <div class="hero-bg absolute inset-0" style={`background-image: url(${baseUrl}/background.png)`} aria-hidden="true"></div>
-    <div class="hero-fade absolute inset-0" aria-hidden="true"></div>
-    <div class="hero-reeds absolute inset-x-0 bottom-0" aria-hidden="true"></div>
-
-    <div class="relative z-10 max-w-3xl px-6 text-center space-y-6">
-      <p class="hero-eyebrow text-xs sm:text-sm tracking-[0.5em] uppercase text-slate-400">A walkthrough companion</p>
-      <h1 class="hero-title gold-metal-text font-display font-semibold text-6xl sm:text-8xl">{project.game}</h1>
-      <div class="page-title-rule mx-auto" aria-hidden="true"><span></span></div>
-      <p class="hero-tag text-slate-300 text-lg sm:text-xl max-w-xl mx-auto">
-        Every chapter, step by step: a video to watch, a checklist to tick, and your place saved as you go.
-      </p>
-      <div class="hero-cta has-[#resume-banner.hidden]:hidden"><ResumeBanner /></div>
-      <div class="hero-cta flex flex-wrap justify-center gap-3 pt-2">
-        <a id="continue-btn" href={first ? `${baseUrl}/guide/${first.id}` : `${baseUrl}/contents`} class="inline-flex items-center gap-2 px-7 py-3 rounded-sm bg-gold-500 hover:bg-gold-400 text-slate-950 font-semibold transition-colors">
-          <Play class="w-4 h-4" aria-hidden="true" />
-          <span id="continue-label">{first ? `Begin: ${first.title}` : 'Contents'}</span>
-        </a>
-        <a href={`${baseUrl}/contents`} class="inline-flex items-center gap-2 px-7 py-3 rounded-sm border border-white/25 hover:border-white/60 text-slate-200 transition-colors">
-          <ListChecks class="w-4 h-4" aria-hidden="true" /> Contents
-        </a>
-      </div>
-    </div>
-
-    <a href="#about" class="scroll-cue absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-slate-400 hover:text-white text-xs tracking-[0.4em] uppercase" aria-label="Scroll to about the game">
-      About the game
-      <span class="block mx-auto mt-2 w-px h-8 bg-gradient-to-b from-white/60 to-transparent"></span>
-    </a>
-  </section>
-
-  <!-- STEAM -->
-  <section id="about" class="max-w-4xl mx-auto py-16 space-y-6 scroll-mt-4">
-    <div class="rounded-sm border border-dashed border-white/25 bg-black/40 p-6 space-y-5">
-      <p class="text-xs tracking-[0.3em] uppercase text-slate-400">Extra research · from the Steam store page, not the walkthrough source</p>
-      <h2 class="font-display text-2xl text-slate-100">About the game</h2>
-      <img src={`${steamImg}/header.jpg?t=1761819450`} alt="LIMBO store banner" loading="lazy" decoding="async" referrerpolicy="no-referrer" class="w-full rounded-sm border border-white/10" />
-      <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
-        <li>A boy searches for his missing sister in a dark, surreal 2D puzzle platformer.</li>
-        <li>It is known for minimalist black-and-white visuals, physics-based puzzles and an eerie atmosphere.</li>
-      </ul>
-      <dl class="grid gap-x-6 gap-y-2 sm:grid-cols-[10rem_1fr] text-sm">
-        {facts.map(([k, v]) => (<><dt class="text-slate-500 uppercase tracking-widest text-xs pt-0.5">{k}</dt><dd class="text-slate-200">{v}</dd></>))}
-      </dl>
-      <img src={`${steamImg}/ss_312f9cbb367362a246a5bbfc8f4911b904eb2ba1.1920x1080.jpg?t=1761819450`} alt="LIMBO screenshot from the Steam store page" loading="lazy" decoding="async" referrerpolicy="no-referrer" class="w-full rounded-sm border border-white/10" />
-      <a href={steamUrl} rel="noopener noreferrer" target="_blank" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-sm border border-white/25 hover:border-white/60 text-slate-200 transition-colors">
-        <ExternalLink class="w-4 h-4" aria-hidden="true" /> View on Steam
+<BaseLayout title={`Contents — ${project.pageTitleSuffix}`} description={`${project.pageDescriptionPrefix} — Contents`} currentId="contents">
+  <article class="max-w-5xl mx-auto space-y-8">
+    <header class="space-y-4">
+      <h1 class="page-title gold-metal-text text-3xl sm:text-4xl lg:text-5xl font-display font-semibold">Contents</h1>
+      <div class="page-title-rule" aria-hidden="true"><span></span></div>
+      <a id="continue-btn" href={`${baseUrl}/guide/${first.id}`} data-pages={JSON.stringify(pages.map((p) => [p.id, p.title]))} data-base={baseUrl} class="inline-flex items-center gap-2 px-6 py-2.5 rounded-sm bg-gold-500 hover:bg-gold-400 text-slate-950 font-semibold transition-colors">
+        <Play class="w-4 h-4" aria-hidden="true" />
+        <span id="continue-label">Begin: {first.title}</span>
       </a>
-      <p class="text-xs text-slate-500">
-        Summary paraphrased from the Steam store page; images &copy; Playdead, shown from Steam's servers. Game facts in the chapters come only from the wiki walkthrough.
-      </p>
-    </div>
-  </section>
+    </header>
+    {categories.map((cat) => (
+      <section class="space-y-3">
+        <h2 class="text-lg uppercase tracking-widest text-slate-300">{cat.category}</h2>
+        <ul class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          {cat.entries.map((entry) => (
+            <li data-page={entry.id}>
+              <a href={`${baseUrl}/guide/${entry.id}`} class="card flex items-center justify-between gap-2 px-4 py-3 text-slate-200 hover:text-white hover:border-white/30 transition-colors">
+                <span>{entry.title}</span>
+                <Check class="read-tick w-4 h-4 flex-shrink-0" aria-label="Read" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </article>
 </BaseLayout>
 
-<style>
-  .hero-bg {
-    background-size: cover;
-    background-position: 40% center;
-    filter: grayscale(1) brightness(0.65);
-    transform: scale(1.08);
-    animation: hero-drift 40s ease-in-out infinite alternate;
+<script>
+  // "Continue" points at the first page not yet marked as read.
+  const btn = document.getElementById('continue-btn');
+  const label = document.getElementById('continue-label');
+  if (btn && label) {
+    let read: string[] = [];
+    try { read = JSON.parse(localStorage.getItem('limbo-read') || '[]'); } catch {}
+    const pages: Array<[string, string]> = JSON.parse(btn.dataset.pages || '[]');
+    const startIdx = pages.findIndex(([id]) => id === 'chapter-01');
+    const todo = pages.slice(startIdx).find(([id]) => !read.includes(id));
+    if (read.length && todo) {
+      btn.setAttribute('href', `${btn.dataset.base}/guide/${todo[0]}`);
+      label.textContent = `Continue: ${todo[1]}`;
+    } else if (read.length && !todo) {
+      label.textContent = 'Walkthrough complete';
+    }
   }
-  .hero-fade {
-    background:
-      radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.75) 100%),
-      linear-gradient(to bottom, rgba(10, 10, 10, 0) 60%, #0a0a0a 100%);
-  }
-  .hero-reeds {
-    height: 90px;
-    background:
-      repeating-linear-gradient(90deg, #000 0 1px, transparent 1px 11px) bottom / 100% 40% no-repeat,
-      repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 23px) bottom / 100% 70% no-repeat,
-      repeating-linear-gradient(90deg, #000 0 1px, transparent 1px 37px) bottom / 100% 100% no-repeat;
-    opacity: 0.7;
-  }
-  .hero-eyebrow, .hero-title, .hero-tag, .hero-cta { opacity: 0; animation: hero-in 1.6s ease forwards; }
-  .hero-title { animation-delay: 0.5s; }
-  .hero-tag { animation-delay: 1.2s; }
-  .hero-cta { animation-delay: 1.8s; }
-  .scroll-cue { animation: cue 3s ease-in-out infinite; }
-  @keyframes hero-drift { to { transform: scale(1.18) translateX(-2%); } }
-  @keyframes hero-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-  @keyframes cue { 50% { opacity: 0.4; } }
-  @media (prefers-reduced-motion: reduce) {
-    .hero-bg, .scroll-cue { animation: none; }
-    .hero-eyebrow, .hero-title, .hero-tag, .hero-cta { animation: none; opacity: 1; }
-  }
-</style>
+</script>

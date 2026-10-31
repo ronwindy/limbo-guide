@@ -158,27 +158,35 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
       })();
     </script>
 
-    <!-- Controller hints: shown only once a gamepad is detected (see src/lib/gamepad.ts) -->
-    <div id="gamepad-hints" class="hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-40 max-w-[94vw]" role="status" aria-live="polite">
-      <div class="flex items-center gap-x-3 gap-y-1.5 flex-wrap rounded-sm border border-white/20 bg-obsidian/95 backdrop-blur px-4 py-2 text-xs sm:text-sm text-slate-300 shadow-lg">
-        <span><kbd class="gp-key">A</kbd> Tick</span>
-        <span><kbd class="gp-key">B</kbd> Back</span>
-        <span><kbd class="gp-key">X</kbd> Contents</span>
-        <span><kbd class="gp-key">Y</kbd> Next unticked</span>
-        <span><kbd class="gp-key">LB</kbd><kbd class="gp-key">RB</kbd> Back / forward</span>
-        <span><kbd class="gp-key">LT</kbd><kbd class="gp-key">RT</kbd> Prev / next section</span>
-        <span><kbd class="gp-key">D-pad</kbd> Move</span>
-        <span><kbd class="gp-key">L-stick</kbd> Scroll · <kbd class="gp-key">R-stick</kbd> Fast</span>
-        <span><kbd class="gp-key">Start</kbd> Menu</span>
-        <span><kbd class="gp-key">View</kbd> Top</span>
-        <span><kbd class="gp-key">L3</kbd> Hints</span>
-        <span><kbd class="gp-key">R3</kbd> Fullscreen</span>
-        <button id="gamepad-hints-dismiss" type="button" class="ml-1 px-2 py-0.5 rounded border border-slate-700 text-slate-400 hover:text-white hover:border-white/50" aria-label="Hide controller hints">Hide</button>
-      </div>
-    </div>
-
-    <script>
-      import '../lib/gamepad';
+    <script is:inline>
+      // Page-level progress: ids of pages marked as read live in localStorage 'limbo-read'.
+      (function () {
+        var KEY = 'limbo-read';
+        function load() { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; } }
+        function save(list) { try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {} }
+        function render() {
+          var read = load();
+          document.querySelectorAll('[data-page]').forEach(function (el) {
+            if (read.indexOf(el.getAttribute('data-page')) >= 0) el.setAttribute('data-read', ''); else el.removeAttribute('data-read');
+          });
+          document.querySelectorAll('[data-mark-read]').forEach(function (btn) {
+            var on = read.indexOf(btn.getAttribute('data-mark-read')) >= 0;
+            btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+            btn.textContent = on ? 'Read ✓' : 'Mark as read';
+          });
+        }
+        document.addEventListener('click', function (e) {
+          var btn = e.target.closest && e.target.closest('[data-mark-read]');
+          if (!btn) return;
+          var id = btn.getAttribute('data-mark-read');
+          var read = load();
+          var at = read.indexOf(id);
+          if (at >= 0) read.splice(at, 1); else read.push(id);
+          save(read);
+          render();
+        });
+        render();
+      })();
     </script>
   </body>
 </html>

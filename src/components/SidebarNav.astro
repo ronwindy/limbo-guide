@@ -1,18 +1,8 @@
 ---
 import project from '../../project.config.json';
-import { getTocData } from '../lib/guideData';
-import type { TocEntry } from '../lib/types';
+import { getToc } from '../lib/guideData';
 import SidebarEntry from './SidebarEntry.astro';
-import {
-  BookOpen, Compass, Castle, Scroll, ChevronRight, TrainFront, Trees, House, Landmark, Anchor, Ship,
-  Church, Hospital, Mountain, Swords, Sword, Shield, Shirt, Gem, Store, Coins, Ticket, Skull, Users,
-  Footprints, Sparkles, Gift, Syringe, Pickaxe, Ghost, Flag, RotateCcw, Cog, Hammer, Map as MapIcon,
-  Trophy, FileText, Copyright, ScrollText, Ribbon, Package, Receipt, Dices, HandCoins, Flame, Heart,
-  TowerControl, Bug, Tent, DoorOpen, Info, Scale,
-  Sunrise, Droplets, TriangleAlert, Network, Columns3, Lock, Target, Crosshair, Worm, CloudRain, Building,
-  Zap, ArrowDownToLine, ArrowUpFromLine, Factory, ArrowRightLeft, ArrowDownUp, Magnet, Wind, RotateCw,
-  Timer, Square, Radio, Circle, WavesLadder
-} from '@lucide/astro';
+import { BookOpen, Compass, Scroll, ChevronRight, Footprints, Gift, Trophy, Cog, Map as MapIcon } from '@lucide/astro';
 
 interface Props {
   currentId?: string;
@@ -21,98 +11,20 @@ interface Props {
 
 const { currentId = '', isMobileDrawer = false } = Astro.props;
 const isContentsPage = currentId === 'contents';
-const tocData = getTocData();
-const categories = tocData.guide.overview.sections;
+const categories = getToc();
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-function getCategoryIcon(name: string) {
-  const n = name.toLowerCase();
-  if (n.includes('introduction')) return BookOpen;
-  return Scroll;
-}
+const CATEGORY_ICONS: Record<string, any> = { Overview: Compass, Walkthrough: BookOpen, Extras: Scroll };
 
-// Keyword map: first match on "<code> <title>" wins; falls back to a generic icon.
-const ENTRY_ICON_RULES: Array<[RegExp, any]> = [
-  [/contents|directory/, MapIcon],
-  [/manual|instructions|introduction/, BookOpen],
-  [/overview/, Compass],
-  [/ending/, Sparkles],
-  [/achievement|trophy/, Trophy],
-  [/egg|collectible/, Gift],
-  [/credits|copyright|disclaimer/, Copyright],
-];
-
-// Hand-picked icon per page id (matches the page's theme); keyword rules below are the fallback.
-const ENTRY_ICONS_BY_ID: Record<string, any> = {
-  'game-overview': Compass,
-  awakening: Sunrise,
-  'lake-passage': Droplets,
-  'bear-traps': TriangleAlert,
-  'deathly-rock': Mountain,
-  'the-spider': Bug,
-  'spiders-lair': Network,
-  'interwovened-escape': Network,
-  'pillars-of-pain': Columns3,
-  'flaming-roll': Flame,
-  'unmerciful-village': House,
-  'spiders-revenge': Skull,
-  'caged-victim': Lock,
-  'zombified-bait': Ghost,
-  'killer-darts': Target,
-  'double-gates': DoorOpen,
-  'the-parasite': Worm,
-  'rain-machine': CloudRain,
-  'in-the-flooding-chambers': WavesLadder,
-  'worms-command': Radio,
-  rooftops: Building,
-  'electric-letters': Zap,
-  'down-the-glass': ArrowDownToLine,
-  'saw-for-the-zombie': Ghost,
-  'upward-elevation': ArrowUpFromLine,
-  'impassible-saw': Cog,
-  'the-bug': Bug,
-  'factory-world': Factory,
-  'shifted-industry': Cog,
-  'boulder-by-gravity': Circle,
-  'dangerous-conveyors': ArrowRightLeft,
-  'to-the-perilous-rail': TrainFront,
-  'dark-rotation': RotateCcw,
-  'machine-guns': Crosshair,
-  'gravitational-changes': ArrowDownUp,
-  'magnetized-blocks': Magnet,
-  'levitated-swing': Wind,
-  'side-of-the-world': RotateCw,
-  'timed-gravity-changes': Timer,
-  'the-final-glass': Square,
-  'end-of-the-journey': Flag,
-};
-
-function getEntryIcon(id: string, code: string, title: string, categoryIcon: any) {
-  if (ENTRY_ICONS_BY_ID[id]) return ENTRY_ICONS_BY_ID[id];
-  const hay = `${code} ${title}`.toLowerCase();
-  for (const [re, icon] of ENTRY_ICON_RULES) {
-    if (re.test(hay)) return icon;
-  }
+// Hand-picked icon per page id; chapters share one.
+function getEntryIcon(id: string, categoryIcon: any) {
+  if (id === 'overview') return Compass;
+  if (id === 'walkthrough') return BookOpen;
+  if (id.startsWith('chapter-')) return Footprints;
+  if (id === 'secret-eggs') return Gift;
+  if (id === 'achievements-trophies') return Trophy;
+  if (id.endsWith('cheats')) return Cog;
   return categoryIcon;
-}
-
-// Nest each run of side-quest entries under the non-side-quest entry that precedes it.
-// A side quest with no preceding parent stays top-level (and keeps its badge).
-function groupEntries(entries: TocEntry[]): Array<{ entry: TocEntry; children: TocEntry[] }> {
-  const groups: Array<{ entry: TocEntry; children: TocEntry[] }> = [];
-  for (const entry of entries) {
-    const parent = groups[groups.length - 1];
-    if (entry.is_sidequest && parent && !parent.entry.is_sidequest) {
-      parent.children.push(entry);
-    } else {
-      groups.push({ entry, children: [] });
-    }
-  }
-  return groups;
-}
-
-function getCategoryFullTitle(name: string): string {
-  return name;
 }
 ---
 
@@ -131,13 +43,12 @@ function getCategoryFullTitle(name: string): string {
     </div>
   )}
 
-  <!-- Chapters Scroll Area -->
+  <!-- Pages Scroll Area -->
   <div class="flex-1 min-h-0 overflow-y-auto p-3 space-y-3 text-sm text-slate-300 custom-scrollbar overscroll-contain" id={isMobileDrawer ? 'mobile-sidebar-list' : 'sidebar-list'}>
     {categories.map((cat, idx) => {
-      const CatIcon = getCategoryIcon(cat.category);
+      const CatIcon = CATEGORY_ICONS[cat.category] ?? Scroll;
       const hasContentsLink = idx === 0;
       const hasActiveEntry = cat.entries.some((entry) => entry.id === currentId) || (hasContentsLink && isContentsPage);
-      // Auto-expand category if it contains the active entry, or expand the first category on home/toc pages
       const isOpenByDefault = hasActiveEntry || (!currentId && idx === 0);
 
       return (
@@ -148,7 +59,7 @@ function getCategoryFullTitle(name: string): string {
         >
           <summary
             class="list-none flex items-center justify-between cursor-pointer px-2 py-1.5 rounded-sm text-slate-300 hover:text-gold-300 hover:bg-slate-800/50 transition-colors focus:outline-none"
-            title={getCategoryFullTitle(cat.category)}
+            title={cat.category}
           >
             <div class="flex items-center gap-2 min-w-0">
               <CatIcon class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
@@ -162,59 +73,20 @@ function getCategoryFullTitle(name: string): string {
           <ul class="mt-1 space-y-0.5 pl-2.5 border-l border-slate-800/80 ml-3 py-1">
             {hasContentsLink && (
               <li class="sidebar-item" data-active={isContentsPage ? 'true' : undefined}>
-                <SidebarEntry
-                  href={`${baseUrl}/contents`}
-                  title="Contents"
-                  icon={MapIcon}
-                  isActive={isContentsPage}
-                  isAvailable={true}
-                />
+                <SidebarEntry href={`${baseUrl}/`} title="Contents" icon={MapIcon} isActive={isContentsPage} />
               </li>
             )}
-            {groupEntries(cat.entries).map((group) => {
-              const entry = group.entry;
-              const isActive = entry.id === currentId;
-              const EntryIcon = entry.is_sidequest
-                ? Scroll
-                : getEntryIcon(entry.id, entry.code, entry.title, CatIcon);
-              return (
-                <li
-                  class="sidebar-item"
-                  data-active={isActive ? 'true' : undefined}
-                >
-                  <SidebarEntry
-                    href={`${baseUrl}/guide/${entry.id}`}
-                    title={entry.title}
-                    icon={EntryIcon}
-                    isActive={isActive}
-                    isAvailable={!!entry.has_structured}
-                    showBadge={entry.is_sidequest}
-                  />
-                  {group.children.length > 0 && (
-                    <ul class="sidebar-children mt-0.5 mb-1 ml-4 pl-2 space-y-0.5 border-l border-slate-800/80">
-                      {group.children.map((child) => {
-                        const childActive = child.id === currentId;
-                        return (
-                          <li
-                            class="sidebar-item"
-                            data-active={childActive ? 'true' : undefined}
-                          >
-                            <SidebarEntry
-                              href={`${baseUrl}/guide/${child.id}`}
-                              title={child.title}
-                              icon={Scroll}
-                              isActive={childActive}
-                              isAvailable={!!child.has_structured}
-                              isChild
-                            />
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )}
-                </li>
-              );
-            })}
+            {cat.entries.map((entry) => (
+              <li class="sidebar-item" data-active={entry.id === currentId ? 'true' : undefined} data-page={entry.id}>
+                <SidebarEntry
+                  href={`${baseUrl}/guide/${entry.id}`}
+                  title={entry.title}
+                  icon={getEntryIcon(entry.id, CatIcon)}
+                  isActive={entry.id === currentId}
+                  trackRead
+                />
+              </li>
+            ))}
           </ul>
         </details>
       );

@@ -15,6 +15,7 @@ Thumbs.db
 .idea/
 
 scratch/
-scripts/*.ps1
-scripts/*.txt
-scripts/*.js
+
+# Saved source pages (user-supplied, not redistributed)
+raw-sources/*
+!raw-sources/.gitkeep
