@@ -39,6 +39,8 @@ const href = (id: string) => `${baseUrl}/guide/${id}`;
         <button type="button" class="mark-read" data-mark-read={page.id} data-page={page.id} aria-pressed="false">Mark as read</button>
       </div>
 
+      <div class="page-title-rule page-end-rule" aria-hidden="true"><span></span></div>
+
       <nav class="page-nav grid gap-3 sm:grid-cols-2" aria-label="Previous and next">
         {prev ? <a class="card px-4 py-3 text-slate-200 hover:text-white hover:border-white/30" href={href(prev.id)}>&larr; {prev.title}</a> : <span></span>}
         {next ? <a class="card px-4 py-3 text-right text-slate-200 hover:text-white hover:border-white/30" href={href(next.id)}>{next.title} &rarr;</a> : <span></span>}
