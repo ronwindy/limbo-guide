@@ -35,6 +35,14 @@ export function stripInlineStyles(html: string): string {
   return html.replace(/\sstyle="[^"]*"/g, '');
 }
 
+/** Swaps the Overview cover figure (IGN's Limbocover.jpg) for our own banner. Presentation only; no text involved. */
+export function swapOverviewCover(html: string, src: string): string {
+  return html.replace(
+    /<figure class="ign-images">(?:(?!<\/figure>)[\s\S])*?Limbocover\.jpg[\s\S]*?<\/figure>/,
+    `<figure class="overview-cover"><img src="${src}" alt="Limbo" width="3840" height="1240"></figure>`,
+  );
+}
+
 /** Marks the "Chapter 01" label paragraph so CSS can hide it (the page title already shows it). Text is untouched. */
 export function tagChapterLabel(html: string, title: string): string {
   const escaped = title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

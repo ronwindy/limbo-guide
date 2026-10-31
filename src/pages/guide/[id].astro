@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import project from '../../../project.config.json';
-import { getPages, getPageHtml, getNeighbours, stripInlineStyles, tagChapterLabel, withHeadingIds } from '../../lib/guideData';
+import { getPages, getPageHtml, getNeighbours, stripInlineStyles, swapOverviewCover, tagChapterLabel, withHeadingIds } from '../../lib/guideData';
 import PageToc from '../../components/PageToc.astro';
 
 export function getStaticPaths() {
@@ -10,8 +10,10 @@ export function getStaticPaths() {
 
 const { page } = Astro.props;
 const { prev, next } = getNeighbours(page.id);
-const { html, headings } = withHeadingIds(tagChapterLabel(stripInlineStyles(getPageHtml(page.id)), page.title));
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { html, headings } = withHeadingIds(
+  tagChapterLabel(swapOverviewCover(stripInlineStyles(getPageHtml(page.id)), `${baseUrl}/image-1.png`), page.title),
+);
 const href = (id: string) => `${baseUrl}/guide/${id}`;
 ---
 
