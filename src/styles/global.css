@@ -217,6 +217,38 @@
 .guide-body figure.overview-cover img { width: 100%; }
 .guide-body figure.overview-cover + .table-wrap table { width: 100%; }
 .guide-body p > span[typeof='mw:File'] { display: block; }
+/* Walkthrough screenshots: larger, pairs sit side by side, click opens the lightbox */
+.guide-body p:has(> span[typeof='mw:File']) { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.guide-body p > span[typeof='mw:File'] { flex: 1 1 18rem; max-width: 27rem; }
+.guide-body p > span[typeof='mw:File'] img { width: 100%; cursor: zoom-in; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.9); cursor: zoom-out;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; border: 1px solid rgba(255, 255, 255, 0.15); }
+.lightbox button {
+  position: absolute; top: 0.75rem; right: 1rem; font-size: 2rem; line-height: 1; color: #e4e4e4; background: none; border: 0; cursor: pointer;
+}
+
+/* Achievement callout: IGN's "Achievement" label box plus the sentence after it, as one gold-accent panel */
+.guide-body .achievement-callout {
+  position: relative; padding: 1rem 1.25rem 1rem 1.5rem; border: 1px solid rgba(217, 180, 90, 0.35); border-left: 4px solid #d9b45a;
+  background: linear-gradient(90deg, rgba(217, 180, 90, 0.14), rgba(217, 180, 90, 0.04)); box-shadow: 0 0 22px rgba(217, 180, 90, 0.12);
+}
+.guide-body .achievement-callout .table-wrap { overflow: visible; margin-bottom: 0.5rem; }
+.guide-body .achievement-callout table { border: 0; }
+.guide-body .achievement-callout td { border: 0; padding: 0; }
+.guide-body .achievement-callout small {
+  display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #d9b45a;
+}
+.guide-body .achievement-callout small::before {
+  content: ''; width: 1.1rem; height: 1.1rem; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10v2h3v3a4 4 0 0 1-4 4h-.3A5 5 0 0 1 13 14.9V17h3v2H8v-2h3v-2.1A5 5 0 0 1 8.3 12H8a4 4 0 0 1-4-4V5h3zM6 7v1a2 2 0 0 0 1.1 1.8A5 5 0 0 1 7 9V7zm12 0h-1v2l-.1.8A2 2 0 0 0 18 8z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10v2h3v3a4 4 0 0 1-4 4h-.3A5 5 0 0 1 13 14.9V17h3v2H8v-2h3v-2.1A5 5 0 0 1 8.3 12H8a4 4 0 0 1-4-4V5h3zM6 7v1a2 2 0 0 0 1.1 1.8A5 5 0 0 1 7 9V7zm12 0h-1v2l-.1.8A2 2 0 0 0 18 8z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.guide-body .achievement-callout p { color: #f0e6cc; font-size: 1.05rem; }
+.guide-body .achievement-callout b { color: #ffe9a8; }
 .guide-body figcaption { display: none; }
 
 .video-embed { position: relative; aspect-ratio: 16 / 9; width: 100%; max-width: 48rem; border: 1px solid rgba(255, 255, 255, 0.12); background: #000; }

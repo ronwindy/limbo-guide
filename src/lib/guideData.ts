@@ -43,6 +43,22 @@ export function swapOverviewCover(html: string, src: string): string {
   );
 }
 
+/**
+ * Wraps IGN's floating "Achievement" label box and the paragraph after it into one callout panel.
+ * Presentation only; both original elements and their text are kept as they are.
+ */
+export function wrapAchievements(html: string): string {
+  return html.replace(
+    /<div class="table-wrap"><table(?:(?!<\/table>)[\s\S])*?<small>Achievement<\/small>[\s\S]*?<\/table><\/div>\s*<p>[\s\S]*?<\/p>/g,
+    (block) => `<div class="achievement-callout">${block}</div>`,
+  );
+}
+
+/** Tells the browser the walkthrough images now display at about 432px, so it picks IGN's 640px file from the srcset. */
+export function enlargeImages(html: string): string {
+  return html.replace(/sizes="\(max-width: 640px\) 640px, \(min-width: 641px\) 325px"/g, 'sizes="(max-width: 640px) 100vw, 432px"');
+}
+
 /** Marks the "Chapter 01" label paragraph so CSS can hide it (the page title already shows it). Text is untouched. */
 export function tagChapterLabel(html: string, title: string): string {
   const escaped = title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
