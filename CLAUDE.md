@@ -14,6 +14,7 @@ raw-sources/ign/*.html (gitignored, user-saved IGN pages)
 - The user chooses all sources; never search for or pick them. Extra research is only done when explicitly requested and is kept visibly separate.
 - Priority when rules conflict: **source fidelity > user requirements > usability > visual polish > convenience.**
 - Commit directly on `main`. Ask before adding new components or dependencies.
+- Browser verification (preview server, screenshots) is only for complex UI changes. For simple changes (a CSS tweak, width/alignment, swapping an image) skip it; the user checks those themselves. A build is enough.
 - Allowed presentation work (render time only, text untouched): CSS, layout, sidebar, icons, styling of IGN's own boxes/tables/rows, hiding the duplicate "Chapter NN" label, stripping inline `style` attributes, adding heading ids for the on-page contents.
 - Design decisions live in [`DESIGN.md`](DESIGN.md). Everything not carried over from the source is listed in [`docs/extract-report.md`](docs/extract-report.md).
 
