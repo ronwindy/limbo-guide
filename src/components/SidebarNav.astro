@@ -2,7 +2,7 @@
 import project from '../../project.config.json';
 import { getToc } from '../lib/guideData';
 import SidebarEntry from './SidebarEntry.astro';
-import { BookOpen, Compass, Scroll, ChevronRight, Footprints, Gift, Trophy, Cog, Map as MapIcon } from '@lucide/astro';
+import { BookOpen, Compass, Scroll,Footprints, Gift, Trophy, Cog, Map as MapIcon } from '@lucide/astro';
 
 interface Props {
   currentId?: string;
@@ -48,17 +48,15 @@ function getEntryIcon(id: string, categoryIcon: any) {
     {categories.map((cat, idx) => {
       const CatIcon = CATEGORY_ICONS[cat.category] ?? Scroll;
       const hasContentsLink = idx === 0;
-      const hasActiveEntry = cat.entries.some((entry) => entry.id === currentId) || (hasContentsLink && isContentsPage);
-      const isOpenByDefault = hasActiveEntry || (!currentId && idx === 0);
 
       return (
         <details
           class="sidebar-category group rounded-sm transition-colors"
-          open={isOpenByDefault}
+          open
           data-category-id={cat.category}
         >
           <summary
-            class="list-none flex items-center justify-between cursor-pointer px-2 py-1.5 rounded-sm text-slate-300 hover:text-gold-300 hover:bg-slate-800/50 transition-colors focus:outline-none"
+            class="list-none flex items-center justify-between cursor-default px-2 py-1.5 rounded-sm text-slate-300 hover:text-gold-300 hover:bg-slate-800/50 transition-colors focus:outline-none"
             title={cat.category}
           >
             <div class="flex items-center gap-2 min-w-0">
@@ -67,7 +65,6 @@ function getEntryIcon(id: string, categoryIcon: any) {
                 {cat.category}
               </span>
             </div>
-            <ChevronRight class="w-3.5 h-3.5 text-slate-400 transition-transform duration-200 group-open:rotate-90 flex-shrink-0" />
           </summary>
 
           <ul class="mt-1 space-y-0.5 pl-2.5 border-l border-slate-800/80 ml-3 py-1">
@@ -104,33 +101,11 @@ function getEntryIcon(id: string, categoryIcon: any) {
     }
   }
 
-  function initAccordionState(listId: string) {
-    const list = document.getElementById(listId);
-    if (!list) return;
-    const detailsElements = list.querySelectorAll<HTMLDetailsElement>('details.sidebar-category');
+  // Categories are always expanded: stop the summary from toggling them.
+  document.querySelectorAll('details.sidebar-category > summary').forEach((summary) => {
+    summary.addEventListener('click', (e) => e.preventDefault());
+  });
 
-    detailsElements.forEach((details) => {
-      const catId = details.getAttribute('data-category-id');
-      const hasActive = details.querySelector('[data-active="true"]');
-      if (hasActive) {
-        details.open = true;
-      } else if (catId) {
-        const stored = sessionStorage.getItem(`sidebar-cat-${catId}`);
-        if (stored !== null) {
-          details.open = stored === 'true';
-        }
-      }
-
-      details.addEventListener('toggle', () => {
-        if (catId) {
-          sessionStorage.setItem(`sidebar-cat-${catId}`, String(details.open));
-        }
-      });
-    });
-  }
-
-  initAccordionState('sidebar-list');
-  initAccordionState('mobile-sidebar-list');
   autoScrollActiveItem('sidebar-list');
   autoScrollActiveItem('mobile-sidebar-list');
 </script>
