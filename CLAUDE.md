@@ -16,7 +16,7 @@ A static guide (Astro, GitHub Pages) for Limbo. The page text lives in `src/data
 ```bash
 npm run build     # Astro build
 ```
-- Windows: run npm via `cmd /c npm run <script>`. Node only, no Python.
+- Windows: run `npm run <script>` directly (PowerShell or Bash). Do not wrap it in `cmd /c`; in Git Bash that opens an interactive prompt and hangs. Node only, no Python.
 - Some links in the page HTML still point to ign.com where the target page was never saved locally; edit them as needed.
 
 ## Scope
