@@ -13,7 +13,7 @@ const first = pages.find((p) => p.id === 'chapter-01') ?? pages[0];
 <BaseLayout title={`Contents — ${project.pageTitleSuffix}`} description={`${project.pageDescriptionPrefix} — Contents`} currentId="contents">
   <article class="max-w-5xl mx-auto space-y-8">
     <header class="space-y-4">
-      <h1 class="page-title gold-metal-text text-3xl sm:text-4xl lg:text-5xl font-display font-semibold">Contents</h1>
+      <h1 class="page-title gold-metal-text text-center text-3xl sm:text-4xl lg:text-5xl font-display font-semibold">Contents</h1>
       <div class="page-title-rule" aria-hidden="true"><span></span></div>
       <a id="continue-btn" href={`${baseUrl}/guide/${first.id}`} data-pages={JSON.stringify(pages.map((p) => [p.id, p.title]))} data-base={baseUrl} class="inline-flex items-center gap-2 px-6 py-2.5 rounded-sm bg-gold-500 hover:bg-gold-400 text-slate-950 font-semibold transition-colors">
         <Play class="w-4 h-4" aria-hidden="true" />
