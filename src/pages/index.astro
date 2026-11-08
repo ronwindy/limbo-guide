@@ -1,58 +1,86 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import project from '../../project.config.json';
-import { getPages, getToc } from '../lib/guideData';
-import { Check, Play } from '@lucide/astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import project from "../../project.config.json";
+import { getPages, getToc } from "../lib/guideData";
+import { Check, Play } from "@lucide/astro";
 
 const categories = getToc();
 const pages = getPages();
-const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
-const first = pages.find((p) => p.id === 'chapter-01') ?? pages[0];
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+const first = pages.find((p) => p.id === "chapter-01") ?? pages[0];
 ---
 
-<BaseLayout title={`Contents — ${project.pageTitleSuffix}`} description={`${project.pageDescriptionPrefix} — Contents`} currentId="contents">
+<BaseLayout
+  title={`Contents — ${project.pageTitleSuffix}`}
+  description={`${project.pageDescriptionPrefix} — Contents`}
+  currentId="contents"
+>
   <article class="max-w-5xl mx-auto space-y-8">
     <header class="space-y-4">
-      <h1 class="page-title gold-metal-text text-center text-3xl sm:text-4xl lg:text-5xl font-display font-semibold">Contents</h1>
+      <h1
+        class="page-title gold-metal-text text-center text-3xl sm:text-4xl lg:text-5xl font-display font-semibold"
+      >
+        Contents
+      </h1>
       <div class="page-title-rule" aria-hidden="true"><span></span></div>
-      <a id="continue-btn" href={`${baseUrl}/guide/${first.id}`} data-pages={JSON.stringify(pages.map((p) => [p.id, p.title]))} data-base={baseUrl} class="inline-flex items-center gap-2 px-6 py-2.5 rounded-sm bg-gold-500 hover:bg-gold-400 text-slate-950 font-semibold transition-colors">
+      <a
+        id="continue-btn"
+        href={`${baseUrl}/guide/${first.id}`}
+        data-pages={JSON.stringify(pages.map((p) => [p.id, p.title]))}
+        data-base={baseUrl}
+        class="inline-flex items-center gap-2 px-6 py-2.5 rounded-sm bg-gold-500 hover:bg-gold-400 text-slate-950 font-semibold transition-colors"
+      >
         <Play class="w-4 h-4" aria-hidden="true" />
         <span id="continue-label">Begin: {first.title}</span>
       </a>
     </header>
-    {categories.map((cat) => (
-      <section class="space-y-3">
-        <h2 class="text-lg uppercase tracking-widest text-slate-300">{cat.category}</h2>
-        <ul class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          {cat.entries.map((entry) => (
-            <li data-page={entry.id}>
-              <a href={`${baseUrl}/guide/${entry.id}`} class="card flex items-center justify-between gap-2 px-4 py-3 text-slate-200 hover:text-white hover:border-white/30 transition-colors">
-                <span>{entry.title}</span>
-                <Check class="read-tick w-4 h-4 flex-shrink-0" aria-label="Read" />
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    ))}
+    {
+      categories.map((cat) => (
+        <section class="space-y-3">
+          <h2 class="text-lg uppercase tracking-widest text-slate-300">
+            {cat.category}
+          </h2>
+          <ul class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {cat.entries.map((entry) => (
+              <li data-page={entry.id}>
+                <a
+                  href={`${baseUrl}/guide/${entry.id}`}
+                  class="card flex items-center justify-between gap-2 px-4 py-3 text-slate-200 hover:text-white hover:border-white/30 transition-colors"
+                >
+                  <span>{entry.title}</span>
+                  <Check
+                    class="read-tick w-4 h-4 flex-shrink-0"
+                    aria-label="Read"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
   </article>
 </BaseLayout>
 
 <script>
   // "Continue" points at the first page not yet marked as read.
-  const btn = document.getElementById('continue-btn');
-  const label = document.getElementById('continue-label');
+  const btn = document.getElementById("continue-btn");
+  const label = document.getElementById("continue-label");
   if (btn && label) {
     let read: string[] = [];
-    try { read = JSON.parse(localStorage.getItem('limbo-read') || '[]'); } catch {}
-    const pages: Array<[string, string]> = JSON.parse(btn.dataset.pages || '[]');
-    const startIdx = pages.findIndex(([id]) => id === 'chapter-01');
+    try {
+      read = JSON.parse(localStorage.getItem("limbo-read") || "[]");
+    } catch {}
+    const pages: Array<[string, string]> = JSON.parse(
+      btn.dataset.pages || "[]",
+    );
+    const startIdx = pages.findIndex(([id]) => id === "chapter-01");
     const todo = pages.slice(startIdx).find(([id]) => !read.includes(id));
     if (read.length && todo) {
-      btn.setAttribute('href', `${btn.dataset.base}/guide/${todo[0]}`);
+      btn.setAttribute("href", `${btn.dataset.base}/guide/${todo[0]}`);
       label.textContent = `Continue: ${todo[1]}`;
     } else if (read.length && !todo) {
-      label.textContent = 'Walkthrough complete';
+      label.textContent = "Walkthrough complete";
     }
   }
 </script>
